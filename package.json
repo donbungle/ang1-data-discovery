@@ -1,0 +1,45 @@
+{
+  "name": "r4-ang1",
+  "description": "AngularJS App",
+  "version": "0.0.1",
+  "author": "R4 dev team",
+  "scripts": {
+    "start": "grunt build",
+    "dev": "grunt dev",
+    "test": "grunt karma",
+    "build": "grunt docker"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "bower": "^1.8.14",
+    "bower-installer": "^1.3.6",
+    "chalk": "^4.1.0",
+    "glob": "^7.1.6",
+    "grunt-cli": "^1.3.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-angular-templates": "^1.2.0",
+    "grunt-concurrent": "^3.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-injector": "^1.1.0",
+    "grunt-karma": "^4.0.0",
+    "karma": "^5.2.3",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-firefox-launcher": "^2.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.32",
+    "load-grunt-tasks": "^5.1.0",
+    "time-grunt": "^2.0.0"
+  }
+}

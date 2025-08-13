@@ -1,0 +1,44 @@
+{
+  "name": "r4-ang1",
+  "description": "AngularJS App",
+  "version": "0.0.1",
+  "install": {
+    "path": {
+      "js": "app/assets/libs",
+      "css": "app/assets/css"
+    }
+  },
+  "dependencies": {
+    "json3": "^3.3.2",
+    "es5-shim": "^4.5.14",
+    "angular": "^1.8.2",
+    "angular-resource": "^1.8.2",
+    "angular-aria": "^1.8.2",
+    "angular-mocks": "^1.8.2",
+    "angular-cookies": "^1.8.2",
+    "angular-animate": "^1.8.2",
+    "angular-sanitize": "^1.8.2",
+    "angular-messages": "^1.8.2",
+    "angular-ui-router": "^1.0.29",
+    "lodash": "^4.17.20",
+    "moment": "^2.26.0",
+    "angular-chart.js": "^1.1.1",
+    "angular-filter": "^0.5.17",
+    "ng-token-auth": "^0.0.30",
+    "angular-cookie": "^4.1.0",
+    "angular-ui-grid": "^4.12.4",
+    "angular-file-upload": "*",
+    "svg-morpheus": "^0.3.0",
+    "highcharts": "highcharts-release#^8.2.2",
+    "bootstrap": "^5.3.0",
+    "jquery": "^2.2.0",
+    "angular-bootstrap": "~0.14.3"
+  },
+  "resolutions": {
+    "angular": "^1.8.2",
+    "json3": "^3.3.2",
+    "es5-shim": "^4.5.14",
+    "angular-ui-router": "^1.0.29"
+    
+  }
+}
