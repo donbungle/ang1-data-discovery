@@ -14,15 +14,16 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="app/assets/images/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon" sizes="114x114" href="app/assets/images/apple-touch-icon-114x114.png" />
 	<!-- injector:css -->
+	<link rel="stylesheet" href="/src/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/app/assets/css/angular-ui-grid/ui-grid.css">
 	<!-- endinjector -->
 </head>
 <body>
 
 <!--Beginning-->
-<section id="wrapper" scroll-to>
-	<div class="view-slide-in" ui-view></div>
-</section>
+<div class="container-fluid">
+	<div class="view-slide-in lc-block" ui-view></div>
+</div>
 <!--End-->
 
 <!-- injector:js -->
@@ -30,7 +31,9 @@
 <script src="/app/assets/libs/moment/moment.js"></script>
 <script src="/app/assets/libs/json3/json3.js"></script>
 <script src="/app/assets/libs/es5-shim/es5-shim.js"></script>
+<script src="/src/bower_components/lodash/lodash.js"></script>
 <script src="/app/assets/libs/jquery/jquery.js"></script>
+<script src="/src/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/app/assets/libs/angular/angular.js"></script>
 <script src="/app/assets/libs/angular-resource/angular-resource.js"></script>
 <script src="/app/assets/libs/angular-cookies/angular-cookies.js"></script>
@@ -57,10 +60,22 @@
 <script src="/app/modules/layouts/nav-bar/navBarService.js"></script>
 <script src="/app/modules/layouts/side-nav/sidenavCtrl.js"></script>
 <script src="/app/modules/layouts/side-nav/sidenavService.js"></script>
+<script src="/app/modules/componentes/componentesModule.js"></script>
+<script src="/app/modules/componentes/componentesRoute.js"></script>
+<script src="/app/modules/componentes/componentesCtrl.js"></script>
+<script src="/app/modules/componentes/componentesService.js"></script>
 <script src="/app/modules/home/homeModule.js"></script>
 <script src="/app/modules/home/homeRoute.js"></script>
 <script src="/app/modules/home/homeCtrl.js"></script>
 <script src="/app/modules/home/homeService.js"></script>
+<script src="/app/modules/servicios/serviciosModule.js"></script>
+<script src="/app/modules/servicios/serviciosRoute.js"></script>
+<script src="/app/modules/servicios/serviciosCtrl.js"></script>
+<script src="/app/modules/servicios/serviciosService.js"></script>
+<script src="/app/modules/shared/services/colorService.js"></script>
+<script src="/app/modules/shared/services/helperService.js"></script>
+<script src="/app/modules/shared/services/tipoCampoService.js"></script>
+<script src="/app/modules/shared/services/toastService.js"></script>
 <!-- endinjector -->
 
 </body>

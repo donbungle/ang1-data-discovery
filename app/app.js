@@ -22,6 +22,9 @@
 		'angularFileUpload',
 
 		'chart.js',
+
+		'home',
+		'componentes'
 	]);
 
 })();

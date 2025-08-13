@@ -199,8 +199,9 @@ module.exports = function (grunt) {
 						'app/assets/libs/json3/*.js',
 						'app/assets/libs/es5-shim/*.js',
 						//'app/assets/libs/lodash/lodash.js',
-						'bower_components/lodash/lodash.js',
+						'src/bower_components/lodash/lodash.js',
 						'app/assets/libs/jquery/jquery.js',
+						'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
 						// Angular Project Dependencies,
 						'app/assets/libs/angular/angular.js',
 						'app/assets/libs/angular-resource/angular-resource.js',
@@ -222,14 +223,30 @@ module.exports = function (grunt) {
 
 						'app/modules/layouts/**/*.js',
 
+						'app/modules/componentes/*Module.js',
+						'app/modules/componentes/*Route.js',
+						'app/modules/componentes/*Ctrl.js',
+						'app/modules/componentes/*Service.js',
+
 						'app/modules/home/*Module.js',
 						'app/modules/home/*Route.js',
 						'app/modules/home/*Ctrl.js',
 						'app/modules/home/*Service.js',
+
+						'app/modules/servicios/*Module.js',
+						'app/modules/servicios/*Route.js',
+						'app/modules/servicios/*Ctrl.js',
+						'app/modules/servicios/*Service.js',
+
+						'app/modules/shared/services/*.js',
+
+						'app/modules/shared/directives/front/**/*.js',
+						'app/modules/shared/directives/front/**/**/*.js',
 						
 						
 
 						//CSS
+						'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
 						'app/assets/css/**/*.css',
 						'app/modules/shared/directives/**/assets/css/*.css'
 					]

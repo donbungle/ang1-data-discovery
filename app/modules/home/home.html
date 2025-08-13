@@ -1,16 +1,50 @@
-<div class="container" role="main">
-	<br>
-	<div class="well text-center">
-		<h1>{{ vm.title }}</h1>
-		<h3>{{ vm.version }}</h3>
-		<p>This is a template for a simple home screen website. Use it as a starting point to create something more unique.</p>
-		<code>app/modules/home/home.html</code>
-		<hr>
-    <h1>Features</h1>
-		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="item in vm.listFeatures">{{item.feature}}</li>
-		</ul>
-		<p><a href="http://www.github.com/newaeonweb/generator-angm" class="btn btn-primary" role="button">Learn more »</a></p>
+<nav class="navbar navbar-light">
+	<div class="container">
+		<a editable="inline" class="navbar-brand" href="https://library.livecanvas.com/sections/">
+			<img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" width="48" height="48" class="align-middle me-1 img-fluid" alt="My Website">
+			My Site</a>
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- START OFFCANVAS -->
+		<!-- To customize and view the offcanvas, utilize the "show" class, but make sure to remove it once you are finished. -->
+		<div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+			<div class="offcanvas-header">
+				<div class="lc-block">
+					<div editable="rich">
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+					</div>
+				</div>
+
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div class="row">
+					<div class="col">
+						<div class="lc-block mb-4">
+
+							<div lc-helper="shortcode" class="live-shortcode me-auto"> <!--  lc_nav_menu -->
+								<ul id="menu-menu-1" class="navbar-nav">
+									<li class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"><a href="https://library.livecanvas.com/starters" class="nav-link ">BS5 Page Templates</a></li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"><a href="https://library.livecanvas.com/sections/" class="nav-link ">BS5 Snippets</a></li>
+								</ul> <!-- /lc_nav_menu -->
+							</div>
+
+
+						</div>
+						<div class="lc-block">
+							<a class="btn btn-primary" href="#" role="button">Buy Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END OFFCANVAS -->
+
 	</div>
+</nav>
+<main class="container">
 	<div class="animation_test md-hue-22" ui-view></div>
-</div>
+</main>
