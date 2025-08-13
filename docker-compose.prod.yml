@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  front_svc:
+    #container_name: front-ctnr
+    image: nginx:1.25.3
+    #build: 
+    #  context: .
+    #  dockerfile: Dockerfile
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    restart: unless-stopped
+    ports:
+        - "2222:80"
+    #logging:
+    #  driver: none
+

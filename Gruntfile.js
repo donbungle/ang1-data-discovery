@@ -53,26 +53,33 @@ module.exports = function (grunt) {
 				src: [
 					// Angular Project Dependencies,
 					'app/app.js',
-						'app/app.Ctrl.js',
-						'app/app.animations.js',
-						'app/app.constants.js',
-						'app/filter.js',
-						'app/app.config.js',
+					'app/app.Ctrl.js',
+					'app/app.animations.js',
+					'app/app.constants.js',
+					'app/filter.js',
+					'app/app.config.js',
 
-						'app/modules/layouts/**/*.js',
+					'app/modules/layouts/**/*.js',
 
-						'app/modules/home/*Module.js',
-						'app/modules/home/*Route.js',
-						'app/modules/home/*Ctrl.js',
-						'app/modules/home/*Service.js',
+					'app/modules/componentes/*Module.js',
+					'app/modules/componentes/*Route.js',
+					'app/modules/componentes/*Ctrl.js',
+					'app/modules/componentes/*Service.js',
 
-						'app/modules/servicios/*Module.js',
-						'app/modules/servicios/*Route.js',
-						'app/modules/servicios/*Ctrl.js',
-						'app/modules/servicios/*Service.js',
+					'app/modules/home/*Module.js',
+					'app/modules/home/*Route.js',
+					'app/modules/home/*Ctrl.js',
+					'app/modules/home/*Service.js',
 
-						'app/modules/shared/models/*.js',
-						'app/modules/shared/services/*.js',
+					'app/modules/servicios/*Module.js',
+					'app/modules/servicios/*Route.js',
+					'app/modules/servicios/*Ctrl.js',
+					'app/modules/servicios/*Service.js',
+
+					'app/modules/shared/services/*.js',
+
+					'app/modules/shared/directives/front/**/*.js',
+					'app/modules/shared/directives/front/**/**/*.js'
 					
 						
 							
@@ -86,18 +93,18 @@ module.exports = function (grunt) {
 					'app/assets/libs/json3/*.js',
 					'app/assets/libs/es5-shim/*.js',
 					//'app/assets/libs/lodash/lodash.js',
-					'bower_components/lodash/lodash.js',
+					'src/bower_components/lodash/lodash.js',
 					'app/assets/libs/jquery/jquery.js',
+					'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
 					// Angular Project Dependencies,
 					'app/assets/libs/angular/angular.js',
 					'app/assets/libs/angular-resource/angular-resource.js',
 					//'app/assets/libs/angular-material*/*.js',
 					'app/assets/libs/angular-cookies/*.js',
 					'app/assets/libs/angular-sanitize/*.js',
-					'app/assets/libs/angular-ui-router/*.js',					
-					'app/assets/libs/ng-token-auth/*.js',
+					'app/assets/libs/angular-ui-router/*.js',
 					'app/assets/libs/angular-ui-grid/ui-grid.js',
-					'app/assets/libs/angular-*/*.js'
+					'app/assets/libs/angular-*/*.js',
 
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
@@ -128,7 +135,11 @@ module.exports = function (grunt) {
 
 		cssmin: {
 			css: {
-				src: 'app/assets/css/**/*.css',
+				src: [
+					'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
+					'app/assets/css/**/*.css',
+					'app/modules/shared/directives/**/assets/css/*.css'
+				],
 				dest: 'dist/assets/<%= pkg.name %>-style.min.css'
 			}
 		},
@@ -177,23 +188,6 @@ module.exports = function (grunt) {
 						[ '<%= concat.build.dest %>' ]
 						.concat(
 						[
-						//LIBS
-						//'app/assets/libs/**/*.js',
-
-						//APP
-						//'app/app.js',
-						//'app/app.config.js',
-						//'app/app.animations.js',
-						//'app/app.constants.js',
-						//'app/filter.js',
-						//'app/**/*Module.js',
-						//'app/**/*Route.js',
-						//'app/**/*Ctrl.js',
-						//'app/**/*Service.js',
-						//'app/**/*Store.js',
-						//'app/**/*Directive.js',
-						//'app/modules/shared/models/*.js',
-
 						'app/assets/libs/chart.js/*.js',
 						'app/assets/libs/moment/*.js',
 						'app/assets/libs/json3/*.js',
@@ -208,8 +202,7 @@ module.exports = function (grunt) {
 						//'app/assets/libs/angular-material*/*.js',
 						'app/assets/libs/angular-cookies/*.js',
 						'app/assets/libs/angular-sanitize/*.js',
-						'app/assets/libs/angular-ui-router/*.js',					
-						'app/assets/libs/ng-token-auth/*.js',
+						'app/assets/libs/angular-ui-router/*.js',	
 						'app/assets/libs/angular-ui-grid/ui-grid.js',
 						'app/assets/libs/angular-*/*.js',
 
@@ -256,10 +249,11 @@ module.exports = function (grunt) {
 			production: {
 				files: {
 					'dist/index.html': [
-						'dist/assets/r4-ang1-templates.min.js',
 						'dist/assets/r4-ang1-plugins.min.js',
 						'dist/assets/r4-ang1-angscript.min.js',
+						'dist/assets/r4-ang1-templates.min.js',
 						'dist/assets/r4-ang1-style.min.css',
+						
 						//'app/assets/css/**/*.min.css',
 						//'<%= uglify.basePlugin.dest %>',
 						//'<%= uglify.base.dest %>',						
@@ -327,6 +321,7 @@ module.exports = function (grunt) {
 		"exec",
 		//"karma",
 		"concat",
+		"concat:build",
 		"ngtemplates",
 		"uglify",
 		"cssmin",
