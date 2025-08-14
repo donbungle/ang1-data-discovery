@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 		'*/\n',
 
 		clean: {
-			dist: ['dist', 'node_modules', 'bower_components', 'lodash']
+			dist: ['app/assets/libs', 'node_modules', 'bower_components', 'lodash', 'bootstrap', 'src', 'app/assets/js/*'],
+			limpiar: ['dist', 'app/assets/libs', 'node_modules', 'bower_components', 'lodash', 'bootstrap', 'src', 'app/assets/js/*']
 		},	
 
 		jshint: {
@@ -306,7 +307,7 @@ module.exports = function (grunt) {
 		"ngtemplates",
 		"injector:production",
 		"concurrent",
-		"clean"
+		"clean:dist"
 	]);
 
 	// Development task(s).
@@ -327,9 +328,9 @@ module.exports = function (grunt) {
 		"cssmin",
 		"copy",
 		"injector:production",
-		//"concurrent"
+		"clean:dist"
 	]);
 
 	grunt.registerTask('test', ['karma']);
-	grunt.registerTask('limpiar', ['clean']);
+	grunt.registerTask('limpiar', ['clean:limpiar']);
 };

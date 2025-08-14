@@ -119,6 +119,11 @@ dist
 
 firebase
 
+app/assets/js/r4-ang1-angularbundle.js
+app/assets/js/r4-ang1-appbundle.js
+app/assets/js/templates.js
+app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js
+app/assets/libs/angular-touch/angular-touch.js
 
 app/assets/libs/lodash
 ./app/assets
