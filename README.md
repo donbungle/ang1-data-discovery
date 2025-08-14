@@ -21,6 +21,8 @@ Para ejecutar los scripts se ejecuta `npm run [script]`, por ejemplo: `npm run s
 
 * `docker` - Para deployment en docker (TODO)
 
+* `clean` - Borra directorios y archivos generados
+
 ## Ejcución de la aplicación
 
 1. Parametrizar `docker-compose.yml`
