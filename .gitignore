@@ -124,3 +124,5 @@ app/assets/libs/lodash
 ./app/assets
 ./app/assets/js
 ./app/assets/libs
+lodash
+bootsrap

@@ -78,8 +78,8 @@ module.exports = function (grunt) {
 
 					'app/modules/shared/services/*.js',
 
-					'app/modules/shared/directives/front/**/*.js',
-					'app/modules/shared/directives/front/**/**/*.js'
+					'app/modules/shared/front/**/*.js',
+					'app/modules/shared/front/**/**/*.js'
 					
 						
 							
@@ -233,8 +233,8 @@ module.exports = function (grunt) {
 
 						'app/modules/shared/services/*.js',
 
-						'app/modules/shared/directives/front/**/*.js',
-						'app/modules/shared/directives/front/**/**/*.js',
+						'app/modules/shared/front/**/*.js',
+						'app/modules/shared/front/**/**/*.js',
 						
 						
 

@@ -13,7 +13,7 @@
 		.module('componentes')
 		.controller('RellenoCtrl', Relleno );
 
-		Relleno.$inject = ['ColorService'];
+		Relleno.$inject = [];
 
 		/*
 		* recommend
@@ -21,7 +21,7 @@
 		* and bindable members up top.
 		*/
 
-		function Relleno(ColorService) {
+		function Relleno() {
 			/*jshint validthis: true */
 			var vm = this;
 

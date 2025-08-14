@@ -117,6 +117,7 @@ angular.module('r4-ang1').run(['$templateCache', function($templateCache) {
   $templateCache.put('app/modules/home/inicio.html',
     "<div>\n" +
     "    <h1>Inicio</h1>\n" +
+    "    <relleno></relleno>\n" +
     "</div>"
   );
 

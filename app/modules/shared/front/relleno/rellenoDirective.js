@@ -13,9 +13,9 @@
 		.module('componentes')
 		.directive('relleno', relleno);
 
-		relleno.$inject = ['$rootScope', 'ColorService'];
+		relleno.$inject = ['$rootScope'];
 
-		function relleno ($rootScope, ColorService) {
+		function relleno ($rootScope) {
 
 			var directive = {
 				restrict: 'E',
@@ -37,7 +37,7 @@
 
 			function link(scope, element, attrs, vm) {
 				if(scope.color == undefined){
-					scope.vm.color = ColorService.getRandomColor();
+					//scope.vm.color = ColorService.getRandomColor();
 				}else{
 					scope.vm.color = scope.color;
 				}
