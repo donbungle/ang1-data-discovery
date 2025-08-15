@@ -8,7 +8,12 @@
     "dev": "grunt dev",
     "test": "grunt karma",
     "build": "grunt docker",
-    "clean": "grunt limpiar"
+    "clean.dist": "grunt limpiar.dist",
+    "clean.src": "grunt limpiar.src",
+    "clean.libs": "grunt limpiar.libs",
+    "clean.bower": "grunt limpiar.bower",
+    "clean.node": "grunt limpiar.node",
+    "clean.dev": "grunt limpiar.dev"
   },
   "dependencies": {
     "async": "^3.2.0",

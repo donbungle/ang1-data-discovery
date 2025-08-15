@@ -13,8 +13,12 @@ module.exports = function (grunt) {
 		'*/\n',
 
 		clean: {
-			dist: ['app/assets/libs', 'node_modules', 'bower_components', 'lodash', 'bootstrap', 'src', 'app/assets/js/*'],
-			limpiar: ['dist', 'app/assets/libs', 'node_modules', 'bower_components', 'lodash', 'bootstrap', 'src', 'app/assets/js/*']
+			dist: ['dist'],
+			libs: ['app/assets/libs', ],
+			src: ['src'],
+			bower: ['src', 'lodash', 'bootstrap'],
+			node: ['node_modules', 'app/assets/js/*'],
+			dev: ['app/assets/libs', 'node_modules', 'bower_components', 'lodash', 'bootstrap', 'src', 'app/assets/js/*']
 		},	
 
 		jshint: {
@@ -332,5 +336,9 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('test', ['karma']);
-	grunt.registerTask('limpiar', ['clean:limpiar']);
+	grunt.registerTask('limpiar.dist', ['clean:dist']);
+	grunt.registerTask('limpiar.libs', ['clean:libs']);
+	grunt.registerTask('limpiar.bower', ['clean:bower']);
+	grunt.registerTask('limpiar.node', ['clean:node']);
+	grunt.registerTask('limpiar.dev', ['clean:dev']);
 };
