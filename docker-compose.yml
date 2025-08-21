@@ -10,7 +10,7 @@ services:
       - ./:/usr/share/nginx/html
     restart: unless-stopped
     ports:
-        - "2222:80"
+        - "6161:80"
     #logging:
     #  driver: none
 

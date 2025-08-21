@@ -12,7 +12,7 @@
   	angular.module('componentes', [
 		'ngResource',
 		'ngAria',
-		'ui.bootstrap',
+		//'ui.bootstrap',
 		'ngCookies',
 		'ngAnimate',
 		'ngSanitize',

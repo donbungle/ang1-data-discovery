@@ -11,7 +11,7 @@
 	*/
 
 	angular.module('r4-ang1', [
-		'ui.bootstrap',
+		//'ui.bootstrap',
 		'ngResource',
 		'ngAria',
 		'ngCookies',

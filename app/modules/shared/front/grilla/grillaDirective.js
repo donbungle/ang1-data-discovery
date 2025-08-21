@@ -21,7 +21,7 @@
 				restrict: 'E',
                 replace: true,
                 transclude: false,
-				templateUrl:'app/modules/shared/directives/front/grilla/grilla.html',
+				templateUrl:'app/modules/shared/front/grilla/grilla.html',
 				scope: {
 					data: '=',
 					columns: '=',
