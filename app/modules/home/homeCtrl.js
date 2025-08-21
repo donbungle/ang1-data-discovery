@@ -127,6 +127,29 @@
 			console.log('Home $scope', $scope);
 		}
 
+		vm.openModal = function() {
+			var modalEl = document.getElementById('exampleModal');
+			var modal = new bootstrap.Modal(modalEl);
+			modal.show();
+		};
+
+		vm.openModal2 = function() {
+			var wrapperScope = angular.element(document.getElementById('myModal')).scope();
+			if (wrapperScope && wrapperScope.show) {
+				wrapperScope.show();
+			}
+
+		};
+
+		vm.salesData = [
+			{ date: '2023-01', sales: 1000, region: 'North' },
+			{ date: '2023-02', sales: 1200, region: 'North' },
+			{ date: '2023-03', sales: 800, region: 'South' },
+			{ date: '2023-04', sales: 1500, region: 'North' },
+			{ date: '2023-05', sales: 1100, region: 'South' }
+		];
+		
+
 		vm.desserts = [
 			'Apple Pie',
 			'Donut',

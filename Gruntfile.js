@@ -44,6 +44,20 @@ module.exports = function (grunt) {
 			}
 		},
 
+		mochaTest: {
+			test: {
+				options: {
+					reporter: 'spec',
+					require: function() {
+						require('./test/setup.js');
+					},
+					clearRequireCache: true,
+					clearCacheFilter: (key) => key.indexOf('node_modules') === -1
+				},
+				src: ['app/modules/**/*-test.js']
+			}
+		},
+
 		exec: {
 			//bowerInstaller: 'bower install --allow-root --config.interactive=false'//'bower-installer'
 			bowerInstaller: 'bower-installer'
@@ -76,6 +90,16 @@ module.exports = function (grunt) {
 					'app/modules/home/*Ctrl.js',
 					'app/modules/home/*Service.js',
 
+					'app/modules/componentes-nuevos/*Module.js',
+					'app/modules/componentes-nuevos/*Config.js',
+					'app/modules/componentes-nuevos/*Ctrl.js',
+					'app/modules/componentes-nuevos/*Service.js',
+
+					'app/modules/dashboard-dataset/*Module.js',
+					'app/modules/dashboard-dataset/*Config.js',
+					'app/modules/dashboard-dataset/*Ctrl.js',
+					'app/modules/dashboard-dataset/*Service.js',
+
 					'app/modules/servicios/*Module.js',
 					'app/modules/servicios/*Route.js',
 					'app/modules/servicios/*Ctrl.js',
@@ -101,6 +125,9 @@ module.exports = function (grunt) {
 					'src/bower_components/lodash/lodash.js',
 					'app/assets/libs/jquery/jquery.js',
 					'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
+					'node_modules/d3/dist/d3.min.js',
+					'node_modules/crossfilter2/crossfilter.min.js',
+					'node_modules/dc/dist/dc.min.js',
 					// Angular Project Dependencies,
 					'app/assets/libs/angular/angular.js',
 					'app/assets/libs/angular-resource/angular-resource.js',
@@ -142,6 +169,7 @@ module.exports = function (grunt) {
 			css: {
 				src: [
 					'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
+					'src/bower_components/dc/dist/style/dc.min.css',
 					'app/assets/css/**/*.css',
 					'app/modules/shared/directives/**/assets/css/*.css'
 				],
@@ -190,7 +218,7 @@ module.exports = function (grunt) {
 			dev: {
 				files: {
 					'index.html': 
-						[ '<%= concat.build.dest %>' ]
+						[ ]
 						.concat(
 						[
 						'app/assets/libs/chart.js/*.js',
@@ -201,6 +229,9 @@ module.exports = function (grunt) {
 						'src/bower_components/lodash/lodash.js',
 						'app/assets/libs/jquery/jquery.js',
 						'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
+						'node_modules/d3/dist/d3.min.js',
+						'node_modules/crossfilter2/crossfilter.min.js',
+						'node_modules/dc/dist/dc.min.js',
 						// Angular Project Dependencies,
 						'app/assets/libs/angular/angular.js',
 						'app/assets/libs/angular-resource/angular-resource.js',
@@ -231,6 +262,16 @@ module.exports = function (grunt) {
 						'app/modules/home/*Ctrl.js',
 						'app/modules/home/*Service.js',
 
+						'app/modules/componentes-nuevos/*Module.js',
+						'app/modules/componentes-nuevos/*Config.js',
+						'app/modules/componentes-nuevos/*Ctrl.js',
+						'app/modules/componentes-nuevos/*Service.js',
+
+						'app/modules/dashboard-dataset/*Module.js',
+						'app/modules/dashboard-dataset/*Config.js',
+						'app/modules/dashboard-dataset/*Ctrl.js',
+						'app/modules/dashboard-dataset/*Service.js',
+
 						'app/modules/servicios/*Module.js',
 						'app/modules/servicios/*Route.js',
 						'app/modules/servicios/*Ctrl.js',
@@ -245,6 +286,7 @@ module.exports = function (grunt) {
 
 						//CSS
 						'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
+						'src/bower_components/dc/dist/style/dc.min.css',
 						'app/assets/css/**/*.css',
 						'app/modules/shared/directives/**/assets/css/*.css'
 					]
@@ -298,6 +340,7 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-mocha-test');
 
 	// Making grunt default to force in order not to break the project if something fail.
 	grunt.option('force', true);
@@ -336,6 +379,8 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('test', ['karma']);
+	grunt.registerTask('test:mocha', ['mochaTest']);
+	grunt.registerTask('test:all', ['karma', 'mochaTest']);
 	grunt.registerTask('limpiar.dist', ['clean:dist']);
 	grunt.registerTask('limpiar.libs', ['clean:libs']);
 	grunt.registerTask('limpiar.bower', ['clean:bower']);

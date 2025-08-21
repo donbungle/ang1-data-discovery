@@ -1,4 +1,41 @@
 <div>
     <h1>Inicio</h1>
     <relleno></relleno>
+    <button ng-click="vm.openModal()">CLICK</button>
+    <button ng-click="vm.openModal2()">CLICK2</button>
+    <bs-modal modal-id="exampleModal" title="Modal Title" size="lg">
+        <p>Your modal content goes here...</p>
+    </bs-modal>
+    <bs-wrapper component="modal" options="{}">
+        <div class="modal fade" id="myModal">
+           LOL
+        </div>
+    </bs-wrapper>
+
+    <bs-dropdown dropdown-id="myDropdown" button-text="Options">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#" ui-sref="dashboard-dataset">Dashboard Dataset</a></li>
+    </bs-dropdown>
+    <dc-chart 
+        chart-type="bar"
+        data="vm.salesData"
+        dimensions="['date']"
+        groups="['sales']"
+        width="600"
+        height="400"
+        x-axis-label="Date"
+        y-axis-label="Sales ($)"
+        elastic-y="true"
+        brush-on="true"
+        on-filtered="handleChartFilter(chart, filter)"
+        on-renderlet="handleChartRender(chart)">
+    </dc-chart>
+    
+    <div class="mt-4">
+        <h3>Enlaces de navegación:</h3>
+        <ul class="list-unstyled">
+            <li><a href="#" ui-sref="dashboard-dataset" class="btn btn-primary btn-sm">🔗 Ir a Dashboard Dataset</a></li>
+        </ul>
+    </div>
 </div>

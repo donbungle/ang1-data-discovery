@@ -1,0 +1,443 @@
+<div class="container-fluid py-4">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="mb-4">Componentes Nuevos - Ejemplos Prácticos</h1>
+			<p class="lead">Demostración de los nuevos directives de Bootstrap 5 y DC.js</p>
+		</div>
+	</div>
+
+	<!-- Navigation Tabs for Examples -->
+	<div class="row mb-4">
+		<div class="col-12">
+			<bs-navs-tabs 
+				type="tabs" 
+				active-tab="vm.activeTab"
+				on-tab-change="vm.handleTabChange(event, tab, relatedTarget, activeTab)">
+				
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" data-bs-toggle="tab" 
+								data-bs-target="#tab-bootstrap" type="button">
+							Bootstrap Components
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="tab" 
+								data-bs-target="#tab-charts" type="button">
+							DC.js Charts
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="tab" 
+								data-bs-target="#tab-examples" type="button">
+							Advanced Examples
+						</button>
+					</li>
+				</ul>
+				
+				<div class="tab-content mt-3">
+					<!-- Bootstrap Components Tab -->
+					<div class="tab-pane fade show active" id="tab-bootstrap" role="tabpanel">
+						<h3>Bootstrap 5 Components</h3>
+						
+						<!-- Breadcrumb Example -->
+						<div class="mb-4" ng-show="vm.componentStates.showBreadcrumb">
+							<h4>Breadcrumb Example</h4>
+							<bs-breadcrumb 
+								items="vm.breadcrumbItems"
+								on-item-click="vm.handleBreadcrumbClick(item, index, event)">
+								<ol class="breadcrumb"></ol>
+							</bs-breadcrumb>
+							<button class="btn btn-sm btn-outline-primary" ng-click="vm.addBreadcrumb()">
+								Agregar Breadcrumb
+							</button>
+						</div>
+
+						<!-- Buttons Example -->
+						<div class="mb-4" ng-show="vm.componentStates.showButtons">
+							<h4>Buttons Example</h4>
+							<bs-buttons 
+								variant="primary" 
+								size="md"
+								loading="vm.isLoading"
+								disabled="vm.isDisabled"
+								loading-text="Procesando..."
+								on-click="vm.handleButtonClick(event, button)">
+								<button type="button" class="btn me-2">Botón Principal</button>
+								<button type="button" class="btn">Botón Secundario</button>
+							</bs-buttons>
+							<div class="mt-2">
+								<button class="btn btn-sm btn-outline-secondary me-2" ng-click="vm.toggleDisabled()">
+									{{ vm.isDisabled ? 'Habilitar' : 'Deshabilitar' }} Botones
+								</button>
+								<span class="badge bg-info">{{ vm.isLoading ? 'Cargando...' : 'Listo' }}</span>
+							</div>
+						</div>
+
+						<!-- Card Example -->
+						<div class="mb-4" ng-show="vm.componentStates.showCards">
+							<h4>Card Example</h4>
+							<div class="row">
+								<div class="col-md-6">
+									<bs-card 
+										header="{{ vm.cardData.header }}"
+										title="{{ vm.cardData.title }}"
+										subtitle="{{ vm.cardData.subtitle }}"
+										text="{{ vm.cardData.text }}"
+										footer="{{ vm.cardData.footer }}"
+										img-src="{{ vm.cardData.imgSrc }}"
+										img-alt="{{ vm.cardData.imgAlt }}"
+										img-top="true"
+										variant="{{ vm.cardData.variant }}"
+										border="success"
+										text-align="left"
+										on-body-click="vm.handleCardClick(event, element)">
+									</bs-card>
+								</div>
+								<div class="col-md-6">
+									<div class="card">
+										<div class="card-header">Controles del Card</div>
+										<div class="card-body">
+											<button class="btn btn-primary mb-2" ng-click="vm.updateCard()">
+												Actualizar Card
+											</button>
+											<div class="mb-2">
+												<label class="form-label">Variante:</label>
+												<select class="form-select" ng-model="vm.cardData.variant">
+													<option value="primary">Primary</option>
+													<option value="secondary">Secondary</option>
+													<option value="success">Success</option>
+													<option value="danger">Danger</option>
+													<option value="warning">Warning</option>
+													<option value="info">Info</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Accordion Example -->
+						<div class="mb-4" ng-show="vm.componentStates.showAccordion">
+							<h4>Accordion Example</h4>
+							<bs-accordion 
+								options="vm.accordionOptions"
+								on-show="vm.onAccordionShow(event, target)"
+								on-hide="vm.onAccordionHide(event, target)">
+								<div class="accordion" id="accordionExample">
+									<div class="accordion-item">
+										<h2 class="accordion-header">
+											<button class="accordion-button" type="button" 
+													data-bs-toggle="collapse" data-bs-target="#collapseOne">
+												Bootstrap 5 Features
+											</button>
+										</h2>
+										<div id="collapseOne" class="accordion-collapse collapse show" 
+											 data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<strong>Bootstrap 5 incluye:</strong>
+												<ul>
+													<li>Nuevos componentes y utilidades</li>
+													<li>Mejor sistema de grid</li>
+													<li>Soporte mejorado para RTL</li>
+													<li>Personalización con CSS custom properties</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header">
+											<button class="accordion-button collapsed" type="button" 
+													data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+												Directive Features
+											</button>
+										</h2>
+										<div id="collapseTwo" class="accordion-collapse collapse" 
+											 data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<strong>Nuestros directives incluyen:</strong>
+												<ul>
+													<li>Integración completa con AngularJS</li>
+													<li>Event callbacks personalizables</li>
+													<li>Configuración dinámica</li>
+													<li>Métodos programáticos</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header">
+											<button class="accordion-button collapsed" type="button" 
+													data-bs-toggle="collapse" data-bs-target="#collapseThree">
+												Usage Examples
+											</button>
+										</h2>
+										<div id="collapseThree" class="accordion-collapse collapse" 
+											 data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<strong>Ejemplos de uso:</strong>
+												<pre><code>&lt;bs-accordion options="accordionOptions"&gt;
+  &lt;div class="accordion"&gt;
+    &lt;!-- Accordion items --&gt;
+  &lt;/div&gt;
+&lt;/bs-accordion&gt;</code></pre>
+											</div>
+										</div>
+									</div>
+								</div>
+							</bs-accordion>
+						</div>
+					</div>
+
+					<!-- DC.js Charts Tab -->
+					<div class="tab-pane fade" id="tab-charts" role="tabpanel">
+						<h3>DC.js Charts Examples</h3>
+						<div ng-show="vm.componentStates.showCharts">
+							
+							<div class="row mb-3">
+								<div class="col-12">
+									<button class="btn btn-primary me-2" ng-click="vm.resetAllFilters()">
+										Reset All Filters
+									</button>
+									<button class="btn btn-secondary me-2" ng-click="vm.refreshCharts()">
+										Refresh Charts
+									</button>
+									<button class="btn btn-info" ng-click="vm.generateRandomData()">
+										Generate Random Data
+									</button>
+								</div>
+							</div>
+
+							<!-- Bar Chart -->
+							<div class="row mb-4">
+								<div class="col-md-8">
+									<div class="card">
+										<div class="card-header">Sales by Month (Bar Chart)</div>
+										<div class="card-body">
+											<dc-chart 
+												chart-type="bar"
+												data="vm.chartData"
+												dimensions="['month']"
+												groups="['sales']"
+												width="600"
+												height="300"
+												x-axis-label="Mes"
+												y-axis-label="Ventas ($)"
+												elastic-y="true"
+												brush-on="true"
+												on-filtered="vm.handleChartFilter(chart, filter)"
+												on-renderlet="vm.handleChartRender(chart)">
+											</dc-chart>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-header">Sales by Category (Pie Chart)</div>
+										<div class="card-body">
+											<dc-chart 
+												chart-type="pie"
+												data="vm.pieChartData"
+												dimensions="['category']"
+												groups="['value']"
+												width="300"
+												height="300"
+												on-filtered="vm.handleChartFilter(chart, filter)">
+											</dc-chart>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Row Chart -->
+							<div class="row mb-4">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-header">Sales by Region (Row Chart)</div>
+										<div class="card-body">
+											<dc-chart 
+												chart-type="row"
+												data="vm.chartData"
+												dimensions="['region']"
+												groups="['sales']"
+												width="800"
+												height="200"
+												elastic-x="true"
+												on-filtered="vm.handleChartFilter(chart, filter)">
+											</dc-chart>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Data Table -->
+							<div class="row">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-header">Data Table</div>
+										<div class="card-body">
+											<dc-chart 
+												chart-type="datatable"
+												data="vm.chartData"
+												dimensions="['month']"
+												width="800"
+												height="300">
+											</dc-chart>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Advanced Examples Tab -->
+					<div class="tab-pane fade" id="tab-examples" role="tabpanel">
+						<h3>Advanced Examples & Integration</h3>
+						
+						<!-- Navbar Example -->
+						<div class="mb-4" ng-show="vm.componentStates.showNavbar">
+							<h4>Navbar Example</h4>
+							<bs-navbar 
+								brand="{{ vm.navbarBrand }}"
+								brand-href="/"
+								variant="dark"
+								expand="lg"
+								container="fluid"
+								on-brand-click="vm.handleBrandClick(event, brand)"
+								on-toggle="vm.handleNavbarToggle(event)">
+								
+								<div class="navbar-collapse collapse" id="navbarNav">
+									<ul class="navbar-nav me-auto">
+										<li class="nav-item">
+											<a class="nav-link active" href="#">Inicio</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#">Componentes</a>
+										</li>
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="#" 
+											   data-bs-toggle="dropdown">Charts</a>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="#">Bar Charts</a></li>
+												<li><a class="dropdown-item" href="#">Pie Charts</a></li>
+												<li><a class="dropdown-item" href="#">Line Charts</a></li>
+											</ul>
+										</li>
+									</ul>
+									<span class="navbar-text">
+										Status: {{ vm.navbarCollapsed ? 'Collapsed' : 'Expanded' }}
+									</span>
+								</div>
+							</bs-navbar>
+						</div>
+
+						<!-- Component Toggle Controls -->
+						<div class="mb-4">
+							<h4>Component Visibility Controls</h4>
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-check" ng-repeat="(key, value) in vm.componentStates">
+												<input class="form-check-input" type="checkbox" 
+													   ng-model="vm.componentStates[key]" id="{{ key }}">
+												<label class="form-check-label" for="{{ key }}">
+													{{ key | uppercase }}
+												</label>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<h5>Current Active Tab:</h5>
+											<p class="lead">{{ vm.currentTabContent }}</p>
+											<div class="mt-3">
+												<button class="btn btn-sm btn-outline-primary me-1" 
+														ng-click="vm.switchTab('#tab-bootstrap')">
+													Bootstrap
+												</button>
+												<button class="btn btn-sm btn-outline-success me-1" 
+														ng-click="vm.switchTab('#tab-charts')">
+													Charts
+												</button>
+												<button class="btn btn-sm btn-outline-info" 
+														ng-click="vm.switchTab('#tab-examples')">
+													Examples
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Integration Example -->
+						<div class="mb-4">
+							<h4>Integration Example - Dynamic Dashboard</h4>
+							<div class="card">
+								<div class="card-header">
+									<bs-breadcrumb items="[{text: 'Dashboard'}, {text: 'Analytics'}, {text: 'Real-time'}]">
+										<ol class="breadcrumb mb-0"></ol>
+									</bs-breadcrumb>
+								</div>
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-3">
+											<bs-card 
+												title="Total Sales"
+												text="$24,500"
+												variant="success"
+												text-align="center">
+											</bs-card>
+										</div>
+										<div class="col-md-3">
+											<bs-card 
+												title="Orders"
+												text="1,234"
+												variant="primary"
+												text-align="center">
+											</bs-card>
+										</div>
+										<div class="col-md-3">
+											<bs-card 
+												title="Customers"
+												text="567"
+												variant="info"
+												text-align="center">
+											</bs-card>
+										</div>
+										<div class="col-md-3">
+											<bs-card 
+												title="Growth"
+												text="+15.3%"
+												variant="warning"
+												text-align="center">
+											</bs-card>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</bs-navs-tabs>
+		</div>
+	</div>
+
+	<!-- Debug Information -->
+	<div class="row mt-4">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="mb-0">Debug Information</h5>
+				</div>
+				<div class="card-body">
+					<p><strong>Active Tab:</strong> {{ vm.activeTab }}</p>
+					<p><strong>Loading State:</strong> {{ vm.isLoading ? 'Active' : 'Inactive' }}</p>
+					<p><strong>Disabled State:</strong> {{ vm.isDisabled ? 'Disabled' : 'Enabled' }}</p>
+					<p><strong>Chart Data Length:</strong> {{ vm.chartData.length }}</p>
+					<p><strong>Current Content:</strong> {{ vm.currentTabContent }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

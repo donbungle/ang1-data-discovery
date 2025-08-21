@@ -1,0 +1,428 @@
+<div class="container-fluid dashboard-dataset">
+	<div class="row">
+		<div class="col-12">
+			<div class="page-header">
+				<h1><i class="fa fa-line-chart"></i> Dashboard Dataset - Análisis Financiero 2024</h1>
+				<p class="text-muted">Análisis integral de instrumentos financieros con visualizaciones interactivas</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Loading State -->
+	<div ng-show="vm.loading" class="text-center">
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Cargando datos...</span>
+		</div>
+		<p>Cargando dataset de valores...</p>
+	</div>
+
+	<!-- Main Dashboard Content -->
+	<div ng-hide="vm.loading">
+		
+		<!-- Analytics Summary Cards -->
+		<div class="row mb-4">
+			<div class="col-md-3">
+				<div class="card bg-primary text-white">
+					<div class="card-body">
+						<div class="d-flex justify-content-between">
+							<div>
+								<h5 class="card-title">Total Registros</h5>
+								<h3>{{vm.analytics.totalRecords | number:0}}</h3>
+							</div>
+							<div class="align-self-center">
+								<i class="fa fa-database fa-2x"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="card bg-success text-white">
+					<div class="card-body">
+						<div class="d-flex justify-content-between">
+							<div>
+								<h5 class="card-title">Valor Total</h5>
+								<h3>${{vm.analytics.totalValue | number:2}}</h3>
+							</div>
+							<div class="align-self-center">
+								<i class="fa fa-money fa-2x"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="card bg-info text-white">
+					<div class="card-body">
+						<div class="d-flex justify-content-between">
+							<div>
+								<h5 class="card-title">Valor Promedio</h5>
+								<h3>${{vm.analytics.averageValue | number:2}}</h3>
+							</div>
+							<div class="align-self-center">
+								<i class="fa fa-calculator fa-2x"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				<div class="card bg-warning text-white">
+					<div class="card-body">
+						<div class="d-flex justify-content-between">
+							<div>
+								<h5 class="card-title">Volatilidad</h5>
+								<h3>{{vm.analytics.standardDeviation | number:2}}</h3>
+							</div>
+							<div class="align-self-center">
+								<i class="fa fa-exclamation-triangle fa-2x"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Risk Metrics -->
+		<div class="row mb-4" ng-if="vm.analytics.riskMetrics">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-shield"></i> Métricas de Riesgo Financiero</h4>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>Retorno Promedio</label>
+									<div class="metric-value text-primary">
+										{{(vm.analytics.riskMetrics.averageReturn * 100) | number:3}}%
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>Volatilidad</label>
+									<div class="metric-value text-info">
+										{{(vm.analytics.riskMetrics.volatility * 100) | number:2}}%
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>Ratio Sharpe</label>
+									<div class="metric-value" ng-class="{'text-success': vm.analytics.riskMetrics.sharpeRatio > 1, 'text-warning': vm.analytics.riskMetrics.sharpeRatio < 0.5}">
+										{{vm.analytics.riskMetrics.sharpeRatio | number:3}}
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>Max Drawdown</label>
+									<div class="metric-value text-danger">
+										{{(vm.analytics.riskMetrics.maxDrawdown * 100) | number:2}}%
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>VaR 95%</label>
+									<div class="metric-value text-warning">
+										{{(vm.analytics.riskMetrics.valueAtRisk95 * 100) | number:2}}%
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="metric-box">
+									<label>VaR 99%</label>
+									<div class="metric-value text-danger">
+										{{(vm.analytics.riskMetrics.valueAtRisk99 * 100) | number:2}}%
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Charts Section -->
+		<div class="row">
+			
+			<!-- Category Analysis Pie Chart -->
+			<div class="col-md-6 mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-pie-chart"></i> Distribución por Categoría</h4>
+					</div>
+					<div class="card-body">
+						<dc-chart 
+							chart-type="pie"
+							data="vm.chartConfigs.categoryPie.data"
+							dimensions="vm.chartConfigs.categoryPie.dimensions"
+							groups="vm.chartConfigs.categoryPie.groups"
+							width="vm.chartConfigs.categoryPie.width"
+							height="vm.chartConfigs.categoryPie.height"
+							title="vm.chartConfigs.categoryPie.title">
+						</dc-chart>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Average Bar Chart -->
+			<div class="col-md-6 mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-bar-chart"></i> Valor Promedio por Categoría</h4>
+					</div>
+					<div class="card-body">
+						<dc-chart 
+							chart-type="bar"
+							data="vm.chartConfigs.categoryBar.data"
+							dimensions="vm.chartConfigs.categoryBar.dimensions"
+							groups="vm.chartConfigs.categoryBar.groups"
+							width="vm.chartConfigs.categoryBar.width"
+							height="vm.chartConfigs.categoryBar.height"
+							margins="vm.chartConfigs.categoryBar.margins"
+							x-axis-label="vm.chartConfigs.categoryBar.xAxisLabel"
+							y-axis-label="vm.chartConfigs.categoryBar.yAxisLabel"
+							title="vm.chartConfigs.categoryBar.title">
+						</dc-chart>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			
+			<!-- Monthly Evolution Line Chart -->
+			<div class="col-md-12 mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-line-chart"></i> Evolución Mensual</h4>
+					</div>
+					<div class="card-body">
+						<dc-chart 
+							chart-type="line"
+							data="vm.chartConfigs.monthlyLine.data"
+							dimensions="vm.chartConfigs.monthlyLine.dimensions"
+							groups="vm.chartConfigs.monthlyLine.groups"
+							width="vm.chartConfigs.monthlyLine.width"
+							height="vm.chartConfigs.monthlyLine.height"
+							margins="vm.chartConfigs.monthlyLine.margins"
+							x-axis-label="vm.chartConfigs.monthlyLine.xAxisLabel"
+							y-axis-label="vm.chartConfigs.monthlyLine.yAxisLabel"
+							title="vm.chartConfigs.monthlyLine.title"
+							elastic-y="true">
+						</dc-chart>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			
+			<!-- Quarterly Analysis Bar Chart -->
+			<div class="col-md-8 mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-bar-chart"></i> Análisis Trimestral</h4>
+					</div>
+					<div class="card-body">
+						<dc-chart 
+							chart-type="bar"
+							data="vm.chartConfigs.quarterlyBar.data"
+							dimensions="vm.chartConfigs.quarterlyBar.dimensions"
+							groups="vm.chartConfigs.quarterlyBar.groups"
+							width="vm.chartConfigs.quarterlyBar.width"
+							height="vm.chartConfigs.quarterlyBar.height"
+							margins="vm.chartConfigs.quarterlyBar.margins"
+							x-axis-label="vm.chartConfigs.quarterlyBar.xAxisLabel"
+							y-axis-label="vm.chartConfigs.quarterlyBar.yAxisLabel"
+							title="vm.chartConfigs.quarterlyBar.title">
+						</dc-chart>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Analysis Table -->
+			<div class="col-md-4 mb-4">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-table"></i> Análisis Detallado por Categoría</h4>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-sm">
+								<thead>
+									<tr>
+										<th>Categoría</th>
+										<th>Count</th>
+										<th>Promedio</th>
+										<th>Volatilidad</th>
+										<th>% Contrib.</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="cat in vm.analytics.categoryAnalysis | limitTo:10" class="category-row">
+										<td class="category-name" title="{{cat.categoria}}">
+											{{cat.categoria | limitTo:15}}{{cat.categoria.length > 15 ? '...' : ''}}
+										</td>
+										<td>{{cat.count}}</td>
+										<td>${{cat.average | number:0}}</td>
+										<td class="volatility-cell" ng-class="{'high-volatility': cat.volatility > vm.analytics.averageValue * 0.5}">
+											{{cat.volatility | number:0}}
+										</td>
+										<td>
+											<div class="progress" style="height: 10px;">
+												<div class="progress-bar" 
+													 ng-class="{'bg-success': cat.contribution > 10, 'bg-warning': cat.contribution > 5, 'bg-info': cat.contribution <= 5}"
+													 style="width: {{cat.contribution}}%">
+												</div>
+											</div>
+											<small>{{cat.contribution | number:1}}%</small>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Export and Actions -->
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						<h4><i class="fa fa-cog"></i> Acciones</h4>
+					</div>
+					<div class="card-body">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-primary" ng-click="vm.refreshCharts()">
+								<i class="fa fa-refresh"></i> Actualizar Gráficos
+							</button>
+							<button type="button" class="btn btn-success" ng-click="vm.exportData('csv')">
+								<i class="fa fa-download"></i> Exportar CSV
+							</button>
+							<button type="button" class="btn btn-info" ng-click="vm.exportData('json')">
+								<i class="fa fa-download"></i> Exportar JSON
+							</button>
+						</div>
+						
+						<div class="mt-3">
+							<h6>Información del Dataset:</h6>
+							<ul class="list-unstyled">
+								<li><strong>Período:</strong> Año 2024 completo</li>
+								<li><strong>Registros:</strong> {{vm.analytics.totalRecords}} transacciones</li>
+								<li><strong>Rango de valores:</strong> ${{vm.analytics.minValue | number:2}} - ${{vm.analytics.maxValue | number:2}}</li>
+								<li><strong>Categorías:</strong> {{vm.analytics.categoryAnalysis.length}} tipos de instrumentos financieros</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<style>
+.dashboard-dataset {
+	padding: 20px 0;
+}
+
+.page-header {
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.page-header h1 {
+	color: #2c3e50;
+	font-weight: 300;
+}
+
+.metric-box {
+	text-align: center;
+	padding: 10px;
+}
+
+.metric-box label {
+	font-size: 12px;
+	color: #6c757d;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.metric-value {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.card {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border: none;
+	margin-bottom: 20px;
+}
+
+.card-header {
+	background-color: #f8f9fa;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.card-header h4 {
+	margin: 0;
+	color: #2c3e50;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.category-row:hover {
+	background-color: #f8f9fa;
+}
+
+.category-name {
+	font-size: 11px;
+	line-height: 1.2;
+}
+
+.volatility-cell.high-volatility {
+	background-color: #fff3cd;
+	color: #856404;
+}
+
+.dc-chart {
+	overflow-x: auto;
+}
+
+.progress {
+	margin-bottom: 2px;
+}
+
+.btn-group {
+	margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+	.metric-value {
+		font-size: 16px;
+	}
+	
+	.card-body {
+		padding: 15px;
+	}
+	
+	.dc-chart {
+		width: 100% !important;
+	}
+}
+</style>

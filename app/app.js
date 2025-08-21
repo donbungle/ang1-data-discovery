@@ -24,7 +24,9 @@
 		'chart.js',
 
 		'home',
-		'componentes'
+		'componentes',
+		'componentesNuevos',
+		'dashboardDataset'
 	]);
 
 })();

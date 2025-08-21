@@ -7,6 +7,10 @@
     "start": "grunt build",
     "dev": "grunt dev",
     "test": "grunt karma",
+    "test:mocha": "mocha 'app/modules/**/*-test.js' --require test/setup.js",
+    "test:mocha:watch": "mocha 'app/modules/**/*-test.js' --require test/setup.js --watch",
+    "test:coverage": "nyc mocha 'app/modules/**/*-test.js' --require test/setup.js",
+    "test:all": "npm run test && npm run test:mocha",
     "build": "grunt docker",
     "clean.dist": "grunt limpiar.dist",
     "clean.src": "grunt limpiar.src",
@@ -22,6 +26,9 @@
     "chalk": "^4.1.0",
     "glob": "^7.1.6",
     "bootstrap": "^5.3.7",
+    "d3": "^6.7.0",
+    "crossfilter2": "^1.5.4",
+    "dc": "^4.2.7",
     "grunt-cli": "^1.3.2"
   },
   "devDependencies": {
@@ -47,6 +54,13 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.32",
     "load-grunt-tasks": "^5.1.0",
-    "time-grunt": "^2.0.0"
+    "time-grunt": "^2.0.0",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "sinon": "^15.2.0",
+    "nyc": "^15.1.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "grunt-mocha-test": "^0.13.3",
+    "jsdom": "^22.1.0"
   }
 }

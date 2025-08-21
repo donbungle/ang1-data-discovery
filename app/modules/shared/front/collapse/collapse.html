@@ -1,0 +1,9 @@
+<div>
+  <button class="btn {{vm.buttonClass}}" type="button" data-bs-toggle="collapse" data-bs-target="#{{vm.targetId}}" aria-expanded="false" aria-controls="{{vm.targetId}}">
+    {{vm.buttonText}}
+  </button>
+  <div class="collapse" id="{{vm.targetId}}">
+    <div class="card card-body" ng-transclude>
+    </div>
+  </div>
+</div>
