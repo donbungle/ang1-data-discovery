@@ -332,7 +332,7 @@ module.exports = function (grunt) {
 		"cssmin",
 		"copy",
 		"injector:production",
-		"clean:dist"
+		//"clean:dist"
 	]);
 
 	grunt.registerTask('test', ['karma']);
