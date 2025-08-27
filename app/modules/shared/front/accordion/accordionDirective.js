@@ -11,23 +11,29 @@
 		var directive = {
 			restrict: 'E',
 			transclude: true,
+			//replace: true,
 			scope: {
+				aId: '@',
+				aClass: '@',
 				options: '=?',
 				onShow: '&?',
 				onHide: '&?',
 				onShown: '&?',
 				onHidden: '&?'
 			},
-			template: '<div ng-transclude class="accordion"></div>',
+			template: '<div ng-transclude></div>',
 			link: link
 		};
 
 		return directive;
 
 		function link(scope, element, attrs) {
+			console.log('scope', scope);
+			console.log('scope.aId', scope.aId);
 			var accordionElement = element[0].firstElementChild;
 			var collapseInstances = [];
-
+			accordionElement.setAttribute('id', scope.aId);
+			accordionElement.classList.add('accordion', scope.aClass);
 			$timeout(function() {
 				initializeAccordion();
 			});

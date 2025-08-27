@@ -97,6 +97,128 @@ $scope.hidePanel = function(targetId) {
 
 ---
 
+### Accordion Item
+
+**Directive:** `<bs-accordion-item>`
+
+**Location:** `app/modules/shared/front/accordion/accordionItemDirective.js`
+
+#### Basic Usage
+
+**View with Content Attribute:**
+```html
+<div class="accordion" id="myAccordion">
+    <bs-accordion-item 
+        title="First Item"
+        content="<p>This is the content for the first accordion item.</p>"
+        expanded="true"
+        parent-id="myAccordion"
+        on-show="onItemShow(event, target)"
+        on-hide="onItemHide(event, target)">
+    </bs-accordion-item>
+    
+    <bs-accordion-item 
+        title="Second Item"
+        content="<p>This is the content for the second accordion item.</p>"
+        parent-id="myAccordion">
+    </bs-accordion-item>
+</div>
+```
+
+**View with Transcluded Content:**
+```html
+<div class="accordion" id="myAccordion">
+    <bs-accordion-item 
+        title="Advanced Item"
+        expanded="true"
+        parent-id="myAccordion">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Custom Content</h5>
+                <p>You can include any HTML content here.</p>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" ng-click="doSomething()">Action</button>
+            </div>
+        </div>
+    </bs-accordion-item>
+</div>
+```
+
+**Controller:**
+```javascript
+$scope.onItemShow = function(event, target) {
+    console.log('Accordion item showing:', target.id);
+};
+
+$scope.onItemHide = function(event, target) {
+    console.log('Accordion item hiding:', target.id);
+};
+
+$scope.doSomething = function() {
+    console.log('Button clicked inside accordion item');
+};
+
+// Programmatic control
+$scope.expandItem = function() {
+    $scope.itemExpanded = true;
+};
+
+$scope.collapseItem = function() {
+    $scope.itemExpanded = false;
+};
+```
+
+#### Usage with bs-accordion
+
+You can also use accordion items inside the main accordion directive:
+
+```html
+<bs-accordion options="accordionOptions">
+    <div class="accordion" id="combinedAccordion">
+        <bs-accordion-item 
+            title="Item 1"
+            content="<p>Content for item 1</p>"
+            expanded="true"
+            parent-id="combinedAccordion">
+        </bs-accordion-item>
+        
+        <bs-accordion-item 
+            title="Item 2"
+            parent-id="combinedAccordion">
+            <p>Custom transcluded content for item 2</p>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+            </ul>
+        </bs-accordion-item>
+    </div>
+</bs-accordion>
+```
+
+#### Options
+
+- `title`: Title text for the accordion header (required)
+- `content`: HTML content for the accordion body (optional, alternative to transclude)
+- `expanded`: Boolean to control expanded state (optional, default: false)
+- `disabled`: Boolean to disable the accordion item (optional, default: false)
+- `target-id`: Custom ID for the collapse element (optional, auto-generated if not provided)
+- `parent-id`: ID of the parent accordion container (optional, auto-generated if not provided)
+- `on-show`: Callback when item starts showing
+- `on-hide`: Callback when item starts hiding
+- `on-shown`: Callback when item is fully shown
+- `on-hidden`: Callback when item is fully hidden
+
+#### Methods Available on Scope
+
+- `show()`: Programmatically show the accordion item
+- `hide()`: Programmatically hide the accordion item
+- `toggle()`: Toggle the accordion item state
+
+**Note:** The directive automatically generates unique IDs if not provided and integrates seamlessly with Bootstrap 5's accordion behavior.
+
+---
+
 ### Buttons
 
 **Directive:** `<bs-buttons>`

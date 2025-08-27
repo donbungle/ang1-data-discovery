@@ -140,24 +140,47 @@
 			}
 
 		};
-
-		vm.salesData = [
-			{ date: '2023-01', sales: 1000, region: 'North' },
-			{ date: '2023-02', sales: 1200, region: 'North' },
-			{ date: '2023-03', sales: 800, region: 'South' },
-			{ date: '2023-04', sales: 1500, region: 'North' },
-			{ date: '2023-05', sales: 1100, region: 'South' }
+		$scope.accordionItems = [
+			{
+				title: "Bootstrap 5 Features",
+				targetId: 'targetId1',
+				parentId: 'parentId1',
+				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
+			},
+			{
+				title: "Bootstrap 5 Features",
+				targetId: 'targetId1',
+				parentId: 'parentId1',
+				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
+			},
+			{
+				title: "Bootstrap 5 Features",
+				targetId: 'targetId1',
+				parentId: 'parentId1',
+				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
+			}
 		];
 		
-
-		vm.desserts = [
-			'Apple Pie',
-			'Donut',
-			'Fudge',
-			'Cupcake',
-			'Ice Cream',
-			'Tiramisu',
-		];
+		$scope.accordionOptions = {
+			parent: false // Allow multiple panels open simultaneously
+		};
+		
+		$scope.onAccordionShow = function(event, target) {
+			console.log('Accordion panel showing:', target.id);
+		};
+		
+		$scope.onAccordionHide = function(event, target) {
+			console.log('Accordion panel hiding:', target.id);
+		};
+		
+		// Methods available on directive scope
+		$scope.showPanel = function(targetId) {
+			$scope.show('#' + targetId);
+		};
+		
+		$scope.hidePanel = function(targetId) {
+			$scope.hide('#' + targetId);
+		};
 	}
 
 })();

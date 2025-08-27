@@ -22,7 +22,6 @@
     "angular-ui-router": "^1.0.29",
     "lodash": "^4.17.20",
     "moment": "^2.26.0",
-    "angular-chart.js": "^1.1.1",
     "angular-filter": "^0.5.17",
     "ng-token-auth": "^0.0.30",
     "angular-cookie": "^4.1.0",

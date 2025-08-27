@@ -19,6 +19,38 @@
 									
 								</box-base>
 							</div>
+							<div class="header_component_list_item">
+								<h3 class="md-headline">ECharts Examples</h3>								
+							</div>
+							<div class="body_component_list_item" layout="row" layout-xs="column" layout-sm="column" layout-md="column">
+								<div flex="30" class="chart-container">
+									<h4>Line Chart</h4>
+									<e-chart 
+										chart-type="line" 
+										data="vm.lineChartData"
+										height="300"
+										title="Sample Line Chart">
+									</e-chart>
+								</div>
+								<div flex="30" class="chart-container">
+									<h4>Bar Chart</h4>
+									<e-chart 
+										chart-type="bar" 
+										data="vm.barChartData"
+										height="300"
+										title="Sample Bar Chart">
+									</e-chart>
+								</div>
+								<div flex="30" class="chart-container">
+									<h4>Pie Chart</h4>
+									<e-chart 
+										chart-type="pie" 
+										data="vm.pieChartData"
+										height="300"
+										title="Sample Pie Chart">
+									</e-chart>
+								</div>
+							</div>
 							<div class="footer_component_list_item">
 								<h3 class="md-subhead" ng-click="vm.test()">footer_component_list_item</h3>
 							</div>
@@ -26,23 +58,7 @@
 					</md-content>
 				</div>
 				<div flex="grow">
-					<theme-selector 
-						primary="vm.primary_obj" 
-						warn="vm.warn_obj" 
-						accent="vm.accent_obj"
-						primary_h1="vm.primary_h1_obj" 
-						warn_h1="vm.warn_h1_obj" 
-						accent_h1="vm.accent_h1_obj"
-						primary_h2="vm.primary_h2_obj" 
-						warn_h2="vm.warn_h2_obj" 
-						accent_h2="vm.accent_h2_obj"
-						primary_h3="vm.primary_h3_obj" 
-						warn_h3="vm.warn_h3_obj" 
-						accent_h3="vm.accent_h3_obj"
-						background="vm.background_obj"
-						default="vm.default_obj"
-						dark="vm.dark_obj">
-					</theme-selector>
+					
 				</div>
 				<div flex="grow" class="relleno">
 					<md-content>

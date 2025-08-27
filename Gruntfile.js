@@ -117,7 +117,6 @@ module.exports = function (grunt) {
 			},
 			build: {
 				src: [
-					'app/assets/libs/chart.js/*.js',
 					'app/assets/libs/moment/*.js',
 					'app/assets/libs/json3/*.js',
 					'app/assets/libs/es5-shim/*.js',
@@ -128,6 +127,7 @@ module.exports = function (grunt) {
 					'node_modules/d3/dist/d3.min.js',
 					'node_modules/crossfilter2/crossfilter.min.js',
 					'node_modules/dc/dist/dc.min.js',
+					'node_modules/echarts/dist/echarts.min.js',
 					// Angular Project Dependencies,
 					'app/assets/libs/angular/angular.js',
 					'app/assets/libs/angular-resource/angular-resource.js',
@@ -221,7 +221,6 @@ module.exports = function (grunt) {
 						[ ]
 						.concat(
 						[
-						'app/assets/libs/chart.js/*.js',
 						'app/assets/libs/moment/*.js',
 						'app/assets/libs/json3/*.js',
 						'app/assets/libs/es5-shim/*.js',
@@ -232,6 +231,7 @@ module.exports = function (grunt) {
 						'node_modules/d3/dist/d3.min.js',
 						'node_modules/crossfilter2/crossfilter.min.js',
 						'node_modules/dc/dist/dc.min.js',
+						'node_modules/echarts/dist/echarts.min.js',
 						// Angular Project Dependencies,
 						'app/assets/libs/angular/angular.js',
 						'app/assets/libs/angular-resource/angular-resource.js',
