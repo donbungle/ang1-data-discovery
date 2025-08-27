@@ -136,8 +136,9 @@ module.exports = function (grunt) {
 					'app/assets/libs/angular-sanitize/*.js',
 					'app/assets/libs/angular-ui-router/*.js',
 					'app/assets/libs/angular-ui-grid/ui-grid.js',
-					'app/assets/libs/angular-*/*.js',
-
+					'app/assets/libs/angular-aria/*.js',
+					'app/assets/libs/angular-animate/*.js',
+					'app/assets/libs/angular-file-upload/*.js',
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
 			},
@@ -239,8 +240,10 @@ module.exports = function (grunt) {
 						'app/assets/libs/angular-cookies/*.js',
 						'app/assets/libs/angular-sanitize/*.js',
 						'app/assets/libs/angular-ui-router/*.js',	
+						'app/assets/libs/angular-aria/*.js',	
 						'app/assets/libs/angular-ui-grid/ui-grid.js',
-						'app/assets/libs/angular-*/*.js',
+						'app/assets/libs/angular-animate/*.js',
+						'app/assets/libs/angular-file-upload/*.js',
 
 						
 						'app/app.js',

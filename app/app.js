@@ -21,7 +21,7 @@
 		'ui.grid',
 		'angularFileUpload',
 
-		'chart.js',
+		//'chart.js',
 
 		'home',
 		'componentes',

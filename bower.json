@@ -28,7 +28,7 @@
     "angular-ui-grid": "^4.12.4",
     "angular-file-upload": "*",
     "svg-morpheus": "^0.3.0",
-    "highcharts": "highcharts-release#^8.2.2",
+    "highcharts": "^8.2.2",
     "jquery": "^2.2.0",
     "bootstrap": "^5.3.7",
     "popper.js": "^2.11.8"
