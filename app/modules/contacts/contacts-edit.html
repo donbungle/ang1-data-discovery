@@ -1,0 +1,49 @@
+<bs-breadcrumb 
+	items="vm.breadcrumbs"
+	on-item-click="vm.handleBreadcrumbClick(item, index, event)">
+	<ol class="breadcrumb"></ol>
+</bs-breadcrumb>
+
+<div class="card mt-3">
+	<div class="card-header">
+		<h4 class="mb-0">Edit Contact</h4>
+	</div>
+	<div class="card-body">
+		<form ng-submit="vm.save()">
+			<div class="mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input type="text" class="form-control" id="name" ng-model="vm.contact.name" required>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="email" class="form-control" id="email" ng-model="vm.contact.email" required>
+			</div>
+			<div class="mb-3">
+				<label for="phone" class="form-label">Phone</label>
+				<input type="tel" class="form-control" id="phone" ng-model="vm.contact.phone" required>
+			</div>
+			<div class="mb-3">
+				<label for="street" class="form-label">Street</label>
+				<input type="text" class="form-control" id="street" ng-model="vm.contact.address.street" required>
+			</div>
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label for="city" class="form-label">City</label>
+					<input type="text" class="form-control" id="city" ng-model="vm.contact.address.city" required>
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="state" class="form-label">State</label>
+					<input type="text" class="form-control" id="state" ng-model="vm.contact.address.state" required>
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="zip" class="form-label">ZIP</label>
+					<input type="text" class="form-control" id="zip" ng-model="vm.contact.address.zip" required>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button type="submit" class="btn btn-success">Save</button>
+				<button type="button" class="btn btn-secondary" ng-click="vm.cancel()">Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>

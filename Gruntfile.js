@@ -100,6 +100,12 @@ module.exports = function (grunt) {
 					'app/modules/dashboard-dataset/*Ctrl.js',
 					'app/modules/dashboard-dataset/*Service.js',
 
+					'app/modules/contacts/contactsModule.js',
+					'app/modules/contacts/contactsRoute.js',
+					'app/modules/contacts/contactsCtrl.js',
+					'app/modules/contacts/contactsService.js',
+					'app/modules/contacts/breadcrumbService.js',
+
 					'app/modules/servicios/*Module.js',
 					'app/modules/servicios/*Route.js',
 					'app/modules/servicios/*Ctrl.js',
@@ -274,6 +280,12 @@ module.exports = function (grunt) {
 						'app/modules/dashboard-dataset/*Config.js',
 						'app/modules/dashboard-dataset/*Ctrl.js',
 						'app/modules/dashboard-dataset/*Service.js',
+
+						'app/modules/contacts/contactsModule.js',
+						'app/modules/contacts/contactsRoute.js',
+						'app/modules/contacts/contactsCtrl.js',
+						'app/modules/contacts/contactsService.js',
+						'app/modules/contacts/breadcrumbService.js',
 
 						'app/modules/servicios/*Module.js',
 						'app/modules/servicios/*Route.js',

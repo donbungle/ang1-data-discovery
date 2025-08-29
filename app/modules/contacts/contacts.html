@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<bs-breadcrumb 
+				items="vm.breadcrumbs"
+				on-item-click="vm.handleBreadcrumbClick(item, index, event)">
+				<ol class="breadcrumb"></ol>
+			</bs-breadcrumb>
+			<h1>Contacts</h1>
+			<div ui-view></div>
+		</div>
+	</div>
+</div>

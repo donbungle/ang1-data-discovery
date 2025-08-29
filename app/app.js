@@ -26,7 +26,8 @@
 		'home',
 		'componentes',
 		'componentesNuevos',
-		'dashboardDataset'
+		'dashboardDataset',
+		'contacts'
 	]);
 
 })();

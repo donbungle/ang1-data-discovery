@@ -96,29 +96,9 @@
         </div>
         <div class="col-12">
 
-          <bs-accordion 
-              a-class="filtro-vertical"
-              a-id="accordionExample"
-              options="accordionOptions" 
-              on-show="onAccordionShow(event, target)"
-              on-hide="onAccordionHide(event, target)">
-              <bs-accordion-item  ng-repeat="item in [1,2,3,4]"
-                    title="Advanced Item"
-                    expanded="false"
-                    parent-id="accordionExample">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Custom Content</h5>
-                            <p>You can include any HTML content here.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-primary" ng-click="doSomething()">Action</button>
-                        </div>
-                    </div>
-                </bs-accordion-item>
-          </bs-accordion>
+          
 
-          <div class="accordion filtro-vertical mb-3 d-none" id="accordionExample">
+          <div class="accordion filtro-vertical mb-3" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

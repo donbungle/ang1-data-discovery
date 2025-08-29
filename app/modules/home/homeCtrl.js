@@ -18,7 +18,6 @@
 		'$rootScope',
 		'$scope',
 		'$controller',
-		'FileUploader',
 	];
 
 	/*
@@ -31,8 +30,7 @@
 		homeService, 
 		$rootScope, 
 		$scope, 
-		$controller, 
-		FileUploader,
+		$controller,
 	) {
 		/*jshint validthis: true */
 		var vm = this;
@@ -43,58 +41,6 @@
 		vm.title = "Hello, " + vm.app_name + "!";
 		vm.version = "1.0.0";
 		vm.menu = homeService.getMenu();
-
-		vm.uploader = new FileUploader({
-            url: 'upload.php'
-            ,timeout: 2000
-        });
-
-		vm.uploader.filters.push({
-            name: 'syncFilter',
-            fn: function(item /*{File|FileLikeObject}*/, options) {
-                console.log('syncFilter');
-                return this.queue.length < 10;
-            }
-        });
-
-		vm.uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
-            console.log('onWhenAddingFileFailed', item, filter, options);
-        };
-        vm.uploader.onAfterAddingFile = function(fileItem) {
-            console.log('onAfterAddingFile', fileItem);
-        };
-        vm.uploader.onAfterAddingAll = function(addedFileItems) {
-            console.log('onAfterAddingAll', addedFileItems);
-        };
-        vm.uploader.onBeforeUploadItem = function(item) {
-            console.log('onBeforeUploadItem', item);
-        };
-        vm.uploader.onProgressItem = function(fileItem, progress) {
-            console.log('onProgressItem', fileItem, progress);
-        };
-        vm.uploader.onProgressAll = function(progress) {
-            console.log('onProgressAll', progress);
-        };
-        vm.uploader.onSuccessItem = function(fileItem, response, status, headers) {
-            console.log('onSuccessItem', fileItem, response, status, headers);
-        };
-        vm.uploader.onErrorItem = function(fileItem, response, status, headers) {
-            console.log('onErrorItem', fileItem, response, status, headers);
-        };
-        vm.uploader.onCancelItem = function(fileItem, response, status, headers) {
-            console.log('onCancelItem', fileItem, response, status, headers);
-        };
-        vm.uploader.onCompleteItem = function(fileItem, response, status, headers) {
-            console.log('onCompleteItem', fileItem, response, status, headers);
-        };
-
-        vm.uploader.onTimeoutItem = function(fileItem) {
-            console.log('onTimeoutItem', fileItem);
-        };
-
-        vm.uploader.onCompleteAll = function() {
-            console.log('onCompleteAll');
-        };
 
         console.log('vm.uploader', vm.uploader);
 
@@ -140,47 +86,7 @@
 			}
 
 		};
-		$scope.accordionItems = [
-			{
-				title: "Bootstrap 5 Features",
-				targetId: 'targetId1',
-				parentId: 'parentId1',
-				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
-			},
-			{
-				title: "Bootstrap 5 Features",
-				targetId: 'targetId1',
-				parentId: 'parentId1',
-				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
-			},
-			{
-				title: "Bootstrap 5 Features",
-				targetId: 'targetId1',
-				parentId: 'parentId1',
-				content: "<strong>Bootstrap 5 incluye:</strong><ul><li>Nuevos componentes y utilidades</li><li>Mejor sistema de grid</li><li>Soporte mejorado para RTL</li><li>Personalización con CSS custom properties</li></ul>"
-			}
-		];
 		
-		$scope.accordionOptions = {
-			parent: false // Allow multiple panels open simultaneously
-		};
-		
-		$scope.onAccordionShow = function(event, target) {
-			console.log('Accordion panel showing:', target.id);
-		};
-		
-		$scope.onAccordionHide = function(event, target) {
-			console.log('Accordion panel hiding:', target.id);
-		};
-		
-		// Methods available on directive scope
-		$scope.showPanel = function(targetId) {
-			$scope.show('#' + targetId);
-		};
-		
-		$scope.hidePanel = function(targetId) {
-			$scope.hide('#' + targetId);
-		};
 	}
 
 })();
