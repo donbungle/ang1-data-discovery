@@ -1088,6 +1088,10 @@ a.link_negro:hover {
     color: var(--renta4);
 }
 
+.accordion-button:not(.collapsed) .icon{
+    color: var(--renta4) !important;
+}
+
 .accordionPF .accordion-button {
     padding-left: 20px;
 }
@@ -1796,7 +1800,10 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 
 /* FIN FILTROS APLICADOS */
 
-
+.accordion-button:focus{
+	outline:0 !important;
+	box-shadow: none !important;
+}
 
 /* FIN FONDOTOP */
 

@@ -1,14 +1,5 @@
 (function () {
 	'use strict';
-
-	/**
-	* @ngdoc function
-	* @name app.controller:HomeCtrl
-	* @description
-	* # HomeCtrl
-	* Controller of the app
-	*/
-
 	angular
 		.module('r4-ang1')
 		.controller('HomeCtrl', Home);
@@ -20,19 +11,12 @@
 		'$controller',
 	];
 
-	/*
-	* recommend
-	* Using function declarations
-	* and bindable members up top.
-	*/
-
 	function Home(
 		homeService, 
 		$rootScope, 
 		$scope, 
 		$controller,
 	) {
-		/*jshint validthis: true */
 		var vm = this;
 		angular.extend(vm, $controller('AppCtrl', {$scope: $scope}));
 		vm.$onInit = onInit;
@@ -45,27 +29,117 @@
         console.log('vm.uploader', vm.uploader);
 
 
-		vm.myData = [
+		vm.filtros_menu = [
 			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true
+				titulo: "GESTORA",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: true,
+						value: ""
+					},{
+						titulo: "Opcion 2",
+						checked: true,
+						value: ""
+					},{
+						titulo: "Opcion 3",
+						checked: false,
+						value: ""
+					},{
+						titulo: "Opcion 4",
+						checked: false,
+						value: ""
+					}
+				]
 			},
 			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false
+				titulo: "ÁREA GEOGRÁFICA",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: true,
+						value: ""
+					}
+				]
 			},
 			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false
+				titulo: "CATEGORÍA",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
+			},
+			{
+				titulo: "DIVISA",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
+			},
+			{
+				titulo: "RATING",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
+			},
+			{
+				titulo: "RENTABILIDAD",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
+			},
+			{
+				titulo: "RATIOS",
+				icono: "square-fill-c",
+				collapsed: true,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
+			},
+			{
+				titulo: "CARACTERÍSTICAS",
+				icono: "square-fill-c",
+				collapsed: false,
+				opciones: [
+					{
+						titulo: "Opcion 1",
+						checked: false,
+						value: ""
+					}
+				]
 			}
-		  ];
-		;
+
+		];
 
 
 		function onInit(){
@@ -79,14 +153,45 @@
 			modal.show();
 		};
 
-		vm.openModal2 = function() {
-			var wrapperScope = angular.element(document.getElementById('myModal')).scope();
-			if (wrapperScope && wrapperScope.show) {
-				wrapperScope.show();
-			}
+		// Get all checked options from a specific filtro
+		vm.getCheckedOptions = function(filtroIndex) {
+		return vm.filtros_menu[filtroIndex].opciones.filter(function(opcion) {
+			return opcion.checked;
+		});
+		};
 
+		// Get all checked options from all filtros
+		vm.getAllCheckedOptions = function() {
+		var result = [];
+		vm.filtros_menu.forEach(function(filtro) {
+			filtro.opciones.forEach(function(opcion) {
+			if (opcion.checked) {
+				result.push({
+				filtro: filtro.titulo,
+				opcion: opcion.titulo,
+				value: opcion.value
+				});
+			}
+			});
+		});
+		return result;
+		};
+
+		// Reset all checkboxes
+		vm.resetAll = function() {
+		vm.filtros_menu.forEach(function(filtro) {
+			filtro.opciones.forEach(function(opcion) {
+			opcion.checked = false;
+			});
+		});
 		};
 		
+
+		$scope.$watch('vm.filtros_menu', function(newVal, oldVal) {
+			console.log('Collection changed:');
+			console.log('From:', oldVal);
+			console.log('To:', newVal);
+		}, true);
 	}
 
 })();
