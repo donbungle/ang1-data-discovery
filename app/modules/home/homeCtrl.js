@@ -28,20 +28,22 @@
 
         console.log('vm.uploader', vm.uploader);
 
+		vm.filtros_aplicados = [];
+
 
 		vm.filtros_menu = [
 			{
 				titulo: "GESTORA",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
 						titulo: "Opcion 1",
-						checked: true,
+						checked: false,
 						value: ""
 					},{
 						titulo: "Opcion 2",
-						checked: true,
+						checked: false,
 						value: ""
 					},{
 						titulo: "Opcion 3",
@@ -56,19 +58,19 @@
 			},
 			{
 				titulo: "ÁREA GEOGRÁFICA",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
 						titulo: "Opcion 1",
-						checked: true,
+						checked: false,
 						value: ""
 					}
 				]
 			},
 			{
 				titulo: "CATEGORÍA",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
@@ -80,7 +82,7 @@
 			},
 			{
 				titulo: "DIVISA",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
@@ -92,7 +94,7 @@
 			},
 			{
 				titulo: "RATING",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
@@ -104,7 +106,7 @@
 			},
 			{
 				titulo: "RENTABILIDAD",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
@@ -116,7 +118,7 @@
 			},
 			{
 				titulo: "RATIOS",
-				icono: "square-fill-c",
+				icono: "list-round",
 				collapsed: true,
 				opciones: [
 					{
@@ -128,8 +130,8 @@
 			},
 			{
 				titulo: "CARACTERÍSTICAS",
-				icono: "square-fill-c",
-				collapsed: false,
+				icono: "list-round",
+				collapsed: true,
 				opciones: [
 					{
 						titulo: "Opcion 1",
@@ -191,6 +193,32 @@
 			console.log('Collection changed:');
 			console.log('From:', oldVal);
 			console.log('To:', newVal);
+			vm.filtros_aplicados = [];
+			angular.forEach(newVal, function(value, key) {
+				delete dst[key];
+			});
+
+			
+
+			vm.filtros_aplicados = [
+				{
+					'label': 'Texto 1',
+					'id': 111,
+					'valor': 'LOL'
+				},{
+					'label': 'Texto 2',
+					'id': 22,
+					'valor': 'LOL'
+				},{
+					'label': 'Texto 3',
+					'id': 333,
+					'valor': 'LOL'
+				},{
+					'label': 'Texto 4',
+					'id': 44,
+					'valor': 'LOL'
+				}
+			];
 		}, true);
 	}
 

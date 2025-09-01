@@ -111,6 +111,16 @@ module.exports = function (grunt) {
 					'app/modules/servicios/*Ctrl.js',
 					'app/modules/servicios/*Service.js',
 
+					'app/modules/calendario/*Module.js',
+					'app/modules/calendario/*Route.js',
+					'app/modules/calendario/*Ctrl.js',
+					'app/modules/calendario/*Service.js',
+
+					'app/modules/modal/*Module.js',
+					'app/modules/modal/*Route.js',
+					'app/modules/modal/*Ctrl.js',
+					'app/modules/modal/*Service.js',
+
 					'app/modules/shared/services/*.js',
 
 					'app/modules/shared/front/**/*.js',
@@ -145,6 +155,13 @@ module.exports = function (grunt) {
 					'app/assets/libs/angular-aria/*.js',
 					'app/assets/libs/angular-animate/*.js',
 					'app/assets/libs/angular-file-upload/*.js',
+					'app/assets/libs/angular-xeditable/xeditable.js',
+					'app/assets/libs/angular-fullcalendar/angular-fullcalendar.js',
+					'app/assets/libs/angular-tooltips/angular-tooltips.min.js',
+					'app/assets/libs/angular-ui-calendar/calendar.js',
+					'app/assets/libs/angularjs-dragula/angularjs-dragula.js',
+					'app/assets/libs/ng-dialog/ngDialog.js',
+					'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js'
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
 			},
@@ -251,6 +268,14 @@ module.exports = function (grunt) {
 						'app/assets/libs/angular-animate/*.js',
 						'app/assets/libs/angular-file-upload/*.js',
 
+						'app/assets/libs/angular-xeditable/xeditable.js',
+						'app/assets/libs/angular-fullcalendar/angular-fullcalendar.js',
+						'app/assets/libs/angular-tooltips/angular-tooltips.min.js',
+						'app/assets/libs/angular-ui-calendar/calendar.js',
+						'app/assets/libs/angularjs-dragula/angularjs-dragula.js',
+						'app/assets/libs/ng-dialog/ngDialog.js',
+						'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
+
 						
 						'app/app.js',
 						'app/app.Ctrl.js',
@@ -291,6 +316,16 @@ module.exports = function (grunt) {
 						'app/modules/servicios/*Route.js',
 						'app/modules/servicios/*Ctrl.js',
 						'app/modules/servicios/*Service.js',
+
+						'app/modules/calendario/*Module.js',
+						'app/modules/calendario/*Route.js',
+						'app/modules/calendario/*Ctrl.js',
+						'app/modules/calendario/*Service.js',
+
+						'app/modules/modal/*Module.js',
+						'app/modules/modal/*Route.js',
+						'app/modules/modal/*Ctrl.js',
+						'app/modules/modal/*Service.js',
 
 						'app/modules/shared/services/*.js',
 

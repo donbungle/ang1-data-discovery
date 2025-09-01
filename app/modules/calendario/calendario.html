@@ -1,0 +1,96 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>
+				<i class="fa fa-calendar"></i> Planificación Mensual
+				<button ng-click="vm.crear_evento();" style="border:1px solid #CCC;" class="btn btn-lg1 btn-flat"><i class="fa fa-plus"></i> Crear evento</button>
+			</h1>
+		</div>
+	</div>
+	<hr style="margin:0px 0px 20px;border-top:#777 1px solid;" />
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+
+					<!-- Widget: user widget style 1 -->
+					<div class="box box-default">
+						<!-- Add the bg color to the header using any of the bg-* classes -->
+						<div class="box-header">
+							<h3 class="box-title" style="display: block;">
+								<i class="fa fa-bookmark-o"></i>
+								Etiquetas <button ng-click="vm.crear_etiqueta();" style="border:1px solid #CCC;" class="btn btn-xs btn-flat pull-right"><i class="fa fa-plus"></i> Crear etiqueta</button>
+							</h3>
+						</div>
+						<div class="box-footer no-padding">
+							<ul class="nav nav-stacked">
+								<li ng-repeat="etiqueta in vm.etiquetas">
+									<!--<a href="#">{{etiqueta.titulo}} <span style="background-color: {{etiqueta.color}};" class="pull-right badge">31</span></a>-->
+									<a href="#">
+										<span style="margin-left:3px;">
+											<i class="fa fa-2x fa-bookmark" style="color:{{etiqueta.color}};"></i>
+										</span>	
+										<span style="vertical-align:super;margin-left: 10px;">
+											{{etiqueta.titulo}} 
+										</span>
+												
+									</a> 
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /.widget-user -->
+					
+				</div>
+
+				<div class="col-md-12 d-none">
+					<!-- About Me Box -->
+					<div class="box box-primary">
+						<div class="box-header with-border">
+						<h3 class="box-title">About Me</h3>
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body">
+						<strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+
+						<p class="text-muted">
+							B.S. in Computer Science from the University of Tennessee at Knoxville
+						</p>
+
+						<hr>
+
+						<strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+						<p class="text-muted">Malibu, California</p>
+
+						<hr>
+
+						<strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+
+						<p>
+							<span class="label label-danger">UI Design</span>
+							<span class="label label-success">Coding</span>
+							<span class="label label-info">Javascript</span>
+							<span class="label label-warning">PHP</span>
+							<span class="label label-primary">Node.js</span>
+						</p>
+
+						<hr>
+
+						<strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+						</div>
+						<!-- /.box-body -->
+					</div>
+					<!-- /.box -->
+					
+				</div>
+
+		<div class="col-md-9" style="min-height: 800px;">
+			<div class="box box-default">
+				<div ui-calendar="vm.uiConfig.calendar" ng-model="vm.eventSources"></div>
+			</div>
+		</div>
+	</div>
+</div>
