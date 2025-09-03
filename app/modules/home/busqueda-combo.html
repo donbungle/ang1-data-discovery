@@ -1,6 +1,6 @@
 <div class="col-12">
 	<div class="accordion filtro-vertical mb-3" id="accordionExample">
-		<div class="accordion-item" ng-repeat="filtro in vm.filtros_menu" ng-model="vm.filtros_menu">
+		<div class="accordion-item" ng-repeat="(j, filtro) in vm.filtros_menu" ng-model="vm.filtros_menu">
 			<h2 class="accordion-header">
 				<button class="accordion-button" ng-class="{collapsed:filtro.collapsed}" type="button"
 					data-bs-toggle="collapse" data-bs-target="#collapseOne{{$index + 1}}"
@@ -15,8 +15,8 @@
 					<div class="form-check"
 						ng-repeat="(i, opcion) in filtro.opciones track by opcion.titulo">
 						<input class="form-check-input" type="checkbox" ng-checked="opcion.checked"
-							id="check_{{i + 1}}" name="check_{{i + 1}}" ng-model="opcion.checked">
-						<label class="form-check-label" for="check_{{i + 1}}">
+							id="check_{{j + 1}}_{{i + 1}}" name="check_{{j + 1}}_{{i + 1}}" ng-model="opcion.checked">
+						<label class="form-check-label" for="check_{{j + 1}}_{{i + 1}}">
 							{{opcion.titulo}}
 						</label>
 					</div>

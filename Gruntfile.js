@@ -161,7 +161,9 @@ module.exports = function (grunt) {
 					'app/assets/libs/angular-ui-calendar/calendar.js',
 					'app/assets/libs/angularjs-dragula/angularjs-dragula.js',
 					'app/assets/libs/ng-dialog/ngDialog.js',
-					'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js'
+					'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
+					'node_modules/tabulator-tables/dist/js/tabulator.min.js',
+					'node_modules/luxon/build/global/luxon.min.js'
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
 			},
@@ -194,6 +196,7 @@ module.exports = function (grunt) {
 				src: [
 					'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
 					'src/bower_components/dc/dist/style/dc.min.css',
+					'node_modules/tabulator-tables/dist/css/tabulator_bootstrap5.min.css',
 					'app/assets/css/**/*.css',
 					'app/modules/shared/directives/**/assets/css/*.css'
 				],
@@ -275,6 +278,8 @@ module.exports = function (grunt) {
 						'app/assets/libs/angularjs-dragula/angularjs-dragula.js',
 						'app/assets/libs/ng-dialog/ngDialog.js',
 						'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
+						'node_modules/tabulator-tables/dist/js/tabulator.min.js',
+						'node_modules/luxon/build/global/luxon.min.js',
 
 						
 						'app/app.js',
@@ -337,6 +342,7 @@ module.exports = function (grunt) {
 						//CSS
 						'src/bower_components/bootstrap/dist/css/bootstrap.min.css',
 						'src/bower_components/dc/dist/style/dc.min.css',
+						'node_modules/tabulator-tables/dist/css/tabulator_bootstrap5.min.css',
 						'app/assets/css/**/*.css',
 						'app/modules/shared/directives/**/assets/css/*.css'
 					]

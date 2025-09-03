@@ -124,6 +124,10 @@
     color: var(--rojo) !important;
 }
 
+.text-rojo-alt {
+    color: var(--rojo-hover) !important;
+}
+
 .text-verde {
     color: var(--verde) !important;
 }
@@ -1804,6 +1808,19 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 	outline:0 !important;
 	box-shadow: none !important;
 }
+
+/* GRILLA */
+#fondos-grilla .tabulator-row .tabulator-cell{
+	padding: 4px
+}
+
+#fondos-grilla .tabulator-row{
+	min-height: auto !important;
+}
+/* FIN GRILLA */
+
+
+
 
 /* FIN FONDOTOP */
 

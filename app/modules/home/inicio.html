@@ -26,40 +26,35 @@
 				<div ng-include="'app/modules/home/busqueda-combo.html'"></div>
 			</div>
 		</div>
-		<div class="col">
+		<div class="col-md-10">
 			<div class="row">
 				<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
 					<div class="row">
 						<div id="fondos-grilla" class="col">
 							<nav>
 								<div class="nav nav-tabs" id="nav-tab" role="tablist">
-									<button id="nav-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" class="nav-link active">Básico</button>
-									<button id="nav-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" class="nav-link">Rentabilidad</button>
-									<button id="nav-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" class="nav-link">Ratios</button>
-									<button id="nav-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" class="nav-link">Ranking</button>
-									<button id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" class="nav-link">General</button>
+									<button id="nav-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-basico-panel" type="button" role="tab" class="nav-link">Básico</button>
+									<button id="nav-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-rentabilidad-panel" type="button" role="tab" class="nav-link active">Rentabilidad</button>
+									<button id="nav-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+									<button id="nav-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+									<button id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general-panel" type="button" role="tab" class="nav-link">General</button>
 								</div>
 							</nav>
-							<div class="card2 border border-top-0 rounded-bottom bg-white">
+							<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
 								<div class="card-body2 py-3 px-0 tab-content table-responsive" id="nav-tabContent">
-									<div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-										aria-labelledby="nav-home-tab">
+									<div class="tab-pane fade" id="nav-basico-panel" role="tabpanel">
 										<div ng-include="'app/modules/home/tab-basico.html'"></div>
 									</div>
-									<div class="tab-pane fade" id="nav-profile" role="tabpanel"
-										aria-labelledby="nav-profile-tab">
+									<div class="tab-pane fade show active" id="nav-rentabilidad-panel" role="tabpanel">
 										<div ng-include="'app/modules/home/tab-rentabilidad.html'"></div>
 									</div>
-									<div class="tab-pane fade" id="nav-contact" role="tabpanel"
-										aria-labelledby="nav-contact-tab">
+									<div class="tab-pane fade" id="nav-ratios-panel" role="tabpanel">
 										<div ng-include="'app/modules/home/tab-ratios.html'"></div>
 									</div>
-									<div class="tab-pane fade" id="nav-contact" role="tabpanel"
-										aria-labelledby="nav-contact-tab">
+									<div class="tab-pane fade" id="nav-ranking-panel" role="tabpanel">
 										<div ng-include="'app/modules/home/tab-ranking.html'"></div>
 									</div>
-									<div class="tab-pane fade" id="nav-contact" role="tabpanel"
-										aria-labelledby="nav-contact-tab">
+									<div class="tab-pane fade" id="nav-general-panel" role="tabpanel">
 										<div ng-include="'app/modules/home/tab-general.html'"></div>
 									</div>
 								</div>

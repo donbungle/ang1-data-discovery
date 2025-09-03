@@ -18,10 +18,6 @@
 		'ngAnimate',
 		'ngSanitize',
 		'ui.router',
-		'ui.grid',
-		'angularFileUpload',
-
-		//'chart.js',
 
 		'home',
 		'componentes',
