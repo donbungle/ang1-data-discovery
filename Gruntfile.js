@@ -163,7 +163,8 @@ module.exports = function (grunt) {
 					'app/assets/libs/ng-dialog/ngDialog.js',
 					'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
 					'node_modules/tabulator-tables/dist/js/tabulator.min.js',
-					'node_modules/luxon/build/global/luxon.min.js'
+					'node_modules/luxon/build/global/luxon.min.js',
+					'node_modules/jquery-sparkline/jquery.sparkline.min.js'
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
 			},
@@ -280,6 +281,7 @@ module.exports = function (grunt) {
 						'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
 						'node_modules/tabulator-tables/dist/js/tabulator.min.js',
 						'node_modules/luxon/build/global/luxon.min.js',
+						'node_modules/jquery-sparkline/jquery.sparkline.min.js',
 
 						
 						'app/app.js',

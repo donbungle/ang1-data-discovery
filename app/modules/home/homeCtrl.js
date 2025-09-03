@@ -26,17 +26,10 @@
 		vm.app_icon = $rootScope.app.icon;
 		vm.title = "Hello, " + vm.app_name + "!";
 		vm.version = "1.0.0";
-		vm.myData = [];
+		vm.table_rentabilidad_data = [];
 		vm.filtros_aplicados = [];
+		vm.opciones_grilla = homeService.get_opt_grilla();
 		
-		//vm.filtros_menu = homeService.get_filtros_menu();
-
-		/*
-		borrowing structure
-
-		*/
-
-
 		function onInit(){
 			console.log('Home onInit', vm);
 			console.log('Home $scope', $scope);
@@ -48,46 +41,36 @@
 				console.log('error', error);
 			});
 			
-			console.log('luxon', luxon);
-			$timeout(function() {
-				vm.table = new Tabulator("#grid-rentabilidad", {
-					height:"500px",
-					layout:"fitColumns",
-					//ajaxURL:"/exampledata/ajaxprogressive",
-					progressiveLoad:"scroll",
-					paginationSize:20,
-					placeholder:"No Data Set",
-					dependencies:{
-						DateTime:luxon.DateTime,
-					},
-					columns:[
-						{title:"Nombre", field:"firstName", sorter:"string", width:200},
-						{title:"Apellido", field:"lastName", sorter:"string", width:200},
-						{title:"Gender", field:"gender", sorter:"string"},
-						{title:"Rating", field:"rating", formatter:"star", hozAlign:"center", width:100},
-						{title:"Empresa", field:"company", sorter:"string"},
-						{title:"Fecha ingreso", field:"creation_date", formatter:"datetime", hozAlign:"center", formatterParams:{
-							inputFormat:"yyyy-MM-dd",
-							outputFormat:"dd/MM/yyyy",
-							invalidPlaceholder:"(fecha no válida)",
-							timezone:"America/Santiago",
-						}},
-						{title:"Empleado", field:"employed", formatter:"tickCross", sorter:"boolean"},
-					],
-				});
-			}, 1000).then(function(){
-				homeService.get_data().then(function(response){
-					console.log('get_data response', response);
-					vm.myData = response.data;
-					$timeout(function(){
-						vm.table.setData(vm.myData);
-					}, 1000);
-					console.log('homeService', vm.myData);
-				}, function(error){
-					console.log('error', error);
-				});
-				console.log('LOL', vm.myData);
+			homeService.get_data().then(function(response){
+				console.log('get_data response', response);
+				vm.table_rentabilidad_data = response.data;
+			}, function(error){
+			
 			});
+
+			homeService.get_data().then(function(response){
+				console.log('get_data response', response);
+				vm.table_ratios_data = response.data;
+			}, function(error){
+			
+			});
+			
+			/*$timeout(function() {
+				vm.table_basico = new Tabulator("#grid-basico", homeService.get_opt_grilla());
+				vm.table_rentabilidad = new Tabulator("#grid-rentabilidad", homeService.get_opt_grilla());
+				vm.table_ratios = new Tabulator("#grid-ratios", homeService.get_opt_grilla());
+				vm.table_ranking = new Tabulator("#grid-ranking", homeService.get_opt_grilla());
+				vm.table_general = new Tabulator("#grid-general", homeService.get_opt_grilla());
+			}, 10000).then(function(){
+				homeService.get_data().then(function(response){vm.table_basico.setData(response.data);}, function(error){});
+				homeService.get_data().then(function(response){vm.table_rentabilidad.setData(response.data);}, function(error){});
+				homeService.get_data().then(function(response){vm.table_ratios.setData(response.data);}, function(error){});
+				homeService.get_data().then(function(response){vm.table_ranking.setData(response.data);}, function(error){});
+				homeService.get_data().then(function(response){vm.table_general.setData(response.data);}, function(error){});
+				
+			});*/
+
+			
 			
 			
 			

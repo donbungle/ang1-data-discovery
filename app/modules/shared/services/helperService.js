@@ -52,7 +52,7 @@
 			}     
 
 			function log(text, obj=undefined){
-				//console.log(text, obj);
+				console.log(text, obj);
 			}	
 		}
 })();

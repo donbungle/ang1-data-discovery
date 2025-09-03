@@ -13,18 +13,20 @@
 		.module('componentes')
 		.directive('grilla', grilla);
 
-		grilla.$inject = ['$rootScope', 'HelperService'];
+		grilla.$inject = ['$rootScope', 'HelperService', '$timeout'];
 
-		function grilla ($rootScope, HelperService) {
+		function grilla ($rootScope, HelperService, $timeout) {
 
 			var directive = {
 				restrict: 'E',
                 replace: true,
                 transclude: false,
-				templateUrl:'app/modules/shared/front/grilla/grilla.html',
+				templateUrl:'app/modules/shared/front/grilla/grilla.html?'+_.random(1,10000),
 				scope: {
+					grillaId: '@',
+					opcionesGrilla: '=',
 					data: '=',
-					columns: '=',
+					//columns: '=',
 					//removeCallback: '&?',
 				},
 				controller: 'GrillaCtrl',
@@ -37,23 +39,31 @@
 			return directive;
 
 			function link(scope, element, attrs, vm) {
-				HelperService.log('link', scope, vm, attrs)
-				if(scope.data == undefined){
-					scope.vm.data = [];
-				}else{
-					scope.columns = _.map(scope.data[0], function(reg){
-						//{ name:'firstName', field: 'first-name' },
-						HelperService.log('reg', reg);
-						return { name:'firstName', field: 'first-name' };					
-					});
-					scope.vm.data = scope.data;
-				}
+				HelperService.log('link scope', scope);
+				HelperService.log('link vm', vm);
+				HelperService.log('link attrs', attrs);
+				HelperService.log('$link vm.opcionesGrilla', vm.opcionesGrilla);
+				$timeout(function(){
+					scope.vm.table = new Tabulator("#"+vm.grillaId, vm.opcionesGrilla);
+				}, 100);
+				
+				$('.sparklines').sparkline('html');
+				scope.$watch('vm.data', function(newValue, oldValue){
+					HelperService.log('watch data newValue', newValue);
+					HelperService.log('watch data oldValue', oldValue);
+					HelperService.log('$watch scope', scope);
+					HelperService.log('$watch vm', vm);
 
-				//if(scope.columns == undefined){
-				//	scope.vm.columns = [];
-				//}else{
-				//	scope.vm.columns = scope.columns;
-				//}
+					$timeout(function(){
+						if(!_.isEmpty(newValue)){
+							$timeout(function(){
+								scope.vm.table.setData(newValue);
+							}, 1).then(function(){
+								
+							});
+						}
+					}, 100);
+				});
 			}
 
 		}
