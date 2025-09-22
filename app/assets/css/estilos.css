@@ -1863,7 +1863,8 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 	font-size: 12px;
 }
 #fondos-grilla .tabulator-row .tabulator-cell{
-	padding: 4px
+	padding: 4px;
+	background-color: #FFF;
 }
 #fondos-grilla .tabulator.table{
 	margin-bottom: 2px !important;
