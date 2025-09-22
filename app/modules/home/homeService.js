@@ -15,358 +15,122 @@
 	homeService.$inject = ['$http', '$q'];
 
 	function homeService($http, $q) {
-		var datos = [
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 375, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Cox",
-				lastName: "Carney",
-				company: "Enormo",
-				employed: true,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Lorraine",
-				lastName: "Wise",
-				company: "Comveyer",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			},
-			{
-				firstName: "Nancy",
-				lastName: "Waters",
-				company: "Fuelton",
-				employed: false,
-				line: _.shuffle(_.range(10, 100, 1)),
-				gender: ["M", "F"][_.random(0,1)],
-				creation_date: '2025-0'+_.random(1, 9)+'-'+_.random(10, 28),
-				rating: _.random(0, 5)
-			}
-		];
-
 		var filtros_menu = [
 			{
 				titulo: "GESTORA",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#965562',
+				id_categoria: 1,
 				collapsed: true,
 				opciones: [
-					{
-						titulo: "Opcion 1",
-						checked: false,
-						value: ""
-					},{
-						titulo: "Opcion 2",
-						checked: false,
-						value: ""
-					},{
-						titulo: "Opcion 3",
-						checked: false,
-						value: ""
-					},{
-						titulo: "Opcion 4",
-						checked: false,
-						value: ""
-					}
+					{id: 111, titulo: "AXA", checked: false, value: ""},
+					{id: 111, titulo: "BLACKROCK", checked: false, value: ""},
+					{id: 111, titulo: "BNP PARIBAS", checked: false, value: ""},
+					{id: 111, titulo: "CREDIT SUISSE", checked: false, value: ""},
+					{id: 111, titulo: "FRANKLIN TEMPLETON", checked: false, value: ""},
+					{id: 111, titulo: "GOLDMAN SACHS", checked: false, value: ""},
+					{id: 111, titulo: "HSBC", checked: false, value: ""},
+					{id: 111, titulo: "INVESCO", checked: false, value: ""},
+					{id: 111, titulo: "JP MORGAN", checked: false, value: ""},
+					{id: 111, titulo: "MFS", checked: false, value: ""},
+					{id: 111, titulo: "MORGAN STANLEY", checked: false, value: ""},
+					{id: 111, titulo: "MULTICONCEPT", checked: false, value: ""},
+					{id: 111, titulo: "NORDEA", checked: false, value: ""},
+					{id: 111, titulo: "OLD MUTUAL", checked: false, value: ""},
+					{id: 111, titulo: "PICTET", checked: false, value: ""},
+					{id: 111, titulo: "PIMCO", checked: false, value: ""},
+					{id: 111, titulo: "RENTA 4 GESTORA", checked: false, value: ""},
+					{id: 111, titulo: "RENTA 4 LUXEMBOURG", checked: false, value: ""},
+					{id: 111, titulo: "ROBECO", checked: false, value: ""},
+					{id: 111, titulo: "SCHRODER", checked: false, value: ""},
+					{id: 111, titulo: "SWISS GLOBAL", checked: false, value: ""},
+					{id: 111, titulo: "THREADNEEDLE", checked: false, value: ""},
+					{id: 111, titulo: "T. ROWE PRICE", checked: false, value: ""},
+					{id: 111, titulo: "UBS", checked: false, value: ""},
 				]
 			},
 			{
 				titulo: "ÁREA GEOGRÁFICA",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#5c7ba0',
+				id_categoria: 2,
 				collapsed: true,
 				opciones: [
-					{
-						titulo: "Opcion 1",
-						checked: false,
-						value: ""
-					}
+					{id: 222, titulo: "Africa/Oriente Medio", checked: false, value: ""},
+					{id: 222, titulo: "Asia ", checked: false, value: ""},
+					{id: 222, titulo: "BRIC", checked: false, value: ""},
+					{id: 222, titulo: "Europa", checked: false, value: ""},
+					{id: 222, titulo: "Europa del Este", checked: false, value: ""},
+					{id: 222, titulo: "Global", checked: false, value: ""},
+					{id: 222, titulo: "Global Emergentes", checked: false, value: ""},
+					{id: 222, titulo: "Latinoamérica", checked: false, value: ""},
+					{id: 222, titulo: "Norteamérica", checked: false, value: ""},
 				]
 			},
 			{
 				titulo: "CATEGORÍA",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#CAA102',
+				id_categoria: 3,
 				collapsed: true,
 				opciones: [
-					{
-						titulo: "Opcion 1",
-						checked: false,
-						value: ""
-					}
+					{id: 333, titulo: "Monetario", checked: false, value: ""},
+					{id: 333, titulo: "Renta Fija", checked: false, value: ""},
+					{id: 333, titulo: "Retorno Absoluto", checked: false, value: ""},
+					{id: 333, titulo: "Mixto", checked: false, value: ""},
+					{id: 333, titulo: "Renta Variable", checked: false, value: ""},
+					{id: 333, titulo: "Inversión Alternativa", checked: false, value: ""},
+					{id: 333, titulo: "Activos Digitales", checked: false, value: ""},
+					{id: 333, titulo: "Otros", checked: false, value: ""},
+				]
+			},
+			{
+				titulo: "CATEGORÍA Morningstar",
+				icono: "grid-plus-fill",
+				collapsed: true,
+				color: 'rgba(216, 101, 101, 0.5)',
+				id_categoria: 4,
+				opciones: [
+					{id: 444, titulo: "Monetario", checked: false, value: ""},
+					{id: 444, titulo: "Renta Fija", checked: false, value: ""},
+					{id: 444, titulo: "Retorno Absoluto", checked: false, value: ""},
+					{id: 444, titulo: "Mixto", checked: false, value: ""},
+					{id: 444, titulo: "Renta Variable", checked: false, value: ""},
+					{id: 444, titulo: "Inversión Alternativa", checked: false, value: ""},
+					{id: 444, titulo: "Activos Digitales", checked: false, value: ""},
+					{id: 444, titulo: "Otros", checked: false, value: ""},
 				]
 			},
 			{
 				titulo: "DIVISA",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#999999',
+				id_categoria: 5,
 				collapsed: true,
 				opciones: [
-					{
-						titulo: "Opcion 1",
-						checked: false,
-						value: ""
-					}
-				]
-			},
-			{
-				titulo: "RATING",
-				icono: "list-round",
-				collapsed: true,
-				opciones: [
-					{
-						titulo: "Opcion 1",
-						checked: false,
-						value: ""
-					}
+					{id: 555, titulo: "EUR", checked: false, value: ""},
+					{id: 555, titulo: "GBP", checked: false, value: ""},
+					{id: 555, titulo: "USD", checked: false, value: ""},
+					{id: 555, titulo: "AUD", checked: false, value: ""},
+					{id: 555, titulo: "CAD", checked: false, value: ""},
+					{id: 555, titulo: "CHF", checked: false, value: ""},
+					{id: 555, titulo: "DKK", checked: false, value: ""},
+					{id: 555, titulo: "HKD", checked: false, value: ""},
+					{id: 555, titulo: "JPY", checked: false, value: ""},
+					{id: 555, titulo: "NOK", checked: false, value: ""},
+					{id: 555, titulo: "SEK", checked: false, value: ""},
+					{id: 555, titulo: "SGD", checked: false, value: ""},
 				]
 			},
 			{
 				titulo: "RENTABILIDAD",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#364a63',
+				id_categoria: 6,
 				collapsed: true,
 				opciones: [
 					{
+						id: 9,
 						titulo: "Opcion 1",
 						checked: false,
 						value: ""
@@ -375,10 +139,13 @@
 			},
 			{
 				titulo: "RATIOS",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: '#93dd8f',
+				id_categoria: 7,
 				collapsed: true,
 				opciones: [
 					{
+						id: 10,
 						titulo: "Opcion 1",
 						checked: false,
 						value: ""
@@ -387,10 +154,13 @@
 			},
 			{
 				titulo: "CARACTERÍSTICAS",
-				icono: "list-round",
+				icono: "grid-plus-fill",
+				color: 'rgba(109, 53, 75, 0.5)',
+				id_categoria: 8,
 				collapsed: true,
 				opciones: [
 					{
+						id: 11,
 						titulo: "Opcion 1",
 						checked: false,
 						value: ""
@@ -400,28 +170,68 @@
 
 		];
 
-		function get_data(success = true) {
-			var respuesta = {};
-			var deferred = $q.defer();
-			var data = datos;
-			
-			if (success) {
-				respuesta = {
-					'data': data,
-					'status': 200,
-					'mensaje': "✅ Task finished successfully!"
-				};
-				deferred.resolve(respuesta);
-			} else {
-				respuesta = {
-					'data': [],
-					'status': 500,
-					'mensaje': "❌ Task failed!"
-				};
-				deferred.reject(respuesta);
-			}
+		var _getDataGrillaBasico = function () {
+			return $http({
+				url: '/app/assets/json/grilla_basico.json',
+				method: "GET",
+				params: { }
+			});
+		};
 
-			return deferred.promise;
+		var _getDataGrillaRentabilidad = function () {
+			return $http({
+				url: 'app/assets/json/grilla_rentabilidad.json',
+				method: "GET",
+				params: { }
+			});
+		};
+
+		var _getDataGrillaRatios = function () {
+			return $http({
+				url: '/app/assets/json/grilla_ratios.json',
+				method: "GET",
+				params: { }
+			});
+		};
+
+		var _getDataGrillaRanking = function () {
+			return $http({
+				url: '/app/assets/json/grilla_ranking.json',
+				method: "GET",
+				params: { }
+			});
+		};
+
+		var _getDataGrillaGeneral = function () {
+			return $http({
+				url: '/app/assets/json/grilla_general.json',
+				method: "GET",
+				params: { }
+			});
+		};
+
+		function _getData(id_grilla=""){
+			var fn;
+			switch (id_grilla) {
+				case "basico":
+					fn = _getDataGrillaBasico();
+					break;
+				case "rentabilidad":
+					fn = _getDataGrillaRentabilidad();
+					break;
+				case "ratios":
+					fn = _getDataGrillaRatios();
+					break;
+				case "ranking":
+					fn = _getDataGrillaRanking();
+					break;
+				case "general":
+					fn = _getDataGrillaGeneral();
+					break;
+				default:
+					break;
+			}
+			return fn;
 		}
 
 		function get_filtros_menu() {
@@ -448,156 +258,9 @@
 			return deferred.promise;
 		}
 
-		var chartFormatter = function(cell, formatterParams, onRendered){
-			var content = document.createElement("span");
-			var values = cell.getValue();
-
-			//invert values if needed
-			if(formatterParams.invert){
-				values = values.map(val => val * -1);
-			}
-
-			//add values to chart and style
-			content.classList.add(formatterParams.type);
-			content.innerHTML = values.join(",");
-
-			//setup chart options
-			var options = {
-				width: 145,
-			}
-
-			if(formatterParams.fill){
-				options.fill = formatterParams.fill
-			}
-
-			//instantiate piety chart after the cell element has been aded to the DOM
-			onRendered(function(){
-				//peity(content, formatterParams.type,  options);
-				var bar_opt = {
-                    type: 'bar', barColor: '#43629c',
-                    barWidth: 15,
-                    //width: 500,
-                    tooltipOffsetX: -100,
-                    tooltipFormatter: function (sp, options, fields) {
-                        var color = options.userOptions.barColor;
-                        return '<i class="fa fa-lg fa-bar-chart" style="color:' + color + ';background:#FFF;padding:2px;"></i> Monto: ' + $.number(fields[0].value, 0, ',', '.');
-                    }
-                };
-
-				var line_opt = {
-                    type: 'line', fillColor: false, lineColor: '#dd4b39',
-                    minSpotColor: 'red', maxSpotColor: '#73C7A5', lineWidth: 2, composite: true,
-                    //defaultPixelsPerValue:15, 
-                    //width: 500,
-					height: '30px',
-                    tooltipOffsetX: -100,
-                    tooltipFormatter: function (sp, options, fields) {
-                        var color = options.userOptions.lineColor;
-                        return '<br /><i class="fa fa-lg fa-line-chart" style="color:' + color + ';background:#FFF;padding:2px;"></i> Spread: ' + $.number(fields.y, 2, ',', '.');
-                    }
-                };
-				
-				$(cell.getElement()).sparkline(_.map(values, function(value){return value*2.2;}), bar_opt);
-				$(cell.getElement()).sparkline(values, line_opt);
-			});
-
-			return content;
-		};
-
-		var opt_grilla = {
-			height:"400px",
-			layout:"fitColumns",
-			//ajaxURL:"/exampledata/ajaxprogressive",
-			headerVisible:true,
-			progressiveLoad:"scroll",
-			paginationSize:20,
-			placeholder:"Sin datos",
-			dependencies:{
-				DateTime:luxon.DateTime,
-			},
-			persistence:{
-				sort:true,
-				filter:true,
-				columns:true,
-			},
-			persistenceID:"examplePerststance",
-			//enable range selection
-			selectableRange:1,
-			selectableRangeColumns:true,
-			selectableRangeRows:true,
-			selectableRangeClearCells:true,
-			//change edit trigger mode to make cell navigation smoother
-			editTriggerEvent:"dblclick",
-
-			//configure clipboard to allow copy and paste of range format data
-			clipboard:true,
-			clipboardCopyStyled:false,
-			clipboardCopyConfig:{
-				rowHeaders:false,
-				columnHeaders:false,
-			},
-			clipboardCopyRowRange:"range",
-			clipboardPasteParser:"range",
-			clipboardPasteAction:"range",
-
-			//rowHeader:{
-			//	resizable: false, 
-			//	frozen: true, 
-			//	width:40, 
-			//	hozAlign:"center", 
-			//	formatter: "rownum", 
-			//	cssClass:"range-header-col bg-rojo", 
-			//	editor:true
-			//},
-
-			rowHeader:{
-				width:40,
-				headerSort:false, 
-				resizable: false, 
-				frozen:true, 
-				headerHozAlign:"center", 
-				hozAlign:"center", 
-				formatter:"rowSelection", 
-				titleFormatter:"rowSelection", cellClick:function(e, cell){
-					cell.getRow().toggleSelect();
-				}
-			},
-
-			//setup cells to work as a spreadsheet
-			columnDefaults:{
-				//headerSort:false,
-				//headerHozAlign:"center",
-				//editor:"input",
-				resizable:false,
-				//width:100,
-			},
-			
-			columns:[
-				{title:"Nombre", field:"firstName", sorter:"string"},
-				{title:"Apellido", field:"lastName", sorter:"string"},
-				{title:"Line Chart", field:"line", cssClass: 'sparkline', width:160, formatter:chartFormatter, formatterParams:{type:"line"}},
-				{title:"Gender", field:"gender", hozAlign:"center", sorter:"string", width:100},
-				{title:"Rating", field:"rating", formatter:"star", hozAlign:"center", width:100}, //
-				{title:"Empresa", field:"company", sorter:"string"},
-				{title:"Fecha ingreso", field:"creation_date", width:120, formatter:"datetime", hozAlign:"center", formatterParams:{
-					inputFormat:"yyyy-MM-dd",
-					outputFormat:"dd/MM/yyyy",
-					invalidPlaceholder:"(fecha no válida)",
-					timezone:"America/Santiago",
-				}},
-				{title:"Empleado", field:"employed", formatter:"tickCross", width:120, hozAlign:"center", sorter:"boolean"},
-			],
-		};
-
-		function get_opt_grilla(){
-			return opt_grilla;
-		}
-
 		var service = {
-            get_data: get_data,
 			get_filtros_menu: get_filtros_menu,
-			chartFormatter: chartFormatter,
-			get_opt_grilla: get_opt_grilla,
+			getData: _getData,
         };
         return service;
 

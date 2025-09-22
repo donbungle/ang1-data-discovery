@@ -6,24 +6,14 @@
 					<div ng-include="'app/modules/home/cant-fondos.html'"></div>
 				</div>
 				<div class="col-12 mb-3">
-					<div class="accordion" id="accordionFiltrosAplicados">
-						<div class="accordion-item">
-							<h2 class="accordion-header">
-								<button class="accordion-button collapsed p-1 text-negro" style="font-size: 12px;"
-									type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiltrosAplicados"
-									aria-expanded="true" aria-controls="collapseFiltrosAplicados">
-									<em class="icon ni ni-filter-fill me-2"
-										style="color:var(--renta4-disabled);"></em>Filtros aplicados
-								</button>
-							</h2>
-							<div ng-include="'app/modules/home/filtros-aplicados.html'"></div>
-						</div>
-					</div>
+					<filtros-aplicados lista="vm.filtros_aplicados" on-delete="vm.quitar_filtros()"></filtros-aplicados>
 				</div>
 				<div>
 					<h6><em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> Opciones de busqueda</h6>
 				</div>
-				<div ng-include="'app/modules/home/busqueda-combo.html'"></div>
+				<div class="col-12">
+					<filtros-categorias categorias="vm.filtros_menu" lista="vm.filtros_aplicados"></filtros-categorias>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-10">
@@ -41,21 +31,27 @@
 								</div>
 							</nav>
 							<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
-								<div class="card-body2 py-3 px-0 tab-content table-responsive" id="nav-tabContent">
+								<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
 									<div class="tab-pane fade" id="nav-basico-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-basico.html'"></div>
+										<div ng-include="'app/modules/home/tab-basico.html?v=4444444'"></div>
 									</div>
 									<div class="tab-pane fade show active" id="nav-rentabilidad-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-rentabilidad.html'"></div>
+										<div ng-include="'app/modules/home/tab-rentabilidad.html?v=4444444'"></div>
 									</div>
 									<div class="tab-pane fade" id="nav-ratios-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-ratios.html'"></div>
+										<div ng-include="'app/modules/home/tab-ratios.html?v=4444444'"></div>
 									</div>
 									<div class="tab-pane fade" id="nav-ranking-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-ranking.html'"></div>
+										<div ng-include="'app/modules/home/tab-ranking.html?v=4444444'"></div>
 									</div>
 									<div class="tab-pane fade" id="nav-general-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-general.html'"></div>
+										<div ng-include="'app/modules/home/tab-general.html?v=4444444'"></div>
+									</div>
+									
+									<div class="tab-loading-overlay" id="tabLoader">
+										<div class="spinner-border text-renta4" role="status">
+											<span class="visually-hidden">Loading...</span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -74,4 +70,12 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- MODAL -->
+	<bs-modal
+		id="modalDetalle"
+		title="LOL"
+		size="fullscreen"
+		></bs-modal>
+	<!-- FIN MODAL -->
 </div>

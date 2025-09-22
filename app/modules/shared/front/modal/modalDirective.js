@@ -27,7 +27,7 @@
 					title: '@',
 					size: '@',
 					//backdrop: '@',
-					keyboard: '@',
+					//keyboard: '@',
 					onShow: '&?',
 					onHide: '&?',
 					onHidden: '&?'

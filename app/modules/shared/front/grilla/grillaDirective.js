@@ -21,7 +21,7 @@
 				restrict: 'E',
                 replace: true,
                 transclude: false,
-				templateUrl:'app/modules/shared/front/grilla/grilla.html?'+_.random(1,10000),
+				templateUrl:'app/modules/shared/front/grilla/grilla.html?v='+_.random(1,10000),
 				scope: {
 					grillaId: '@',
 					opcionesGrilla: '=',
@@ -47,7 +47,7 @@
 					scope.vm.table = new Tabulator("#"+vm.grillaId, vm.opcionesGrilla);
 				}, 100);
 				
-				$('.sparklines').sparkline('html');
+				//$('.sparklines').sparkline('html');
 				scope.$watch('vm.data', function(newValue, oldValue){
 					HelperService.log('watch data newValue', newValue);
 					HelperService.log('watch data oldValue', oldValue);
@@ -57,9 +57,9 @@
 					$timeout(function(){
 						if(!_.isEmpty(newValue)){
 							$timeout(function(){
-								scope.vm.table.setData(newValue);
-							}, 1).then(function(){
 								
+							}, 100).then(function(){
+								scope.vm.table.setData(newValue);
 							});
 						}
 					}, 100);

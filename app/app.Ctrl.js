@@ -13,7 +13,7 @@
 		.module('r4-ang1')
 		.controller('AppCtrl', AppCtrl);
 
-		AppCtrl.$inject = ['$scope', '$rootScope'];
+		AppCtrl.$inject = ['$scope', '$rootScope', '$window'];
 
 		/*
 		* recommend
@@ -21,7 +21,7 @@
 		* and bindable members up top.
 		*/
 
-		function AppCtrl($scope, $rootScope) {
+		function AppCtrl($scope, $rootScope, $window) {
 			/*jshint validthis: true */
 			var vm = this;
 			console.log('AppCtrl', $scope);
@@ -39,9 +39,14 @@
 			}
 
 			function onInit() {
-				
+
 			}
-	
+			
+			//$rootScope.$watch(function(){ 
+			//	return $window.height();
+			//},function onHeightChange(newValue, oldValue){
+			//	alert(newValue);
+			//});
 
 		}
 

@@ -170,6 +170,11 @@
                 return JSON.parse(value);
             };
         })
+		.filter('cant_items', function () {
+            return function (value) {
+                return "("+value.length+")";
+            };
+        })
         .filter('rut', function () {
             return function (rut) {
                 var result = rut.slice(-4, -1) + '-' + rut.substr(rut.length - 1)

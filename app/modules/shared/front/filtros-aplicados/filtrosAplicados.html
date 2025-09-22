@@ -1,0 +1,32 @@
+<div class="accordion" id="accordionFiltrosAplicados">
+	<div class="accordion-item">
+		<h2 class="accordion-header">
+			<button id ="accordion_btn" class="accordion-button collapsed p-1 text-negro" style="font-size: 12px;"
+				type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiltrosAplicados"
+				aria-expanded="true" aria-controls="collapseFiltrosAplicados">
+				<em class="icon ni ni-filter-fill me-2" style="color:var(--renta4-disabled);"></em> 
+				 Filtros aplicados 
+				<span class="ms-2 text-renta4 fw-bold" ng-show="lista.length > 0">
+					{{lista | cant_items}}
+				</span>
+			</button>
+		</h2>
+		<div id="collapseFiltrosAplicados" class="accordion-collapse collapse"
+			data-bs-parent="#accordionFiltrosAplicados">
+			<div class="accordion-body px-1 pt-2 pb-0">
+				<div class="filtros-aplicados" auto-animate>
+					<p class="mb-0 text-gris" ng-show="lista.length == 0">
+						<em class="icon ni ni-alert-circle me-1"	style="color:var(--renta4-disabled);"></em>
+						Sin filtros
+					</p>
+					<button type="button" class="btn btn-sm filtro-aplicado-item" ng-model="filtro" ng-repeat="filtro in lista" ng-click="quitar_filtro($event, filtro)" ng-style="{'background-color':(filtro.color)}">
+						{{filtro.label}}
+						<span class="filtro-aplicado-item-icono"><em class="icon ni ni-cross-circle-fill"></em></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

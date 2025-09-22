@@ -122,6 +122,7 @@ module.exports = function (grunt) {
 					'app/modules/modal/*Service.js',
 
 					'app/modules/shared/services/*.js',
+					'app/modules/shared/modelos/*.js',
 
 					'app/modules/shared/front/**/*.js',
 					'app/modules/shared/front/**/**/*.js'
@@ -139,7 +140,7 @@ module.exports = function (grunt) {
 					//'app/assets/libs/lodash/lodash.js',
 					'src/bower_components/lodash/lodash.js',
 					'app/assets/libs/jquery/jquery.js',
-					'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
+					'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
 					'node_modules/d3/dist/d3.min.js',
 					'node_modules/crossfilter2/crossfilter.min.js',
 					'node_modules/dc/dist/dc.min.js',
@@ -164,7 +165,10 @@ module.exports = function (grunt) {
 					'app/assets/libs/angular-bootstrap/ui-bootstrap-tpls.js',
 					'node_modules/tabulator-tables/dist/js/tabulator.min.js',
 					'node_modules/luxon/build/global/luxon.min.js',
-					'node_modules/jquery-sparkline/jquery.sparkline.min.js'
+					'node_modules/jquery-sparkline/jquery.sparkline.min.js',
+					'node_modules/numeral/min/numeral.min.js',
+					'node_modules/numeral/min/locales/es-es.min.js'
+					
 				],
 				dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
 			},
@@ -255,7 +259,7 @@ module.exports = function (grunt) {
 						//'app/assets/libs/lodash/lodash.js',
 						'src/bower_components/lodash/lodash.js',
 						'app/assets/libs/jquery/jquery.js',
-						'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
+						'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
 						'node_modules/d3/dist/d3.min.js',
 						'node_modules/crossfilter2/crossfilter.min.js',
 						'node_modules/dc/dist/dc.min.js',
@@ -282,6 +286,8 @@ module.exports = function (grunt) {
 						'node_modules/tabulator-tables/dist/js/tabulator.min.js',
 						'node_modules/luxon/build/global/luxon.min.js',
 						'node_modules/jquery-sparkline/jquery.sparkline.min.js',
+						'node_modules/numeral/min/numeral.min.js',
+						'node_modules/numeral/min/locales/es-es.min.js',
 
 						
 						'app/app.js',
@@ -335,6 +341,7 @@ module.exports = function (grunt) {
 						'app/modules/modal/*Service.js',
 
 						'app/modules/shared/services/*.js',
+						'app/modules/shared/modelos/*.js',
 
 						'app/modules/shared/front/**/*.js',
 						'app/modules/shared/front/**/**/*.js',

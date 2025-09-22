@@ -31,14 +31,14 @@
 			};
 			return service;
 
-            function getRandomElement(arr) {
+			function getRandomElement(arr) {
 				//console.log('getRandom arr', arr);
 				if (arr && arr.length) {
 					const randomIndex = Math.floor(Math.random() * arr.length);
 					return arr[randomIndex];
 				}
 				return null;
-			}     
+			}
 			
 			function validarFormulario(formulario) {
 				var defer = $q.defer();
@@ -52,7 +52,7 @@
 			}     
 
 			function log(text, obj=undefined){
-				console.log(text, obj);
+				//console.log(text, obj);
 			}	
 		}
 })();

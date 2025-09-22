@@ -10,6 +10,7 @@
 		'$scope',
 		'$controller',
 		'$timeout',
+		'grillaService',
 	];
 
 	function Home(
@@ -18,6 +19,7 @@
 		$scope, 
 		$controller,
 		$timeout,
+		grillaService
 	) {
 		var vm = this;
 		angular.extend(vm, $controller('AppCtrl', {$scope: $scope}));
@@ -28,61 +30,109 @@
 		vm.version = "1.0.0";
 		vm.table_rentabilidad_data = [];
 		vm.filtros_aplicados = [];
-		vm.opciones_grilla = homeService.get_opt_grilla();
+		vm.opciones_grilla = grillaService.get_opt_grilla();
+		vm.opciones_grilla_basico = grillaService.get_opt_grilla("basico");
+		vm.opciones_grilla_rentabilidad = grillaService.get_opt_grilla("rentabilidad");
+		vm.opciones_grilla_ratios = grillaService.get_opt_grilla("ratios");
+		vm.opciones_grilla_ranking = grillaService.get_opt_grilla("ranking");
+		vm.opciones_grilla_general = grillaService.get_opt_grilla("general");
+		vm.nro = 0;
 		
 		function onInit(){
 			console.log('Home onInit', vm);
 			console.log('Home $scope', $scope);
-
+			getDataGrillas();
+			$timeout(function(){
+				setTabs();
+				setPopover();
+				setTooltip();
+				//autoAnimate(document.getElementsByClassName('#accordionFiltrosAplicados .accordion-body'));
+			}, 1000);
 			homeService.get_filtros_menu().then(function(response){
 				console.log('get_filtros_menu response', response);
 				vm.filtros_menu = response.data;
 			}, function(error){
 				console.log('error', error);
 			});
-			
-			homeService.get_data().then(function(response){
-				console.log('get_data response', response);
-				vm.table_rentabilidad_data = response.data;
-			}, function(error){
-			
-			});
-
-			homeService.get_data().then(function(response){
-				console.log('get_data response', response);
-				vm.table_ratios_data = response.data;
-			}, function(error){
-			
-			});
-			
-			/*$timeout(function() {
-				vm.table_basico = new Tabulator("#grid-basico", homeService.get_opt_grilla());
-				vm.table_rentabilidad = new Tabulator("#grid-rentabilidad", homeService.get_opt_grilla());
-				vm.table_ratios = new Tabulator("#grid-ratios", homeService.get_opt_grilla());
-				vm.table_ranking = new Tabulator("#grid-ranking", homeService.get_opt_grilla());
-				vm.table_general = new Tabulator("#grid-general", homeService.get_opt_grilla());
-			}, 10000).then(function(){
-				homeService.get_data().then(function(response){vm.table_basico.setData(response.data);}, function(error){});
-				homeService.get_data().then(function(response){vm.table_rentabilidad.setData(response.data);}, function(error){});
-				homeService.get_data().then(function(response){vm.table_ratios.setData(response.data);}, function(error){});
-				homeService.get_data().then(function(response){vm.table_ranking.setData(response.data);}, function(error){});
-				homeService.get_data().then(function(response){vm.table_general.setData(response.data);}, function(error){});
-				
-			});*/
-
-			
-			
-			
-			
 		}
 
+		vm.ver_detalle = function(){
+			console.log("ver_detalle");
+		};
+
+		function getDataGrillas(){
+			homeService.getData("basico").then(response => { vm.table_basico_data = response.data;});
+			homeService.getData("rentabilidad").then(response => { vm.table_rentabilidad_data = response.data;});
+			homeService.getData("ratios").then(response => { vm.table_ratios_data = response.data;});
+			homeService.getData("ranking").then(response => { vm.table_ranking_data = response.data;});
+			homeService.getData("general").then(response => { vm.table_general_data = response.data;});
+		}
+
+		function setPopover(){
+			$timeout(function() {
+				// initialize Bootstrap popovers after Angular digest cycle
+				const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+				popoverTriggerList.map(function (el) {
+					return new bootstrap.Popover(el, {
+						//container: '#nav-tabContent'
+					});
+				});
+			},1000);
+		}
+
+		function setTooltip(){
+			$timeout(function() {
+				const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+				const tooltipList = [...tooltipTriggerList].map(function(tooltipTriggerEl){
+					new bootstrap.Tooltip(tooltipTriggerEl, {
+						container: 'body'
+					});
+					
+					}
+				);
+
+				
+				$timeout(function () {
+					const verDetalleList = document.querySelectorAll('.fondo-detalle');
+					const tooltipList = [...verDetalleList].map(function(verDetalleEl){
+						verDetalleEl.addEventListener('click', function () {
+							console.log('Clicked after render '+ vm.nro++);
+						});
+					});
+				}, 100);
+
+				
+			},1000);
+		}
+
+		function setTabs(){
+			const tabEl = document.querySelector('#nav-tab');
+			const loader = document.getElementById('tabLoader');
+
+			tabEl.addEventListener('show.bs.tab', () => {
+				setTooltip();
+				loader.classList.add('show');   // show overlay
+			});
+
+			tabEl.addEventListener('shown.bs.tab', () => {
+				// simulate async loading
+				setTimeout(() => loader.classList.remove('show'), 500);
+			});
+		}
+
+		function getCheckedOpciones(filtros_menu) {
+			return filtros_menu
+				.flatMap(item => item.opciones)
+				.filter(opcion => opcion.checked === true);
+		}
+
+		vm.quitar_filtro = function() {
+			var filtros = vm.filtros_menu
+				.flatMap(item => item.opciones)
+				.filter(opcion => opcion.checked === true);
+			console.log('quitar_filtro filtros:', filtros);
+		}
 		
-
-
-
-
-
-
 		//MODAL INFO FONDO
 		vm.openModal = function() {
 			var modalEl = document.getElementById('exampleModal');
@@ -103,34 +153,21 @@
 		});
 		};
 
-		$scope.$watch('vm.filtros_menu', function(newVal, oldVal) {
-			console.log('Collection changed:');
-			console.log('From:', oldVal);
-			console.log('To:', newVal);
-			vm.filtros_aplicados = [];
-			angular.forEach(newVal, function(value, key) {
-				//delete dst[key];
-			});
 
-			vm.filtros_aplicados = [
-				{
-					'label': 'Texto 1',
-					'id': 111,
-					'valor': 'LOL'
-				},{
-					'label': 'Texto 2',
-					'id': 22,
-					'valor': 'LOL'
-				},{
-					'label': 'Texto 3',
-					'id': 333,
-					'valor': 'LOL'
-				},{
-					'label': 'Texto 4',
-					'id': 44,
-					'valor': 'LOL'
-				}
-			];
+		$scope.$watch('vm.filtros_menu', function(newVal, oldVal) {
+			//console.log('Collection changed:');
+			//console.log('From:', oldVal);
+			//console.log('To:', newVal);
+			//vm.filtros_aplicados = [];
+			//vm.filtros_aplicados = _.map(getCheckedOpciones(newVal), function(filtro){
+			//	return {
+			//		'label': filtro.titulo,
+			//		'id': filtro.id,
+			//		'valor': filtro.value,
+			//		'color': filtro.color,
+			//	};
+			//});
+			console.log('vm.filtros_aplicados', vm.filtros_aplicados);
 		}, true);
 
 		// FIN FILTROS

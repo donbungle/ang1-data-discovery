@@ -1,0 +1,52 @@
+class BuscadorBasico {
+  constructor({
+    categ_r4_desc = "",
+	cod_isin = "",
+	comis_gestion = 0,
+	comis_ogc = 0,
+	comis_reembolso = 0,
+	comis_suscripcion = 0,
+	comis_ter = 0,
+	dias_liq_reem = "",
+	dias_liq_susc = "",
+	divisa = "",
+	estrellas = 0,
+	fecha_cont_reem = "",
+	fecha_cont_susc = "",
+	hora_corte = "",
+	id_perfil = "",
+	inversion_min = 0,
+	mostrar = 0,
+	nombre_fondo = "",
+	onlin = "",
+	recomendado = "0",
+	sec_id = "",
+	tipo_producto = "",
+	valor_liq = 0
+  } = {}) {
+		this.categ_r4_desc = categ_r4_desc;
+		this.cod_isin = cod_isin;
+		this.comis_gestion = comis_gestion;
+		this.comis_ogc = comis_ogc;
+		this.comis_reembolso = comis_reembolso;
+		this.comis_suscripcion = comis_suscripcion;
+		this.comis_ter = comis_ter;
+		this.dias_liq_reem = dias_liq_reem;
+		this.dias_liq_susc = dias_liq_susc;
+		this.divisa = divisa;
+		this.estrellas = estrellas;
+		this.fecha_cont_reem = fecha_cont_reem;
+		this.fecha_cont_susc = fecha_cont_susc;
+		this.hora_corte = hora_corte;
+		this.id_perfil = id_perfil;
+		this.inversion_min = inversion_min;
+		this.mostrar = mostrar;
+		this.nombre_fondo = nombre_fondo;
+		this.onlin = onlin;
+		this.recomendado = recomendado;
+		this.sec_id = sec_id;
+		this.tipo_producto = tipo_producto;
+		this.valor_liq = valor_liq;
+	}
+}
+//module.exports = BuscadorBasico;

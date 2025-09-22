@@ -15,13 +15,13 @@ angular.module('r4-ang1')
 			.state('home', {
 				url: '',
 				abstract: true,
-				templateUrl: 'app/modules/home/home.html',
+				templateUrl: 'app/modules/home/home.html?v='+_.random(1,10000),
 				controller: 'HomeCtrl',
 				controllerAs: 'vm',
 			})
 			.state('home.dashboard', {
 				url:'/dashboard',
-				templateUrl: 'app/modules/home/inicio.html',
+				templateUrl: 'app/modules/home/inicio.html?av='+_.random(1,10000),
 			});
 			
 	}]);
