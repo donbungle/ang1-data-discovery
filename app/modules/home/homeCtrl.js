@@ -56,8 +56,11 @@
 			});
 		}
 
-		vm.ver_detalle = function(){
+		$scope.ver_detalle = function(){
 			console.log("ver_detalle");
+			var modalEl = document.getElementById('modalDetalle');
+			var modal = new bootstrap.Modal(modalEl);
+			modal.show();
 		};
 
 		function getDataGrillas(){
@@ -97,6 +100,8 @@
 					const tooltipList = [...verDetalleList].map(function(verDetalleEl){
 						verDetalleEl.addEventListener('click', function () {
 							console.log('Clicked after render '+ vm.nro++);
+							$scope.ver_detalle();
+							//alert();
 						});
 					});
 				}, 100);

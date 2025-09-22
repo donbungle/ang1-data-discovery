@@ -1,17 +1,24 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
 	<div class="row">
-		<div class="col-md-2 px-1" style="min-height: 300px;">
+		<div class="col-md-2 px-1" style="">
 			<div class="row">
 				<div class="col-12 mb-3">
 					<div ng-include="'app/modules/home/cant-fondos.html'"></div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-12 mb-3">
 					<filtros-aplicados lista="vm.filtros_aplicados" on-delete="vm.quitar_filtros()"></filtros-aplicados>
 				</div>
+			</div>
+			<div class="row mb-3">
 				<div>
-					<h6><em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> Opciones de busqueda</h6>
+					<h6 data-bs-toggle="collapse" href="#collapseExample" role="button">
+						<em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> 
+						Opciones de busqueda 
+						<em class="icon ni ni-chevron-down text-negro fs-2 float-end" style="margin-top: -6px;"></em></h6>
 				</div>
-				<div class="col-12">
+				<div class="col-12 collapse"  id="collapseExample">
 					<filtros-categorias categorias="vm.filtros_menu" lista="vm.filtros_aplicados"></filtros-categorias>
 				</div>
 			</div>
@@ -22,7 +29,7 @@
 					<div class="row">
 						<div id="fondos-grilla" class="col">
 							<nav>
-								<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<div class="nav nav-tabs" id="nav-tab" role="tablist" style="flex-wrap: nowrap !important;">
 									<button id="nav-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-basico-panel" type="button" role="tab" class="nav-link">Básico</button>
 									<button id="nav-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-rentabilidad-panel" type="button" role="tab" class="nav-link active">Rentabilidad</button>
 									<button id="nav-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
@@ -71,11 +78,474 @@
 		</div>
 	</div>
 
-	<!-- MODAL -->
-	<bs-modal
-		id="modalDetalle"
-		title="LOL"
-		size="fullscreen"
-		></bs-modal>
-	<!-- FIN MODAL -->
+	 <!-- Modal -->
+<div class="fade modal modal-r4-base" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalleLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" >
+    <div class="modal-content">
+      <div class="modal-body p-0 m-0">
+        <div id="mspreview_ficha" data-iso="EUR|ES0173394034"
+	style="overflow: hidden; z-index: 999999; background: url(/app/assets/images/ms_minificha_bg_green.png) left top / 100% 104px no-repeat rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 16px -5px; top: 662px;"
+	data-p3m="5.73814270273872" data-rtbp3m="5,74%" data-p6m="8.756944726697121" data-rtbp6m="8,76%"
+	data-p1a="13.390151635154599" data-rtbp1a="13,39%" data-p3a="15.920545388871554" data-rtbp3a="15,92%"
+	data-p5a="12.405921643682504" data-rtbp5a="12,41%">
+	<div style="color:#fff; font-size:9.5pt; white-space:nowrap; text-overflow:ellipsis; height:24px; overflow:hidden; padding:2px 8px;">
+		<a href="javascript:;" id="msminificha_field_close"
+			style="color:#00b491; float:right; background-color:#fff; display:inline-block; width:14px; height:14px; text-align:center; line-height:12px; border-radius:50%; font-weight:600; padding-top:0px;">x</a><span><a
+				class="mslink_minificha_namefondo"
+				href="/portal?TX=goto&amp;FWD=FCH_FND_CHILE&amp;PAG=5&amp;HOJA=2&amp;COD_ISIN=ES0173394034&amp;DIVI=EUR">Renta
+				4 Bolsa Espana, FI Clase R</a></span></div>
+	<div style="position:relative; top:-5px; display:table; width:100%; color:#fff; font-size:9pt;">
+		<div style="display:table-cell; padding:2px 8px;"><span
+				style="font-size:13pt; display:inline-block; padding:2px 4px; background-color:rgba(0,0,0,.18); border-radius:4px;">50,465913
+				<small>€</small></span>
+			<div
+				style="color:#fff; max-width:160px; font-size:8pt; white-space:nowrap; text-overflow:ellipsis; height:20px; overflow:hidden; opacity:.9;">
+				RENTA 4 GESTORA</div>
+			<div style="line-height:1em; font-size:7pt;"><span style="opacity:.9;">INVERSIóN MÍNIMA:</span> <span
+					style="font-size:9pt; font-weight:600; opacity:1;">10</span></div>
+			<div style="line-height:1.8em; font-size:7pt;"><span
+					style="font-size:8pt; cursor:pointer; opacity:1;">ES0173394034</span></div>
+		</div>
+		<div style="display:table-cell; text-align:right;"></div>
+		<div
+			style="background-color:rgba(0,0,0,.18); border-bottom-left-radius:8px; border-top-left-radius:28px; padding:2px 8px; text-align:right;">
+			<span style="font-size:8pt; opacity:.9;" id="msminificha_field_Periodo">RNTB. 5 AÑOS<br></span><span
+				id="msminificha_field_Rentabilidad" style="font-size:20pt;">12,41%</span></div>
+	</div>
+	<div style="position:relative; top:-12px; display:table; width:100%; font-size:9pt;">
+		<div style="display:table-cell; vertical-align: top;text-align:right;">
+			<div style="padding:2px 8px; text-align:right;"><span class="fndVal_ESTRELLAS fndStars2"
+					style="font-size:18pt;"></span></div>
+		</div>
+	</div>
+	<div style="position:relative; display:table; width:100%; font-size:11px;">
+		<div style="display:table-cell; vertical-align: top; padding:2px 8px;">
+			<div><span
+					style="font-weight:600; display:block; width:206px; height:20px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:#666;">RV
+					España</span><span
+					style="text-transform: uppercase; margin-left:0px; font-size:7pt; line-height:14px; display:inline-block; padding:0px 8px; color:#444; border-radius:4px; background:#f1f1f1;">Renta
+					Variable</span></div>
+		</div>
+		<div style="display:table-cell; vertical-align: padding-right:2px; top;text-align:center;">
+			<div
+				style="width:72px; border:1px solid #ccc; border-radius:4px; overflow:hidden; padding:0; padding: 0; margin: 0; line-height:1; text-align:center;">
+				<span style="background:#f5f5f5; font-size:6pt; color:#888;">FECHA VALOR</span>
+				<div
+					style="background:#f5f5f5; display:table; padding: 0; margin: 0; line-height: 12px; width:100%; border-bottom:1px solid #ccc;">
+					<span
+						style="display:table-cell; width:50%; font-size:6pt; font-weight:600; text-align:center; color:#666;">SUSCR.</span><span
+						style="display:table-cell; width:50%; font-size:6pt; font-weight:600; text-align:center; color:#666;">REEMB.</span>
+				</div>
+				<div style="display:table; padding: 0; margin: 0; line-height: 12px; width:100%;"><span
+						style="display:table-cell; width:50%; font-weight:600; font-size:7pt; text-align:center; color:#000;">1
+						D</span><span
+						style="display:table-cell; width:50%; font-weight:600; font-size:7pt; text-align:center; color:#000;">2
+						D</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="msminificha_risk" style="position:relative; top:0px;">
+		<div class="riskfund_obj" style="text-align:right; height:30px; position:relative; z-index:1;">
+			<div class="riskfund_objinner"
+				style="cursor:help; max-width:450px; display:inline-block; z-index:10; position:relative; right:0; padding:0px 12px;">
+				<div style="display:none; font-size:8pt; color:#666;" class="riskfund_objtop">
+					<div style="font-weight:bold; text-align:center; border-bottom:1px solid #bbb;">NIVEL DE RIESGO
+						UCITS</div>
+					<table style="width:100%;">
+						<tbody>
+							<tr>
+								<td style="width:50%; text-align:left; line-height:9pt;">Potencialmente menor
+									rendimiento.<br>Menor riesgo.</td>
+								<td style="width:50%; text-align:right;  line-height:9pt;">Potencialmente mayor
+									rendimiento.<br>Mayor riesgo.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="riskfund_objcontent"><span class="riskfund_label"
+						style="color:#666; font-size:8pt; display: block; line-height: 16px;">NIVEL DE RIESGO
+						UCITS</span><span class="riskfund_blockriskinline"
+						style="color:#666; font-size:8pt; padding-left:6px;"><span style="white-space:nowrap;"
+							class="mstitle tooltipstered"><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">1</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">2</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">3</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#000; color:#eee; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">4</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">5</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">6</span><span
+								style="width:16px; height:16px; margin-right:1px; background-color:#ddd; color:#666; font-size:8pt; display:inline-block; line-height:16px; text-align:center;">7</span><span></span></span></span>
+					<div class="riskfund_blockriskinner"
+						style="display:none; color:#666; font-size:8pt; padding-top:12px; padding-bottom:12px; text-align:center;">
+						<table style="white-space:nowrap; width:100%; border:2px solid #fff;"
+							class="mstitle tooltipstered">
+							<tbody>
+								<tr>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										1</td>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										2</td>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										3</td>
+									<td
+										style="background-color:#000; text-align:center; vertical-align:middle; color:#eee; border:2px solid #fff; height:30px;">
+										4</td>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										5</td>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										6</td>
+									<td
+										style="background-color:#ddd; text-align:center; vertical-align:middle; color:#666; border:2px solid #fff; height:30px;">
+										7</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div style="display:none; color:#666; line-height:8pt; font-size:7pt; padding-bottom:8px;text-align:left; border-top:1px solid #bbb;"
+					class="riskfund_objbottom">La categoría "1" no significa que la inversión está libre de
+					riesgo<br>Este dato es indicativo del riesgo del fondo y está calculado en base a datos simulados
+					que, no obstante, pueden no constituir una indicación fiable del futuro perfil de riesgo del fondo.
+					Además, no hay garantías de que la categoría indicada vaya a permanecer inalterable y puede variar a
+					lo largo del tiempo.</div>
+			</div>
+		</div>
+	</div>
+	<div style="width:415px; position:relative; top:20px; border-bottom:1px solid #ccc; text-align:center;">
+		<div style="float:right; border-left:1px solid #ccc; width:39px; height:140px; text-align:center;">
+			<div id="msminificha_percentil" style="text-align:center; white-space: nowrap;"><span
+					id="msminificha_percentil_3m" class="msminificha_percentil" style="display:none;"><span
+						style="display:inline-block; min-width:32px;" class="mstitle tooltipstered"> <span
+							style="display:inline-block; width:24px; height:100px; position:relative; margin:0 auto;">
+							<span
+								style="display:inline-block; right:0; width:16px; position:absolute; height:100px; border-left:1px dotted #999;"
+								class="percentil_gradient"></span> <span
+								style="display:inline-block; width:18px; left:4px; position:absolute; height:6px; top:89px;"
+								class="arrow_percentil">95</span> </span> <span
+							style="color:#999; display:block; margin-top:18px; width:12px; padding-left:5px; font-size:7pt; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); writing-mode: lr-tb; padding-right:5px;">PERCENTIL
+							3M</span> </span></span><span id="msminificha_percentil_6m" class="msminificha_percentil"
+					style="display:none;"><span style="display:inline-block; min-width:32px;"
+						class="mstitle tooltipstered"> <span
+							style="display:inline-block; width:24px; height:100px; position:relative; margin:0 auto;">
+							<span
+								style="display:inline-block; right:0; width:16px; position:absolute; height:100px; border-left:1px dotted #999;"
+								class="percentil_gradient"></span> <span
+								style="display:inline-block; width:18px; left:4px; position:absolute; height:6px; top:92px;"
+								class="arrow_percentil">98</span> </span> <span
+							style="color:#999; display:block; margin-top:18px; width:12px; padding-left:5px; font-size:7pt; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); writing-mode: lr-tb; padding-right:5px;">PERCENTIL
+							6M</span> </span></span><span id="msminificha_percentil_1a" class="msminificha_percentil"
+					style="display:none;"><span style="display:inline-block; min-width:32px;"
+						class="mstitle tooltipstered"> <span
+							style="display:inline-block; width:24px; height:100px; position:relative; margin:0 auto;">
+							<span
+								style="display:inline-block; right:0; width:16px; position:absolute; height:100px; border-left:1px dotted #999;"
+								class="percentil_gradient"></span> <span
+								style="display:inline-block; width:18px; left:4px; position:absolute; height:6px; top:93px;"
+								class="arrow_percentil">99</span> </span> <span
+							style="color:#999; display:block; margin-top:18px; width:12px; padding-left:5px; font-size:7pt; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); writing-mode: lr-tb; padding-right:5px;">PERCENTIL
+							1A</span> </span></span><span id="msminificha_percentil_3a" class="msminificha_percentil"
+					style="display:none;"><span style="display:inline-block; min-width:32px;"
+						class="mstitle tooltipstered"> <span
+							style="display:inline-block; width:24px; height:100px; position:relative; margin:0 auto;">
+							<span
+								style="display:inline-block; right:0; width:16px; position:absolute; height:100px; border-left:1px dotted #999;"
+								class="percentil_gradient"></span> <span
+								style="display:inline-block; width:18px; left:4px; position:absolute; height:6px; top:83px;"
+								class="arrow_percentil">89</span> </span> <span
+							style="color:#999; display:block; margin-top:18px; width:12px; padding-left:5px; font-size:7pt; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); writing-mode: lr-tb; padding-right:5px;">PERCENTIL
+							3A</span> </span></span><span id="msminificha_percentil_5a" class="msminificha_percentil"
+					style=""><span style="display:inline-block; min-width:32px;" class="mstitle tooltipstered"> <span
+							style="display:inline-block; width:24px; height:100px; position:relative; margin:0 auto;">
+							<span
+								style="display:inline-block; right:0; width:16px; position:absolute; height:100px; border-left:1px dotted #999;"
+								class="percentil_gradient"></span> <span
+								style="display:inline-block; width:18px; left:4px; position:absolute; height:6px; top:88px;"
+								class="arrow_percentil">94</span> </span> <span
+							style="color:#999; display:block; margin-top:18px; width:12px; padding-left:5px; font-size:7pt; -webkit-transform: rotate(270deg); -moz-transform: rotate(270deg); -o-transform: rotate(270deg); writing-mode: lr-tb; padding-right:5px;">PERCENTIL
+							5A</span> </span></span></div>
+		</div>
+		<div id="graphminificha" data-highcharts-chart="11" aria-hidden="false" role="region"
+			aria-label="Chart. Highcharts interactive chart.">
+			<div id="highcharts-screen-reader-region-before-11" aria-hidden="false" style="position: relative;">
+				<div aria-hidden="false"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+					<h6>Chart</h6>
+					<div>Line chart with 262 data points.</div>
+					<div>The chart has 1 X axis displaying Time. Data ranges from 2019-09-23 00:00:00 to 2025-09-18
+						00:00:00.</div>
+					<div>The chart has 1 Y axis displaying values. Data ranges from 26.2935 to 50.844.</div>
+				</div>
+			</div>
+			<div aria-hidden="false" class="highcharts-announcer-container" style="position: relative;">
+				<div aria-hidden="false" aria-live="polite" aria-atomic="true"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+				</div>
+				<div aria-hidden="false" aria-live="assertive" aria-atomic="true"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+				</div>
+				<div aria-hidden="false" aria-live="polite" aria-atomic="true"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+				</div>
+				<div aria-hidden="false" aria-live="polite" aria-atomic="true"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+				</div>
+			</div>
+			<div style="position: relative; height: 0px; z-index: 1;" aria-hidden="true"><select
+					style="position: absolute; padding: 0px; border: 0px; cursor: pointer; opacity: 0.0001; left: 0px; visibility: hidden; width: 59px; height: 22px; top: 0px; margin-top: 0px;"
+					aria-hidden="true" aria-label="" tabindex="-1">
+					<option disabled=""></option>
+					<option>3 meses</option>
+					<option>6 meses</option>
+					<option>1 año</option>
+					<option>3 años</option>
+					<option>5 años</option>
+				</select></div>
+			<div id="highcharts-u6dg8wi-444"
+				style="position: relative; overflow: hidden; height: 140px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; touch-action: manipulation; outline: none; padding: 0px;"
+				dir="ltr" class="highcharts-container " aria-hidden="false" tabindex="0">
+				<div aria-hidden="false" class="highcharts-a11y-proxy-container-before"
+					style="top: 0px; left: 0px; white-space: nowrap; position: absolute;"></div>
+					<svg version="1.1"
+					class="highcharts-root"
+					style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif; font-size: 1rem;"
+					xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140"
+					aria-hidden="false" aria-label="Interactive chart">
+					<desc aria-hidden="true">Created with Highcharts 12.1.2</desc>
+					<defs aria-hidden="true">
+						<filter id="highcharts-drop-shadow-11">
+							<feDropShadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5">
+							</feDropShadow>
+						</filter>
+						<clipPath id="highcharts-u6dg8wi-715-">
+							<rect x="0" y="0" width="320" height="105" fill="none"></rect>
+						</clipPath>
+					</defs>
+					<rect fill="#ffffff" class="highcharts-background" filter="none" x="0" y="0" width="320"
+						height="140" rx="0" ry="0" aria-hidden="true"></rect>
+					<rect fill="none" class="highcharts-plot-background" x="0" y="35" width="320" height="105"
+						filter="none" aria-hidden="true"></rect>
+					<g class="highcharts-pane-group" data-z-index="0" aria-hidden="true"></g>
+					<g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1" aria-hidden="true">
+						<path fill="none" stroke="#999" stroke-width="1" stroke-dasharray="1,3" data-z-index="1"
+							class="highcharts-grid-line" d="M 66.5 35 L 66.5 140" opacity="1"></path>
+						<path fill="none" stroke="#999" stroke-width="1" stroke-dasharray="1,3" data-z-index="1"
+							class="highcharts-grid-line" d="M 170.5 35 L 170.5 140" opacity="1"></path>
+					</g>
+					<g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1" aria-hidden="true">
+						<path fill="none" stroke="#999" stroke-width="1" stroke-dasharray="1,3" data-z-index="1"
+							class="highcharts-grid-line" d="M 0 140.5 L 260 140.5" opacity="1"></path>
+						<path fill="none" stroke="#999" stroke-width="1" stroke-dasharray="1,3" data-z-index="1"
+							class="highcharts-grid-line" d="M 0 88.5 L 260 88.5" opacity="1"></path>
+						<path fill="none" stroke="#999" stroke-width="1" stroke-dasharray="1,3" data-z-index="1"
+							class="highcharts-grid-line" d="M 0 35.5 L 260 35.5" opacity="1"></path>
+					</g>
+					<rect fill="none" class="highcharts-plot-border" data-z-index="1" stroke="#cccccc" stroke-width="0"
+						x="0" y="35" width="320" height="105" aria-hidden="true"></rect>
+					<g class="highcharts-axis highcharts-xaxis" data-z-index="2" aria-hidden="true">
+						<path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1"
+							d="M 66.5 140 L 66.5 150" opacity="1"></path>
+						<path fill="none" class="highcharts-tick" stroke="#333333" stroke-width="1"
+							d="M 170.5 140 L 170.5 150" opacity="1"></path>
+						<path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="1"
+							data-z-index="7" d="M 0 140.5 L 260 140.5"></path>
+					</g>
+					<g class="highcharts-axis highcharts-yaxis" data-z-index="2" aria-hidden="true">
+						<path fill="none" class="highcharts-axis-line" stroke="#333333" stroke-width="0"
+							data-z-index="7" d="M 260 35 L 260 140"></path>
+					</g>
+					<path fill="none" class="highcharts-crosshair highcharts-crosshair-thin" data-z-index="2"
+						stroke="#cccccc" stroke-width="1" d="M 142.5 35 L 142.5 140" style="pointer-events: none;"
+						visibility="hidden"></path>
+					<path fill="none" class="highcharts-crosshair highcharts-crosshair-thin" data-z-index="2"
+						stroke="#cccccc" stroke-width="1" d="M 0 111.5 L 260 111.5" style="pointer-events: none;"
+						visibility="hidden"></path>
+					<g class="highcharts-series-group" data-z-index="3" filter="none" aria-hidden="false">
+						<g class="highcharts-series highcharts-series-0 highcharts-line-series highcharts-color-0"
+							data-z-index="0.1" opacity="1" transform="translate(0,35) scale(1 1)"
+							clip-path="url(#highcharts-u6dg8wi-715-)" aria-hidden="false">
+							<path fill="none"
+								d="M -0.56955093099671 98.0301 L 0.42716319824754 100.82016 L 1.4238773274918 100.3359 L 2.420591456736 99.094275 L 3.4173055859803 99.238125 L 4.4140197152245 99.46986 L 5.4107338444688 102.28365 L 6.407447973713 100.53876 L 7.4041621029573 93.59616 L 8.4008762322015 91.04508 L 9.3975903614458 89.60658 L 10.39430449069 88.789199999999 L 11.391018619934 88.557600000001 L 12.387732749179 88.0989 L 13.384446878423 88.192799999999 L 14.381161007667 87.325499999999 L 15.377875136911 86.568 L 16.374589266156 86.372099999999 L 17.3713033954 87.0828 L 18.368017524644 89.1411 L 19.364731653888 87.8787 L 20.361445783133 87.17436 L 21.358159912377 86.89464 L 22.354874041621 86.10462 L 23.351588170865 85.22388 L 24.34830230011 84.11214 L 25.345016429354 83.50062 L 26.341730558598 84.18375 L 27.338444687842 82.6017 L 28.335158817087 82.5552 L 29.331872946331 82.37418 L 30.328587075575 81.73326 L 31.325301204819 81.212949999999 L 32.322015334064 80.183699999999 L 33.318729463308 79.3107 L 34.315443592552 79.1385 L 35.312157721796 78.99822 L 36.308871851041 78.32286 L 37.305585980285 77.819175 L 38.302300109529 77.6118 L 39.299014238773 78.67944 L 40.295728368018 79.0734 L 41.292442497262 78.7962 L 42.289156626506 79.9197 L 43.28587075575 81.16584 L 44.282584884995 79.433900000001 L 45.279299014239 79.10784 L 46.276013143483 78.53286 L 47.272727272727 78.73782 L 48.269441401972 78.74496 L 49.266155531216 78.71766 L 50.26286966046 79.14942 L 51.259583789704 79.71915 L 52.256297918949 79.40646 L 53.253012048193 79.536975 L 54.249726177437 80.197425 L 55.246440306681 79.25652 L 56.243154435926 78.58704 L 57.23986856517 78.46104 L 58.236582694414 77.89236 L 59.233296823658 77.67354 L 60.230010952903 78.783075 L 61.226725082147 80.23218 L 62.223439211391 82.55205 L 63.220153340635 81.0957 L 64.21686746988 82.031775 L 65.213581599124 81.181275 L 66.210295728368 78.68826 L 67.207009857612 77.8134 L 68.203723986857 78.183 L 69.200438116101 78.62106 L 70.197152245345 81.82482 L 71.193866374589 80.67276 L 72.190580503834 80.7093 L 73.187294633078 81.081525 L 74.184008762322 82.70304 L 75.180722891566 84.83286 L 76.177437020811 88.27455 L 77.174151150055 85.3314 L 78.170865279299 84.41118 L 79.167579408543 83.97648 L 80.164293537788 84.798 L 81.161007667032 84.947799999999 L 82.157721796276 83.3112 L 83.15443592552 84.17976 L 84.151150054765 83.96556 L 85.147864184009 85.6233 L 86.144578313253 84.09912 L 87.141292442497 82.49388 L 88.138006571742 81.04992 L 89.134720700986 81.09066 L 90.13143483023 86.16594 L 91.128148959474 86.01222 L 92.124863088719 86.22222 L 93.121577217963 87.28566 L 94.118291347207 86.76192 L 95.115005476451 85.365699999999 L 96.111719605696 85.01136 L 97.10843373494 85.79382 L 98.105147864184 84.48846 L 99.101861993428 83.77614 L 100.09857612267 85.58004 L 101.09529025192 87.97656 L 102.09200438116 88.67922 L 103.08871851041 88.49442 L 104.08543263965 91.27902 L 105.08214676889 94.12452 L 106.07886089814 92.50206 L 107.07557502738 93.30006 L 108.07228915663 91.38066 L 109.06900328587 89.29368 L 110.06571741512 88.41042 L 111.06243154436 87.22182 L 112.0591456736 86.77116 L 113.05585980285 85.7367 L 114.05257393209 85.38012 L 115.04928806134 85.55694 L 116.04600219058 85.41498 L 117.04271631982 86.1168 L 118.03943044907 85.445325 L 119.03614457831 83.61402 L 120.03285870756 81.8139 L 121.0295728368 80.93316 L 122.02628696605 79.92012 L 123.02300109529 79.03854 L 124.01971522453 79.06752 L 125.01642935378 78.74706 L 126.01314348302 79.08012 L 127.00985761227 78.61518 L 128.00657174151 78.72942 L 129.00328587076 81.28134 L 130 81.6669 L 130.99671412924 80.78658 L 131.99342825849 80.139675 L 132.99014238773 79.846725 L 133.98685651698 78.92808 L 134.98357064622 79.37118 L 135.98028477547 79.27185 L 136.97699890471 78.04524 L 137.97371303395 77.5215 L 138.9704271632 77.3955 L 139.96714129244 77.74746 L 140.96385542169 76.51896 L 141.96056955093 75.97548 L 142.95728368018 76.94064 L 143.95399780942 76.87092 L 144.95071193866 76.14264 L 145.94742606791 76.03176 L 146.94414019715 75.4362 L 147.9408543264 74.36184 L 148.93756845564 75.25014 L 149.93428258489 75.3606 L 150.93099671413 76.3056 L 151.92771084337 76.99272 L 152.92442497262 75.0141 L 153.92113910186 75.60924 L 154.91785323111 75.29466 L 155.91456736035 75.6399 L 156.91128148959 77.4648 L 157.90799561884 79.07424 L 158.90470974808 79.067625 L 159.90142387733 80.3817 L 160.89813800657 82.34268 L 161.89485213582 81.14526 L 162.89156626506 79.58034 L 163.8882803943 77.4438 L 164.88499452355 75.7869 L 165.88170865279 74.41182 L 166.87842278204 73.09176 L 167.87513691128 72.85068 L 168.87185104053 71.93634 L 169.86856516977 71.604225 L 170.86527929901 71.87985 L 171.86199342826 72.5403 L 172.8587075575 73.10058 L 173.85542168675 72.26898 L 174.85213581599 71.90862 L 175.84884994524 71.85444 L 176.84556407448 72.28746 L 177.84227820372 72.3156 L 178.83899233297 72.32904 L 179.83570646221 71.83302 L 180.83242059146 70.4718 L 181.8291347207 69.6171 L 182.82584884995 68.030025 L 183.82256297919 68.5083 L 184.81927710843 69.2202 L 185.81599123768 70.37814 L 186.81270536692 68.89722 L 187.80941949617 68.39994 L 188.80613362541 66.50406 L 189.80284775465 64.19028 L 190.7995618839 63.70392 L 191.79627601314 64.26252 L 192.79299014239 63.5691 L 193.78970427163 64.61196 L 194.78641840088 65.36544 L 195.78313253012 66.09246 L 196.77984665936 66.31464 L 197.77656078861 66.37134 L 198.77327491785 66.28818 L 199.7699890471 66.57 L 200.76670317634 67.0173 L 201.76341730559 69.74226 L 202.76013143483 68.52426 L 203.75684556407 66.66954 L 204.75355969332 65.44986 L 205.75027382256 66.1332 L 206.74698795181 66.6141 L 207.74370208105 64.99668 L 208.7404162103 64.04916 L 209.73713033954 64.684899999999 L 210.73384446878 65.14368 L 211.73055859803 64.27806 L 212.72727272727 64.48218 L 213.72398685652 64.45992 L 214.72070098576 65.5515 L 215.71741511501 66.47466 L 216.71412924425 66.55278 L 217.71084337349 65.34696 L 218.70755750274 63.79044 L 219.70427163198 64.4301 L 220.70098576123 66.5532 L 221.69769989047 66.700899999999 L 222.69441401972 65.717925 L 223.69112814896 65.416749999999 L 224.6878422782 65.84172 L 225.68455640745 64.2915 L 226.68127053669 62.86224 L 227.67798466594 62.74632 L 228.67469879518 62.35026 L 229.67141292442 61.76562 L 230.66812705367 61.17762 L 231.66484118291 60.61356 L 232.66155531216 62.6745 L 233.6582694414 60.53418 L 234.65498357065 60.00036 L 235.65169769989 61.5132 L 236.64841182913 67.89846 L 237.64512595838 63.36645 L 238.64184008762 61.407675 L 239.63855421687 59.91888 L 240.63526834611 58.72272 L 241.63198247536 56.83566 L 242.6286966046 55.1481 L 243.62541073384 55.17078 L 244.62212486309 54.64704 L 245.61883899233 54.74196 L 246.61555312158 56.35014 L 247.61226725082 56.66472 L 248.60898138007 55.041 L 249.60569550931 54.27786 L 250.60240963855 54.77556 L 251.5991237678 53.56848 L 252.59583789704 53.6445 L 253.59255202629 53.57226 L 254.58926615553 51.8952 L 255.58598028478 50.7276 L 256.58269441402 51.43404 L 257.57940854326 52.58274 L 258.57612267251 50.97078 L 259.57283680175 51.28095"
+								class="highcharts-graph" data-z-index="1" stroke="#058DC7" stroke-width="1"
+								stroke-linejoin="round" stroke-linecap="round" filter="none" aria-hidden="false"
+								role="region" tabindex="-1" aria-label=", line 1 of 1 with 262 data points."
+								style="outline: none;"></path>
+							<path fill="none"
+								d="M -0.56955093099671 98.0301 L 0.42716319824754 100.82016 L 1.4238773274918 100.3359 L 2.420591456736 99.094275 L 3.4173055859803 99.238125 L 4.4140197152245 99.46986 L 5.4107338444688 102.28365 L 6.407447973713 100.53876 L 7.4041621029573 93.59616 L 8.4008762322015 91.04508 L 9.3975903614458 89.60658 L 10.39430449069 88.789199999999 L 11.391018619934 88.557600000001 L 12.387732749179 88.0989 L 13.384446878423 88.192799999999 L 14.381161007667 87.325499999999 L 15.377875136911 86.568 L 16.374589266156 86.372099999999 L 17.3713033954 87.0828 L 18.368017524644 89.1411 L 19.364731653888 87.8787 L 20.361445783133 87.17436 L 21.358159912377 86.89464 L 22.354874041621 86.10462 L 23.351588170865 85.22388 L 24.34830230011 84.11214 L 25.345016429354 83.50062 L 26.341730558598 84.18375 L 27.338444687842 82.6017 L 28.335158817087 82.5552 L 29.331872946331 82.37418 L 30.328587075575 81.73326 L 31.325301204819 81.212949999999 L 32.322015334064 80.183699999999 L 33.318729463308 79.3107 L 34.315443592552 79.1385 L 35.312157721796 78.99822 L 36.308871851041 78.32286 L 37.305585980285 77.819175 L 38.302300109529 77.6118 L 39.299014238773 78.67944 L 40.295728368018 79.0734 L 41.292442497262 78.7962 L 42.289156626506 79.9197 L 43.28587075575 81.16584 L 44.282584884995 79.433900000001 L 45.279299014239 79.10784 L 46.276013143483 78.53286 L 47.272727272727 78.73782 L 48.269441401972 78.74496 L 49.266155531216 78.71766 L 50.26286966046 79.14942 L 51.259583789704 79.71915 L 52.256297918949 79.40646 L 53.253012048193 79.536975 L 54.249726177437 80.197425 L 55.246440306681 79.25652 L 56.243154435926 78.58704 L 57.23986856517 78.46104 L 58.236582694414 77.89236 L 59.233296823658 77.67354 L 60.230010952903 78.783075 L 61.226725082147 80.23218 L 62.223439211391 82.55205 L 63.220153340635 81.0957 L 64.21686746988 82.031775 L 65.213581599124 81.181275 L 66.210295728368 78.68826 L 67.207009857612 77.8134 L 68.203723986857 78.183 L 69.200438116101 78.62106 L 70.197152245345 81.82482 L 71.193866374589 80.67276 L 72.190580503834 80.7093 L 73.187294633078 81.081525 L 74.184008762322 82.70304 L 75.180722891566 84.83286 L 76.177437020811 88.27455 L 77.174151150055 85.3314 L 78.170865279299 84.41118 L 79.167579408543 83.97648 L 80.164293537788 84.798 L 81.161007667032 84.947799999999 L 82.157721796276 83.3112 L 83.15443592552 84.17976 L 84.151150054765 83.96556 L 85.147864184009 85.6233 L 86.144578313253 84.09912 L 87.141292442497 82.49388 L 88.138006571742 81.04992 L 89.134720700986 81.09066 L 90.13143483023 86.16594 L 91.128148959474 86.01222 L 92.124863088719 86.22222 L 93.121577217963 87.28566 L 94.118291347207 86.76192 L 95.115005476451 85.365699999999 L 96.111719605696 85.01136 L 97.10843373494 85.79382 L 98.105147864184 84.48846 L 99.101861993428 83.77614 L 100.09857612267 85.58004 L 101.09529025192 87.97656 L 102.09200438116 88.67922 L 103.08871851041 88.49442 L 104.08543263965 91.27902 L 105.08214676889 94.12452 L 106.07886089814 92.50206 L 107.07557502738 93.30006 L 108.07228915663 91.38066 L 109.06900328587 89.29368 L 110.06571741512 88.41042 L 111.06243154436 87.22182 L 112.0591456736 86.77116 L 113.05585980285 85.7367 L 114.05257393209 85.38012 L 115.04928806134 85.55694 L 116.04600219058 85.41498 L 117.04271631982 86.1168 L 118.03943044907 85.445325 L 119.03614457831 83.61402 L 120.03285870756 81.8139 L 121.0295728368 80.93316 L 122.02628696605 79.92012 L 123.02300109529 79.03854 L 124.01971522453 79.06752 L 125.01642935378 78.74706 L 126.01314348302 79.08012 L 127.00985761227 78.61518 L 128.00657174151 78.72942 L 129.00328587076 81.28134 L 130 81.6669 L 130.99671412924 80.78658 L 131.99342825849 80.139675 L 132.99014238773 79.846725 L 133.98685651698 78.92808 L 134.98357064622 79.37118 L 135.98028477547 79.27185 L 136.97699890471 78.04524 L 137.97371303395 77.5215 L 138.9704271632 77.3955 L 139.96714129244 77.74746 L 140.96385542169 76.51896 L 141.96056955093 75.97548 L 142.95728368018 76.94064 L 143.95399780942 76.87092 L 144.95071193866 76.14264 L 145.94742606791 76.03176 L 146.94414019715 75.4362 L 147.9408543264 74.36184 L 148.93756845564 75.25014 L 149.93428258489 75.3606 L 150.93099671413 76.3056 L 151.92771084337 76.99272 L 152.92442497262 75.0141 L 153.92113910186 75.60924 L 154.91785323111 75.29466 L 155.91456736035 75.6399 L 156.91128148959 77.4648 L 157.90799561884 79.07424 L 158.90470974808 79.067625 L 159.90142387733 80.3817 L 160.89813800657 82.34268 L 161.89485213582 81.14526 L 162.89156626506 79.58034 L 163.8882803943 77.4438 L 164.88499452355 75.7869 L 165.88170865279 74.41182 L 166.87842278204 73.09176 L 167.87513691128 72.85068 L 168.87185104053 71.93634 L 169.86856516977 71.604225 L 170.86527929901 71.87985 L 171.86199342826 72.5403 L 172.8587075575 73.10058 L 173.85542168675 72.26898 L 174.85213581599 71.90862 L 175.84884994524 71.85444 L 176.84556407448 72.28746 L 177.84227820372 72.3156 L 178.83899233297 72.32904 L 179.83570646221 71.83302 L 180.83242059146 70.4718 L 181.8291347207 69.6171 L 182.82584884995 68.030025 L 183.82256297919 68.5083 L 184.81927710843 69.2202 L 185.81599123768 70.37814 L 186.81270536692 68.89722 L 187.80941949617 68.39994 L 188.80613362541 66.50406 L 189.80284775465 64.19028 L 190.7995618839 63.70392 L 191.79627601314 64.26252 L 192.79299014239 63.5691 L 193.78970427163 64.61196 L 194.78641840088 65.36544 L 195.78313253012 66.09246 L 196.77984665936 66.31464 L 197.77656078861 66.37134 L 198.77327491785 66.28818 L 199.7699890471 66.57 L 200.76670317634 67.0173 L 201.76341730559 69.74226 L 202.76013143483 68.52426 L 203.75684556407 66.66954 L 204.75355969332 65.44986 L 205.75027382256 66.1332 L 206.74698795181 66.6141 L 207.74370208105 64.99668 L 208.7404162103 64.04916 L 209.73713033954 64.684899999999 L 210.73384446878 65.14368 L 211.73055859803 64.27806 L 212.72727272727 64.48218 L 213.72398685652 64.45992 L 214.72070098576 65.5515 L 215.71741511501 66.47466 L 216.71412924425 66.55278 L 217.71084337349 65.34696 L 218.70755750274 63.79044 L 219.70427163198 64.4301 L 220.70098576123 66.5532 L 221.69769989047 66.700899999999 L 222.69441401972 65.717925 L 223.69112814896 65.416749999999 L 224.6878422782 65.84172 L 225.68455640745 64.2915 L 226.68127053669 62.86224 L 227.67798466594 62.74632 L 228.67469879518 62.35026 L 229.67141292442 61.76562 L 230.66812705367 61.17762 L 231.66484118291 60.61356 L 232.66155531216 62.6745 L 233.6582694414 60.53418 L 234.65498357065 60.00036 L 235.65169769989 61.5132 L 236.64841182913 67.89846 L 237.64512595838 63.36645 L 238.64184008762 61.407675 L 239.63855421687 59.91888 L 240.63526834611 58.72272 L 241.63198247536 56.83566 L 242.6286966046 55.1481 L 243.62541073384 55.17078 L 244.62212486309 54.64704 L 245.61883899233 54.74196 L 246.61555312158 56.35014 L 247.61226725082 56.66472 L 248.60898138007 55.041 L 249.60569550931 54.27786 L 250.60240963855 54.77556 L 251.5991237678 53.56848 L 252.59583789704 53.6445 L 253.59255202629 53.57226 L 254.58926615553 51.8952 L 255.58598028478 50.7276 L 256.58269441402 51.43404 L 257.57940854326 52.58274 L 258.57612267251 50.97078 L 259.57283680175 51.28095"
+								data-z-index="2" class="highcharts-tracker-line" stroke-linecap="round"
+								stroke-linejoin="round" stroke="rgba(192,192,192,0.0001)" stroke-width="21"
+								aria-hidden="true"></path>
+						</g>
+						<g class="highcharts-markers highcharts-series-0 highcharts-line-series highcharts-color-0 highcharts-tracker"
+							data-z-index="0.1" opacity="1" transform="translate(0,35) scale(1 1)" clip-path="none"
+							aria-hidden="true">
+							<path fill="#058DC7" d="M 141.5 75.97548 A 0 0 0 1 1 141.5 75.97548 Z"
+								class="highcharts-halo highcharts-color-0" data-z-index="-1" fill-opacity="0.25"
+								visibility="hidden"></path>
+							<path fill="#058DC7" d="M 141.5 79.97548 A 4 4 0 1 1 141.50019999999992 79.975479995 Z"
+								stroke="#ffffff" stroke-width="1" opacity="1"
+								class="highcharts-point highcharts-color-0" visibility="hidden"></path>
+						</g>
+					</g><text x="130" class="highcharts-title" data-z-index="4"
+						style="font-size: 1em; color: rgb(51, 51, 51); font-weight: bold; fill: rgb(51, 51, 51);"
+						text-align="center" y="12" text-anchor="middle" transform-origin="0 19"
+						transform="translate(0,0) scale(1 1)" aria-hidden="true"></text><text x="130"
+						class="highcharts-subtitle" data-z-index="4"
+						style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);"
+						text-align="center" y="14" text-anchor="middle" transform-origin="0 15"
+						transform="translate(0,0) scale(1 1)" aria-hidden="true"></text><text x="0" text-anchor="start"
+						class="highcharts-caption" data-z-index="4"
+						style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);" text-align="left"
+						y="152" transform-origin="0 15" transform="translate(0,0) scale(1 1)" aria-hidden="true"></text>
+					<g class="highcharts-range-selector-group" data-z-index="7" text-align="undefined"
+						transform="translate(0,0)" aria-hidden="false">
+						<g class="highcharts-range-selector-buttons" text-align="left" transform="translate(0,0)"
+							aria-hidden="false">
+							<g class="highcharts-label" transform="translate(0,0)" aria-hidden="true"><text x="0"
+									data-z-index="1" y="15.5"
+									style="color: rgb(102, 102, 102); font-size: 0.8em; fill: rgb(102, 102, 102);"></text>
+							</g>
+							<g class="highcharts-no-tooltip highcharts-button highcharts-button-normal" data-z-index="7"
+								style="cursor: pointer;" transform="translate(5,0)" aria-hidden="false" tabindex="-1"
+								role="button">
+								<rect fill="none" class="highcharts-button-box" x="0.5" y="0.5" width="50" height="22"
+									rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="25" data-z-index="1"
+									y="14.5" text-anchor="middle"
+									style="color: rgb(102, 102, 102); font-size: 8pt; font-weight: normal; fill: rgb(102, 102, 102);">3
+									meses</text>
+							</g>
+							<g class="highcharts-no-tooltip highcharts-button highcharts-button-normal" data-z-index="7"
+								style="cursor: pointer;" transform="translate(55,0)" aria-hidden="false" tabindex="-1"
+								role="button">
+								<rect fill="none" class="highcharts-button-box" x="0.5" y="0.5" width="50" height="22"
+									rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="25" data-z-index="1"
+									y="14.5" text-anchor="middle"
+									style="color: rgb(102, 102, 102); font-size: 8pt; font-weight: normal; fill: rgb(102, 102, 102);">6
+									meses</text>
+							</g>
+							<g class="highcharts-no-tooltip highcharts-button highcharts-button-normal" data-z-index="7"
+								style="cursor: pointer;" transform="translate(105,0)" aria-hidden="false" tabindex="-1"
+								role="button">
+								<rect fill="none" class="highcharts-button-box" x="0.5" y="0.5" width="50" height="22"
+									rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="25" data-z-index="1"
+									y="14.5" text-anchor="middle"
+									style="color: rgb(102, 102, 102); font-size: 8pt; font-weight: normal; fill: rgb(102, 102, 102);">1
+									año</text>
+							</g>
+							<g class="highcharts-no-tooltip highcharts-button highcharts-button-normal" data-z-index="7"
+								style="cursor: pointer;" transform="translate(155,0)" aria-hidden="false" tabindex="-1"
+								role="button">
+								<rect fill="none" class="highcharts-button-box" x="0.5" y="0.5" width="50" height="22"
+									rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="25" data-z-index="1"
+									y="14.5" text-anchor="middle"
+									style="color: rgb(102, 102, 102); font-size: 8pt; font-weight: normal; fill: rgb(102, 102, 102);">3
+									años</text>
+							</g>
+							<g class="highcharts-no-tooltip highcharts-button highcharts-button-pressed"
+								data-z-index="7" style="cursor: pointer;" transform="translate(205,0)"
+								aria-hidden="false" tabindex="-1" role="button">
+								<rect fill="#222" class="highcharts-button-box" x="0.5" y="0.5" width="50" height="22"
+									rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="25" data-z-index="1"
+									y="14.5" text-anchor="middle"
+									style="color: white; font-size: 8pt; font-weight: normal; fill: white;">5
+									años</text>
+							</g>
+						</g>
+						<g class="highcharts-no-tooltip highcharts-button highcharts-button-pressed" data-z-index="7"
+							visibility="hidden" style="cursor: pointer;" transform="translate(0,0)" aria-hidden="true">
+							<rect fill="#222" class="highcharts-button-box" x="0.5" y="0.5" width="59" height="22"
+								rx="2" ry="2" stroke="#ccc" stroke-width="1"></rect><text x="8" data-z-index="1"
+								y="14.5" style="color: white; font-size: 8pt; font-weight: normal; fill: white;">5 años
+								▾</text>
+						</g>
+					</g>
+					<g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7" aria-hidden="true"><text
+							x="66.922234392114"
+							style="color: rgb(102, 102, 102); cursor: default; font-size: 9px; fill: rgb(102, 102, 102);"
+							text-anchor="middle" transform="translate(0,0)" y="165" opacity="1">2022</text><text
+							x="170.86527929901"
+							style="color: rgb(102, 102, 102); cursor: default; font-size: 9px; fill: rgb(102, 102, 102);"
+							text-anchor="middle" transform="translate(0,0)" y="165" opacity="1">2024</text></g>
+					<g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7" aria-hidden="true"><text
+							x="260"
+							style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);"
+							text-anchor="end" transform="translate(0,0)" y="138" opacity="1">25</text><text x="260"
+							style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);"
+							text-anchor="end" transform="translate(0,0)" y="86" opacity="1">50</text><text x="0"
+							style="color: rgb(51, 51, 51); cursor: default; font-size: 0.8em; fill: rgb(51, 51, 51);"
+							text-anchor="end" transform="translate(0,0)" visibility="hidden">75</text></g>
+					<g class="highcharts-tooltip" data-z-index="8" filter="url(#highcharts-drop-shadow-11)" opacity="0"
+						aria-hidden="true" visibility="hidden">
+						<g class="highcharts-label highcharts-tooltip-header highcharts-tooltip-box"
+							transform="translate(55,139)" style="cursor: default;">
+							<path fill="#ffffff" class="highcharts-label-box"
+								d="M 3.5 0.5 L 80.5 0.5 L 86.5 -5.5 L 92.5 0.5 L 171 0.5 A 3 3 0 0 1 174.5 3.5 L 174.5 27.5 A 3 3 0 0 1 171.5 30.5 L 3.5 30.5 A 3 3 0 0 1 0.5 27.5 L 0.5 3.5 A 3 3 0 0 1 3.5 0.5 Z"
+								stroke-width="1" stroke="#333333"></path><text x="8" data-z-index="1" y="20"
+								style="color: rgb(51, 51, 51); font-size: 0.8em; fill: rgb(51, 51, 51);">
+								<tspan style="font-size: 10px;">week from lunes, 12 de jun de 2023</tspan>
+								<tspan class="highcharts-br">​</tspan>
+							</text>
+						</g>
+						<g class="highcharts-label highcharts-tooltip-box highcharts-color-0"
+							transform="translate(61,94)" style="cursor: default;">
+							<path fill="#ffffff" class="highcharts-label-box"
+								d="M 3.5 0.5 L 61.5 0.5 A 3 3 0 0 1 64.5 3.5 L 64.5 10.975480000000005 L 70.5 16.975480000000005 L 64.5 22.975480000000005 L 64.5 30.5 A 3 3 0 0 1 61.5 33.5 L 3.5 33.5 A 3 3 0 0 1 0.5 30.5 L 0.5 3.5 A 3 3 0 0 1 3.5 0.5 Z"
+								stroke-width="1" stroke="#058DC7"></path><text x="8" data-z-index="1" y="20"
+								style="color: rgb(51, 51, 51); font-size: 0.8em; fill: rgb(51, 51, 51);">
+								<tspan style="font-weight: bold;">38,8212</tspan>
+							</text>
+						</g>
+					</g>
+				</svg>
+				<div aria-hidden="false" class="highcharts-a11y-proxy-container-after"
+					style="top: 0px; left: 0px; white-space: nowrap; position: absolute;">
+					<div class="highcharts-a11y-proxy-group highcharts-a11y-proxy-group-zoom"></div>
+					<div class="highcharts-a11y-proxy-group highcharts-a11y-proxy-group-chartMenu"></div>
+				</div>
+			</div>
+			<div id="highcharts-screen-reader-region-after-11" aria-hidden="false" style="position: relative;">
+				<div aria-hidden="false"
+					style="position: absolute; width: 1px; height: 1px; overflow: hidden; white-space: nowrap; clip: rect(1px, 1px, 1px, 1px); margin-top: -3px; opacity: 0.01;">
+					<div id="highcharts-end-of-chart-marker-11" class="highcharts-exit-anchor" tabindex="0"
+						aria-hidden="false">End of interactive chart.</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="msminificha_minmax" style=" background-color:#fff; margin-top:50px;">
+		<div style="position:relative; top:0px; color:#444; font-size:7pt; padding-left:10px;"><span
+				id="msminificha_fieldgr_finicio">18/09/2020</span> HASTA <span
+				id="msminificha_fieldgr_ffin">18/09/2025</span></div>
+		<table style="width: 100%; position:relative; top:10px;">
+			<tbody>
+				<tr>
+					<td class="text-center"> <span
+							style="display: block; line-height: 11px; font-size: 6pt; font-weight: 600; color: #666; text-align: center; border-bottom:0px dotted #ccc;">MÍNIMO</span>
+						<span class="fnd_labelblockleft"><span style="font-weight:600; font-size: 22px;"
+								id="msminificha_fieldgr_min">26,29</span></span> </td>
+					<td class="text-center"> <span
+							style="display: block; line-height: 11px; font-size: 6pt; font-weight: 600; color: #666; text-align: center; border-bottom:0px dotted #ccc;">MÁXIMO</span>
+						<span class="fnd_labelblockright"><span style="font-weight:600; font-size: 22px;"
+								id="msminificha_fieldgr_max">50,84</span></span> </td>
+				</tr>
+				<tr>
+					<td class="text-center" style="padding-bottom:10px;" colspan="2"> <span
+							style="display:block; height:8px; position:relative;" class="gradiantrangehorizontal"> <span
+								class="hsd_gappiramide mstitle tooltipstered" id="msminificha_fieldgr_gappiramide"
+								style="display: block; top: 0px; height: 20px; padding-top: 10px; position: absolute; left: 47.3477%; color: rgb(68, 68, 68); padding-left: 0px; font-size: 8pt;">
+								<span class="hsd_gap"></span> </span> </span> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal -->
 </div>

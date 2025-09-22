@@ -76,6 +76,7 @@
 			progressiveLoad:"scroll",
 			paginationSize:20,
 			placeholder:"Sin datos",
+			//selectableRows:true,
 			dependencies:{
 				DateTime:luxon.DateTime,
 			},
@@ -101,7 +102,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:300,
+					width:250,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -152,7 +154,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:300,
+					width:250,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -201,7 +204,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:300,
+					width:250,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -249,7 +253,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:300,
+					width:250,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -298,7 +303,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:300,
+					width:250,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+

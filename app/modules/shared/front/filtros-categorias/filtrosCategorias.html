@@ -4,8 +4,9 @@
 			<button class="accordion-button" ng-class="{collapsed:filtro.collapsed}" type="button"
 				data-bs-toggle="collapse" data-bs-target="#collapseOne{{$index + 1}}"
 				aria-expanded="true" aria-controls="collapseOne{{$index + 1}}">
-				<em class="icon ni ni-{{filtro.icono}} me-1"
-					style="color:{{filtro.color}} !important;"></em> {{filtro.titulo}}
+				<em class="icon ni ni-{{filtro.icono}} me-1" style="color:{{filtro.color}} !important;"></em> 
+				{{filtro.titulo}}
+				<span class="me-1 fw-bold d-none" style="color:{{filtro.color}} !important;">( {{1}} )</span>
 			</button>
 		</h2>
 		<div id="collapseOne{{$index + 1}}" class="accordion-collapse collapse"

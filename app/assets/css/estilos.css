@@ -972,7 +972,9 @@
     color: var(--renta4-alt);
 }
 
-
+input[type="checkbox"] {
+  accent-color: var(--renta4); /* changes the color of the checkmark */
+}
 
 
 a {
@@ -1733,6 +1735,16 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 
 /* FONDOTOP */
 
+
+
+#fondos-grilla .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left{
+	/*padding-top: 8px;*/
+}
+
+#fondos-grilla .tabulator-row .tabulator-cell.tabulator-row-header{
+	padding-top: 8px;
+}
+
 /* TABS */
 #fondos-grilla .tab-pane.slide {
   transform: translateX(100%);
@@ -1866,8 +1878,18 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 	min-height: auto !important;
 }
 
+#fondos-grilla .tabulator-row.tabulator-selected {
+    background-color: var(--gris-light) !important;
+}
+
 #fondos-grilla .tabulator-row .fondo-detalle{
 	color: var(--renta4-alt-disabled) !important;
+}
+
+#modalDetalle a.mslink_minificha_namefondo{
+	color: #FFF !important;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 /*#fondos-grilla .tabulator-row.tabulator-row-even{
@@ -1928,6 +1950,18 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 /* Change inactive (empty) stars */
 .tabulator .tabulator-star.tabulator-star-inactive svg polygon {
   fill: #ddd !important;
+}
+
+.entrada.ng-hide {
+	transition:0.2s ease all;
+	transform:matrix(0.8, 0, 0, 0.8, 0, -10);/*translateY(-10px);*/
+	opacity:0;
+}
+
+.entrada {
+	transition:0.2s ease all;
+	transform:matrix(1, 0, 0, 1, 0, 0);/*translateY(0);*/
+	opacity:1;
 }
 
 /* FIN FONDOTOP */
