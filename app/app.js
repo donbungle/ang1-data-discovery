@@ -24,8 +24,7 @@
 		'componentes',
 		'componentesNuevos',
 		'dashboardDataset',
-		'contacts', 
-		'calendario'
+		'contacts'
 	]);
 
 })();

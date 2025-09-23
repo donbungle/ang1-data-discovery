@@ -32,6 +32,8 @@
 			}
 
 			scope.quitar_filtro = function($event, filtro) {
+				console.log('quitar_filtro filtro', filtro);
+				console.log('quitar_filtro $event', $event);
 				scope.lista = _.remove(scope.lista, function(elem) {
 					return elem.id != filtro.id;
 				});

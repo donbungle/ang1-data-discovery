@@ -1,4 +1,36 @@
 <div class="container-fluid p-0">
+	<nav class="navbar navbar-expand-xxl2 bg-white mb-3 sticky-top">
+		<div class="container">
+			<div class="collapse navbar-collapse show" id="navbarSupportedContent11">
+				<ul class="navbar-nav mx-auto my-2 my-lg-0 flex-row justify-content-between">
+					<li class="nav-item text-center mx-1">
+						<a class="nav-link py-0" style="font-size:12px;" href="">
+							<img src="app/assets/images/earth-globe-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+							<span>Fondos nacionales<br> e internacionales</span>
+						</a>
+					</li>
+					<li class="nav-item text-center mx-1">
+						<a class="nav-link py-0" style="font-size:12px;" href="">
+							<img src="app/assets/images/model-alt-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+							<span></span>Carteras<br>modelo
+						</a>
+					</li>
+					<li class="nav-item text-center mx-1">
+						<a class="nav-link py-0" style="font-size:12px;" href="">
+							<img src="app/assets/images/robot-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+							<span>Carteras<br>con IA</span>
+						</a>
+					</li>
+					<li class="nav-item text-center mx-1">
+						<a class="nav-link py-0" style="font-size:12px;" href="">
+							<img src="app/assets/images/iso_pequeno_negro_300x300.svg" alt="Fondos Renta 4" width="32" height="32"><br> 
+							<span>Fondos<br>Renta4</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div class="row">
 		<div class="col-md-2 px-1" style="">
 			<div class="row">
@@ -13,10 +45,10 @@
 			</div>
 			<div class="row mb-3">
 				<div>
-					<h6 data-bs-toggle="collapse" href="#collapseExample" role="button">
+					<h6 data-bs-toggle="collapse" href="#collapseExample" role="button" style="font-size:14px;">
 						<em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> 
 						Opciones de busqueda 
-						<em class="icon ni ni-chevron-down text-negro fs-2 float-end" style="margin-top: -6px;"></em></h6>
+						<em class="icon ni ni-chevron-down text-negro fs-2 position-relative" style="top: 8px;"></em></h6>
 				</div>
 				<div class="col-12 collapse"  id="collapseExample">
 					<filtros-categorias categorias="vm.filtros_menu" lista="vm.filtros_aplicados"></filtros-categorias>
@@ -69,7 +101,7 @@
 						<div class="col-12">
 							<p class="d-flex justify-content-end align-items-center mt-3">
 								<em class="icon ni ni-info text-renta4 fs-6"></em>
-								<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).</span>
+								<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
 							</p>
 						</div>
 					</div>

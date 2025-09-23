@@ -111,11 +111,6 @@ module.exports = function (grunt) {
 					'app/modules/servicios/*Ctrl.js',
 					'app/modules/servicios/*Service.js',
 
-					'app/modules/calendario/*Module.js',
-					'app/modules/calendario/*Route.js',
-					'app/modules/calendario/*Ctrl.js',
-					'app/modules/calendario/*Service.js',
-
 					'app/modules/modal/*Module.js',
 					'app/modules/modal/*Route.js',
 					'app/modules/modal/*Ctrl.js',
@@ -330,11 +325,6 @@ module.exports = function (grunt) {
 						'app/modules/servicios/*Ctrl.js',
 						'app/modules/servicios/*Service.js',
 
-						'app/modules/calendario/*Module.js',
-						'app/modules/calendario/*Route.js',
-						'app/modules/calendario/*Ctrl.js',
-						'app/modules/calendario/*Service.js',
-
 						'app/modules/modal/*Module.js',
 						'app/modules/modal/*Route.js',
 						'app/modules/modal/*Ctrl.js',
@@ -362,8 +352,8 @@ module.exports = function (grunt) {
 				files: {
 					'dist/index.html': [
 						'dist/assets/r4-ang1-plugins.min.js',
-						'dist/assets/r4-ang1-angscript.min.js',
 						'dist/assets/r4-ang1-templates.min.js',
+						'dist/assets/r4-ang1-angscript.min.js',
 						'dist/assets/r4-ang1-style.min.css',
 						
 						//'app/assets/css/**/*.min.css',

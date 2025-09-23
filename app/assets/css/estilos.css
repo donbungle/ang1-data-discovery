@@ -1142,11 +1142,11 @@ a.link_negro:hover {
     background-image: url(../img_css/compra.svg);
 }
 
-.icon.compra-disabled:before {
+.icon.compra-disabled::before {
     background-image: url(../img_css/compra-disabled.svg);
 }
 
-.icon.venta-disabled:before {
+.icon.venta-disabled::before {
     background-image: url(../img_css/venta-disabled.svg);
 }
 
@@ -1864,8 +1864,16 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 }
 #fondos-grilla .tabulator-row .tabulator-cell{
 	padding: 4px;
-	background-color: #FFF;
 }
+
+#fondos-grilla .tabulator-row{
+	background-color: #FFF !important;
+}
+
+#fondos-grilla .tabulator-row.tabulator-selected {
+    background-color: var(--gris-light) !important;
+}
+
 #fondos-grilla .tabulator.table{
 	margin-bottom: 2px !important;
 }
@@ -1877,10 +1885,6 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 
 #fondos-grilla .tabulator-row{
 	min-height: auto !important;
-}
-
-#fondos-grilla .tabulator-row.tabulator-selected {
-    background-color: var(--gris-light) !important;
 }
 
 #fondos-grilla .tabulator-row .fondo-detalle{
@@ -1922,6 +1926,31 @@ table.dataTable tr:not(.odd, .even) tr:last-child td{
 #fondos-grilla .bg-amarillo {
     background-color: var(--amarillo-hover) !important;
 }
+
+
+#fondos-grilla .tabulator .tabulator-footer{
+	background-color: #FFF !important;
+}
+#fondos-grilla .tabulator .tabulator-footer .tabulator-footer-contents{
+	flex-direction: column-reverse !important;
+	padding: 0 !important;
+}
+
+#fondos-grilla .tabulator .tabulator-footer .tabulator-page.active {
+    background-color: var(--renta4-alt) !important;
+    border-color: var(--renta4-alt-hover) !important;
+    color: #fff !important;
+}
+
+#fondos-grilla .tabulator .tabulator-footer .tabulator-page:not(.disabled):hover {
+	background: var(--gris-light) !important;
+	border-color: var(--gris-disabled) !important;
+	color: var(--renta4-alt) !important;
+}
+
+/*tabulator-paginator
+tabulator-pages
+tabulator-page*/
 /* FIN GRILLA */
 
 /*POPOVER*/

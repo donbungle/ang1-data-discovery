@@ -70,25 +70,67 @@
 		};
 
 		var opt_base = {
-			height:"500px",
-			layout:"fitColumns",
+			//height:"500px",
+			//rowHeight:40,
+			layout:"fitDataFill",
+			locale: "es-es",
+			langs: {
+				"es-es":{ 
+					"pagination":{
+						"first":"Primera",
+						"first_title":"Primaera página",
+						"last":"Última",
+						"last_title":"Última página",
+						"prev":"Anterior",
+						"prev_title":"Página Anterior",
+						"next":"Siguiente",
+						"next_title":"Página Siguiente",
+						"all":"Todos",
+						"counter":{
+							"showing": "Mostrando",
+							"of": "de",
+							"rows": "registros",
+							"pages": "páginas",
+						},
+						"groups":{ //copy for the auto generated item count in group header
+							"item":"cosa", //the singular  for item
+							"items":"cosas", //the plural for items
+						},
+						"data":{
+							"loading":"Cargando", //data loader text
+							"error":"Error", //data error text
+						},
+					},
+				},
+			},
 			headerVisible:true,
-			progressiveLoad:"scroll",
-			paginationSize:20,
+			//progressiveLoad:"scroll",
+			pagination:true,
+			paginationSize:10,
+			//paginationSizeSelector:[3, 6, 8, 10],
+			movableColumns:true,
+			paginationCounter:"rows",
 			placeholder:"Sin datos",
 			//selectableRows:true,
+			resizableRows:false,
+			resizableRowGuide:false,
+			resizableColumnGuide:false,
+			columnDefaults:{
+				resizable:false,
+			},
 			dependencies:{
 				DateTime:luxon.DateTime,
 			},
 			rowHeader:{
-				width:40,
+				//width:40,
 				headerSort:false, 
 				resizable: false, 
-				frozen:true, 
+				frozen:false, 
 				headerHozAlign:"center", 
 				hozAlign:"center", 
 				formatter:"rowSelection", 
-				titleFormatter:"rowSelection", cellClick:function(e, cell){
+				titleFormatter:"rowSelection", 
+				cellClick:function(e, cell){
 					cell.getRow().toggleSelect();
 				}
 			},
@@ -102,7 +144,7 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:250,
+					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
@@ -118,28 +160,29 @@
 						return celda;
 					}
 				},
-				{title:"V.Liq.", field:"valor_liq", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Divisa.", field:"divisa", sorter:"string", hozAlign:"center"},
-				{title:"Activo", field:"mostrar", sorter:"string", hozAlign:"center"},
-				{title:"Susc.", field:"fecha_cont_susc", sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Reemb.", field:"fecha_cont_reem", sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Gestión", field:"comis_gestion", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"TER/OGC", field:"comis_ter", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Suscr.", field:"comis_suscripcion", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Reemb.", field:"comis_reembolso", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Inv. Min.", field:"inversion_min", sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
-				{title:"Ranking", field:"categ_r4_desc", sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"V.Liq.", field:"valor_liq", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Divisa.", field:"divisa", width:60, sorter:"string", hozAlign:"center"},
+				{title:"Activo", field:"mostrar", width:60, sorter:"string", hozAlign:"center"},
+				{title:"Susc.", field:"fecha_cont_susc", width:60, sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Reemb.", field:"fecha_cont_reem", width:60, sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Gestión", field:"comis_gestion", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"TER/OGC", field:"comis_ter", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Suscr.", field:"comis_suscripcion", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Reemb.", field:"comis_reembolso", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Inv. Min.", field:"inversion_min", width:60, sorter:"number", hozAlign:"right", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
+				{title:"Ranking", field:"categ_r4_desc", width:60, sorter:"number", hozAlign:"center", formatter:"money", formatterParams: {decimal:",", thousand:".", negativeSign:true}},
 				{
 					title:" ", 
 					field:"sec_id", 
 					headerSort:false,
-					width:50,
+					width:40,
+					frozen:true,
 					hozAlign:"center",
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
 										'<button class="btn btn-link text-renta4-alt fondo-comprar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Contratar fondo" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
-											' <i class="icon ni ni-cart-fill ms-1 text-verde fs-6"></i>'+
+											' <img src="app/assets/img_css/compra.svg" alt="Contratar fondo" width="16" height="16">'+
 										'</button>'+
 									'</div>';
 						return celda;
@@ -154,7 +197,7 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:250,
+					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
@@ -189,7 +232,7 @@
 						var value = cell.getValue();
 						var celda = '<div>'+
 										'<button class="btn btn-link text-renta4-alt fondo-comprar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Contratar fondo" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
-											' <i class="icon ni ni-cart-fill ms-1 text-verde fs-6"></i>'+
+											' <img src="app/assets/img_css/compra.svg" alt="Contratar fondo" width="16" height="16">'+
 										'</button>'+
 									'</div>';
 						return celda;
@@ -204,7 +247,7 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:250,
+					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
@@ -238,7 +281,7 @@
 						var value = cell.getValue();
 						var celda = '<div>'+
 										'<button class="btn btn-link text-renta4-alt fondo-comprar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Contratar fondo" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
-											' <i class="icon ni ni-cart-fill ms-1 text-verde fs-6"></i>'+
+											' <img src="app/assets/img_css/compra.svg" alt="Contratar fondo" width="16" height="16">'+
 										'</button>'+
 									'</div>';
 						return celda;
@@ -253,8 +296,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:250,
-					frozen:true,
+					width:200,
+					frozen:false,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -288,7 +331,7 @@
 						var value = cell.getValue();
 						var celda = '<div>'+
 										'<button class="btn btn-link text-renta4-alt fondo-comprar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Contratar fondo" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
-											' <i class="icon ni ni-cart-fill ms-1 text-verde fs-6"></i>'+
+											' <img src="app/assets/img_css/compra.svg" alt="Contratar fondo" width="16" height="16">'+
 										'</button>'+
 									'</div>';
 						return celda;
@@ -303,8 +346,8 @@
 					title:"Fondo", 
 					field:"nombre_fondo", 
 					sorter:"string",
-					width:250,
-					frozen:true,
+					width:200,
+					frozen:false,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
@@ -330,12 +373,13 @@
 					field:"sec_id", 
 					headerSort:false,
 					width:50,
+					frozen:true,
 					hozAlign:"center",
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
 						var celda = '<div>'+
 										'<button class="btn btn-link text-renta4-alt fondo-comprar" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Contratar fondo" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
-											' <i class="icon ni ni-cart-fill ms-1 text-verde fs-6"></i>'+
+											' <img src="app/assets/img_css/compra.svg" alt="Contratar fondo" width="16" height="16">'+
 										'</button>'+
 									'</div>';
 						return celda;

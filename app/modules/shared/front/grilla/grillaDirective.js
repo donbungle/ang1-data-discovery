@@ -45,6 +45,7 @@
 				HelperService.log('$link vm.opcionesGrilla', vm.opcionesGrilla);
 				$timeout(function(){
 					scope.vm.table = new Tabulator("#"+vm.grillaId, vm.opcionesGrilla);
+					
 				}, 100);
 				
 				//$('.sparklines').sparkline('html');
