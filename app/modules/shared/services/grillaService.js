@@ -137,24 +137,36 @@
 		};
 
 		var opt_grilla = {};
+		var tipos = [
+			{
+				color: 'renta4',
+				texto: 'N'
+			},
+			{
+				color: 'renta4-alt',
+				texto: '&nbsp;I&nbsp;'
+			}
+		];
 
 		var opt_grilla_basico = {
 			columns:[
 				{
 					title:"Fondo", 
 					field:"nombre_fondo", 
+					headerVertical:true,
 					sorter:"string",
 					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
+						var test = _.first(_.shuffle(tipos));
+
 						var celda = '<div>'+
-										'<button class="btn btn-link text-renta4-alt fondo-detalle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Ver detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
+										'<button class="btn btn-link text-renta4-alt fondo-detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:underline dashed var(--renta4-alt);">'+
 											value +
-											' <i class="icon ni ni-info-fill ms-1 text-renta4-alt fs-6"></i>'+
 										'</button>'+
-										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+_.first(_.shuffle(["rojo", "amarillo", "verde"]))+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
-											'R'+
+										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+test.color+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
+											test.texto +
 										'</span>'+
 									'</div>';
 						return celda;
@@ -196,21 +208,22 @@
 				{
 					title:"Fondo", 
 					field:"nombre_fondo", 
+					headerVertical:true,
 					sorter:"string",
 					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
+						var test = _.first(_.shuffle(tipos));
+
 						var celda = '<div>'+
-										'<button class="btn btn-link text-renta4-alt fondo-detalle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Ver detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
+										'<button class="btn btn-link text-renta4-alt fondo-detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
 											value +
-											' <i class="icon ni ni-info-fill ms-1 text-renta4-alt fs-6"></i>'+
 										'</button>'+
-										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+_.first(_.shuffle(["rojo", "amarillo", "verde"]))+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
-											'R'+
+										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+test.color+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
+											test.texto +
 										'</span>'+
 									'</div>';
-						//var celda = '<celda-fondo texto="'+value+'"></celda-fondo>';
 						return celda;
 					}
 				},
@@ -247,21 +260,22 @@
 				{
 					title:"Fondo", 
 					field:"nombre_fondo", 
+					headerVertical:true,
 					sorter:"string",
 					width:200,
 					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
+						var test = _.first(_.shuffle(tipos));
+
 						var celda = '<div>'+
-										'<button class="btn btn-link text-renta4-alt fondo-detalle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Ver detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
+										'<button class="btn btn-link text-renta4-alt fondo-detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
 											value +
-											' <i class="icon ni ni-info-fill ms-1 text-renta4-alt fs-6"></i>'+
 										'</button>'+
-										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+_.first(_.shuffle(["rojo", "amarillo", "verde"]))+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
-											'R'+
+										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+test.color+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
+											test.texto +
 										'</span>'+
 									'</div>';
-						//var celda = '<celda-fondo texto="'+value+'"></celda-fondo>';
 						return celda;
 					}
 				},
@@ -297,21 +311,22 @@
 				{
 					title:"Fondo", 
 					field:"nombre_fondo", 
+					headerVertical:true,
 					sorter:"string",
 					width:200,
-					frozen:false,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
+						var test = _.first(_.shuffle(tipos));
+
 						var celda = '<div>'+
-										'<button class="btn btn-link text-renta4-alt fondo-detalle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Ver detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
+										'<button class="btn btn-link text-renta4-alt fondo-detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
 											value +
-											' <i class="icon ni ni-info-fill ms-1 text-renta4-alt fs-6"></i>'+
 										'</button>'+
-										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+_.first(_.shuffle(["rojo", "amarillo", "verde"]))+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
-											'R'+
+										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+test.color+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
+											test.texto +
 										'</span>'+
 									'</div>';
-						//var celda = '<celda-fondo texto="'+value+'"></celda-fondo>';
 						return celda;
 					}
 				},
@@ -348,21 +363,22 @@
 				{
 					title:"Fondo", 
 					field:"nombre_fondo", 
+					headerVertical:true,
 					sorter:"string",
 					width:200,
-					frozen:false,
+					frozen:true,
 					formatter:function(cell, formatterParams){
 						var value = cell.getValue();
+						var test = _.first(_.shuffle(tipos));
+
 						var celda = '<div>'+
-										'<button class="btn btn-link text-renta4-alt fondo-detalle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Ver detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
+										'<button class="btn btn-link text-renta4-alt fondo-detalle" style="font-size: 12px;padding:0px 0px 0px 0px; text-decoration:none;">'+
 											value +
-											' <i class="icon ni ni-info-fill ms-1 text-renta4-alt fs-6"></i>'+
 										'</button>'+
-										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+_.first(_.shuffle(["rojo", "amarillo", "verde"]))+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
-											'R'+
+										'<span class="position-absolute top-0 end-0 translate-middle badge bg-'+test.color+' rounded-2 rounded-top-0" style="margin-top:8px;margin-right:-6px;padding:3px;border-bottom-right-radius: 0 !important;">'+
+											test.texto +
 										'</span>'+
 									'</div>';
-						//var celda = '<celda-fondo texto="'+value+'"></celda-fondo>';
 						return celda;
 					}
 				},
@@ -392,7 +408,7 @@
 			],
 		};
 
-		function get_opt_grilla(id_grilla=""){
+		function get_opt_grilla(id_grilla="", no_pagination=false){
 			switch (id_grilla) {
 				case "basico":
 					opt_grilla = opt_grilla_basico;
@@ -412,6 +428,10 @@
 				default:
 					break;
 			}
+			if(no_pagination){
+				opt_base.pagination = false;
+			}
+			
 			return {...opt_base, ...opt_grilla};
 		}
 

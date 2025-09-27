@@ -45,7 +45,13 @@
 				HelperService.log('$link vm.opcionesGrilla', vm.opcionesGrilla);
 				$timeout(function(){
 					scope.vm.table = new Tabulator("#"+vm.grillaId, vm.opcionesGrilla);
-					
+					scope.vm.table.on("rowSelected", function(row){
+						const bsOffcanvas = new bootstrap.Offcanvas('#offcanvasNavbar');
+						bsOffcanvas.show();
+					});
+					scope.vm.table.on("rowDeselected", function(row){
+						console.log('rowDeselected');
+					});
 				}, 100);
 				
 				//$('.sparklines').sparkline('html');

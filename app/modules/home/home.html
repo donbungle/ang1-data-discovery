@@ -10,33 +10,20 @@
 
 		<!-- START OFFCANVAS -->
 		<!-- To customize and view the offcanvas, utilize the "show" class, but make sure to remove it once you are finished. -->
-		<div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+		<div class="offcanvas offcanvas-end p-2 bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 98vw;">
 			<div class="offcanvas-header">
 				<div class="lc-block">
 					<div editable="rich">
-						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Fondos seleccionados</h5>
 					</div>
 				</div>
 
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
-			<div class="offcanvas-body">
+			<div class="offcanvas-body px-0">
 				<div class="row">
-					<div class="col">
-						<div class="lc-block mb-4">
-
-							<div lc-helper="shortcode" class="live-shortcode me-auto"> <!--  lc_nav_menu -->
-								<ul id="menu-menu-1" class="navbar-nav">
-									<li class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"><a href="https://library.livecanvas.com/starters" class="nav-link ">BS5 Page Templates</a></li>
-									<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"><a href="https://library.livecanvas.com/sections/" class="nav-link ">BS5 Snippets</a></li>
-								</ul> <!-- /lc_nav_menu -->
-							</div>
-
-
-						</div>
-						<div class="lc-block">
-							<a class="btn btn-primary" href="#" role="button">Buy Now</a>
-						</div>
+					<div class="col-12">
+						<div id="chart-container" style="position: relative;height: 100vh;overflow: hidden;"></div>
 					</div>
 				</div>
 			</div>

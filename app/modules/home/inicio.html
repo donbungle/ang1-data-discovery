@@ -1,5 +1,5 @@
 <div class="container-fluid p-0">
-	<nav class="navbar navbar-expand-xxl2 bg-white mb-3 sticky-top">
+	<nav class="navbar navbar-expand-xxl2 bg-white mb-3 sticky-top d-none">
 		<div class="container">
 			<div class="collapse navbar-collapse show" id="navbarSupportedContent11">
 				<ul class="navbar-nav mx-auto my-2 my-lg-0 flex-row justify-content-between">
@@ -31,97 +31,698 @@
 			</div>
 		</div>
 	</nav>
-	<div class="row">
-		<div class="col-md-2 px-1" style="">
+	<div class="row my-3 pt-1 pb-1 bg-white sticky-top border-bottom">
+		<div class="col-12">
+			<ul class="nav nav-pills d-flex justify-content-between" id="pills-tab-servicios" role="tablist">
+				<li class="nav-item flex-fill text-center mx-1">
+					<a class="nav-link pt-1 active py-0" id="pills-buscador-tab" data-bs-toggle="pill" data-bs-target="#pills-buscador-pane"  style="font-size:12px;" href="">
+						<img src="app/assets/images/earth-globe-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+						<span class="fw-bold">Fondos nacionales<br> e internacionales</span>
+					</a>
+				</li>
+				<li class="nav-item flex-fill text-center mx-1">
+					<a class="nav-link pt-1 py-0" id="pills-modelo-tab" data-bs-toggle="pill" data-bs-target="#pills-modelo-pane" style="font-size:12px;" href="">
+						<img src="app/assets/images/model-alt-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+						<span class="fw-bold">Carteras<br>modelo</span>
+					</a>
+				</li>
+				<li class="nav-item flex-fill text-center mx-1">
+					<a class="nav-link pt-1 py-0" id="pills-ia-tab" data-bs-toggle="pill" data-bs-target="#pills-ia-pane" style="font-size:12px;" href="">
+						<img src="app/assets/images/robot-svgrepo-com.svg" alt="Todos los fondos" width="32" height="32"><br> 
+						<span class="fw-bold">Carteras<br>con IA</span>
+					</a>
+				</li>
+				<li class="nav-item flex-fill text-center mx-1">
+					<a class="nav-link pt-1 py-0" id="pills-r4-tab" data-bs-toggle="pill" data-bs-target="#pills-r4-pane" style="font-size:12px;" href="">
+						<img src="app/assets/images/iso_pequeno_negro_300x300.svg" alt="Fondos Renta 4" width="32" height="32"><br> 
+						<span class="fw-bold">Fondos<br>Renta4</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tab-content" id="pills-tabContent">
+		<div class="tab-pane fade show active" id="pills-buscador-pane" role="tabpanel" tabindex="0">
 			<div class="row">
-				<div class="col-12 mb-3">
-					<div ng-include="'app/modules/home/cant-fondos.html'"></div>
+				<div class="col-12 m-0 p-0">
+					
+					<div class="container-fluid px-4 py-2 my-0 text-center">
+						<div class="lc-block">
+							<div editable="rich">
+								<h1 class="display-6 fw-bold"> La <span class="text-renta4">Mayor Oferta</span> de Fondos del Mercado</h1>
+							</div>
+						</div>
+						<div class="lc-block col-lg-6 mx-auto mb-4">
+							<div editable="rich">
+								<p class="lead">&nbsp;
+									Nuestro compromiso es democratizar el acceso a la inversión profesional, 
+									proporcionándote las mismas herramientas y oportunidades que utilizan los grandes patrimonios institucionales.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="col-12 col-md-6 my-4 entrada" ng-show="vm.mostrar_logos"  ng-cloak>
+					<h5 class="text-renta4-alt text-center display-6"><em class="icon ni ni-map-pin text-renta4 fs-6"></em> Gestoras Nacionales</h5>
+					<div class="multiple-items">
+						<!-- Slides-->
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/bci.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/bice.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/btg.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/compass.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 46px;" src="app/assets/images/gestoras/credicorp.png" loading="lazy">
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-12 col-md-6 my-4 entrada" ng-show="vm.mostrar_logos"  ng-cloak>
+					<h5 class="text-renta4-alt text-center display-6"><em class="icon ni ni-globe text-renta4 fs-6"></em> Gestoras Internacionales</h5>
+					<div class="multiple-items">
+						<!-- Slides-->
+						 
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/compass.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 46px;" src="app/assets/images/gestoras/credicorp.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/bci.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/bice.png" loading="lazy">
+						</div>
+						<div class="lc-block me-3">
+							<img class="img-fluid" style="height: 60px;" src="app/assets/images/gestoras/btg.png" loading="lazy">
+						</div>
+						
+					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 mb-3">
-					<filtros-aplicados lista="vm.filtros_aplicados" on-delete="vm.quitar_filtros()"></filtros-aplicados>
+				<div class="col-md-2 px-1" style="">
+					<div class="row">
+						<div class="col-12 mb-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-between mb-3 lh-1">
+										<div>
+											<span class="fs-6 text-uppercase fw-semibold">Fondos de Inversión</span>
+										</div>
+										<div>
+											<span class="ni ni-wallet-new fs-3" style="color:var(--renta4-disabled);"></span>
+										</div>
+									</div>
+									<h2 class="fw-bold mb-1 text-negro">
+										343
+									</h2>
+									<span class="text-success fw-semibold"><i class="icon ni ni-trend-up me-1"></i>+5.19%</span>
+									<span class="ms-1 fw-medium">Rentabilidad</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mb-3">
+							<filtros-aplicados lista="vm.filtros_aplicados" on-delete="vm.quitar_filtros()"></filtros-aplicados>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div>
+							<h6 data-bs-toggle="collapse" href="#collapseExample" role="button" style="font-size:14px;">
+								<em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> 
+									<span class="lol" style="text-decoration: underline dotted var(--renta4);">Opciones de busqueda </span>
+								<em class="icon ni ni-chevron-down text-negro fs-2 position-relative" style="top: 8px;"></em></h6>
+						</div>
+						<div class="col-12 collapse"  id="collapseExample">
+							<filtros-categorias categorias="vm.filtros_menu" lista="vm.filtros_aplicados"></filtros-categorias>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row mb-3">
-				<div>
-					<h6 data-bs-toggle="collapse" href="#collapseExample" role="button" style="font-size:14px;">
-						<em class="icon ni ni-search" style="color:var(--renta4-alt);"></em> 
-						Opciones de busqueda 
-						<em class="icon ni ni-chevron-down text-negro fs-2 position-relative" style="top: 8px;"></em></h6>
-				</div>
-				<div class="col-12 collapse"  id="collapseExample">
-					<filtros-categorias categorias="vm.filtros_menu" lista="vm.filtros_aplicados"></filtros-categorias>
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+							<div class="row">
+								<div id="fondos-grilla" class="col">
+									<nav>
+										<div class="nav nav-tabs" id="nav-tab" role="tablist" style="flex-wrap: nowrap !important;">
+											<button id="nav-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+											<button id="nav-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+											<button id="nav-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+											<button id="nav-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+											<button id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general-panel" type="button" role="tab" class="nav-link">General</button>
+										</div>
+									</nav>
+									<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+										<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+											<div class="tab-pane fade show active" id="nav-basico-panel" role="tabpanel">
+												<div class="container-fluid px-0">
+													<grilla grilla-id="grid-basico" data="vm.table_basico_data" opciones-grilla="vm.opciones_grilla_basico" class="table1"></grilla>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-rentabilidad-panel" role="tabpanel">
+												<div class="container-fluid px-0">
+													<grilla grilla-id="grid-rentabilidad" data="vm.table_rentabilidad_data" opciones-grilla="vm.opciones_grilla_rentabilidad"></grilla>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-ratios-panel" role="tabpanel">
+												<div class="container-fluid px-0">
+													<grilla grilla-id="grid-ratios" data="vm.table_ratios_data" opciones-grilla="vm.opciones_grilla_ratios"></grilla>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-ranking-panel" role="tabpanel">
+												<div class="container-fluid px-0">
+													<grilla grilla-id="grid-ranking" data="vm.table_ranking_data" opciones-grilla="vm.opciones_grilla_ranking"></grilla>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="nav-general-panel" role="tabpanel">
+												<div class="container-fluid px-0">
+													<grilla grilla-id="grid-general" data="vm.table_general_data" opciones-grilla="vm.opciones_grilla_general"></grilla>
+												</div>
+											</div>
+											
+											<div class="tab-loading-overlay" id="tabLoader">
+												<div class="spinner-border text-renta4" role="status">
+													<span class="visually-hidden">Loading...</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<p class="d-flex justify-content-end align-items-center mt-3">
+										<em class="icon ni ni-info text-renta4 fs-6"></em>
+										<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-10">
-			<div class="row">
-				<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+		<div class="tab-pane fade" id="pills-modelo-pane" role="tabpanel" tabindex="0">
+			<div id="cartera-modelo-1" class="row">
+				<div class="col-12">
+					<h1 class="display-6 text-renta4-alt">
+						Perfil Conservador<br>
+						<span style="color:var(--renta4-shadow);font-size: 20px;">Preservación de Capital</span>
+					</h1>
+				</div>
+				<div class="col-12">
+					<p>
+						Recomendamos una cartera defensiva con 65% en fondos de renta fija gubernamental y corporativa de alta calificación, 
+						25% en fondos de dividendos de empresas estables, y 10% en fondos del mercado monetario. 
+						Esta distribución prioriza la estabilidad y generación de ingresos predecibles. 
+						Los fondos de bonos te proporcionarán flujos regulares con baja volatilidad, mientras que el componente 
+						accionario de dividendos agregará una protección adicional contra la inflación sin comprometer 
+						significativamente la seguridad de tu inversión.
+					</p>
+				</div>
+				<div class="col-12">
 					<div class="row">
-						<div id="fondos-grilla" class="col">
-							<nav>
-								<div class="nav nav-tabs" id="nav-tab" role="tablist" style="flex-wrap: nowrap !important;">
-									<button id="nav-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-basico-panel" type="button" role="tab" class="nav-link">Básico</button>
-									<button id="nav-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-rentabilidad-panel" type="button" role="tab" class="nav-link active">Rentabilidad</button>
-									<button id="nav-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
-									<button id="nav-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
-									<button id="nav-general-tab" data-bs-toggle="tab" data-bs-target="#nav-general-panel" type="button" role="tab" class="nav-link">General</button>
-								</div>
-							</nav>
-							<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
-								<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
-									<div class="tab-pane fade" id="nav-basico-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-basico.html?v=4444444'"></div>
+						<div class="col-md-2 px-1" style="">
+							<div class="row">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+									<div class="row">
+										<div id="fondos-grilla" class="col">
+											<nav>
+												<div class="nav nav-tabs" id="nav-aaa-tab" role="tablist" style="flex-wrap: nowrap !important;">
+													<button id="nav-aaa-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-aaa-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+													<button id="nav-aaa-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-aaa-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+													<button id="nav-aaa-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-aaa-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+													<button id="nav-aaa-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-aaa-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+													<button id="nav-aaa-general-tab" data-bs-toggle="tab" data-bs-target="#nav-aaa-general-panel" type="button" role="tab" class="nav-link">General</button>
+												</div>
+											</nav>
+											<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+												<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+													<div class="tab-pane fade show active" id="nav-aaa-basico-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-aaa-basico" data="vm.table_basico_data_modelo" opciones-grilla="vm.opciones_grilla_aaa_basico" class="table1"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-aaa-rentabilidad-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-aaa-rentabilidad" data="vm.table_rentabilidad_data_modelo" opciones-grilla="vm.opciones_grilla_aaa_rentabilidad"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-aaa-ratios-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-aaa-ratios" data="vm.table_ratios_data_modelo" opciones-grilla="vm.opciones_grilla_aaa_ratios"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-aaa-ranking-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-aaa-ranking" data="vm.table_ranking_data_modelo" opciones-grilla="vm.opciones_grilla_aaa_ranking"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-aaa-general-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-aaa-general" data="vm.table_general_data_modelo" opciones-grilla="vm.opciones_grilla_aaa_general"></grilla>
+														</div>
+													</div>
+													
+													<div class="tab-loading-overlay" id="tabLoader">
+														<div class="spinner-border text-renta4" role="status">
+															<span class="visually-hidden">Loading...</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
 									</div>
-									<div class="tab-pane fade show active" id="nav-rentabilidad-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-rentabilidad.html?v=4444444'"></div>
-									</div>
-									<div class="tab-pane fade" id="nav-ratios-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-ratios.html?v=4444444'"></div>
-									</div>
-									<div class="tab-pane fade" id="nav-ranking-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-ranking.html?v=4444444'"></div>
-									</div>
-									<div class="tab-pane fade" id="nav-general-panel" role="tabpanel">
-										<div ng-include="'app/modules/home/tab-general.html?v=4444444'"></div>
-									</div>
-									
-									<div class="tab-loading-overlay" id="tabLoader">
-										<div class="spinner-border text-renta4" role="status">
-											<span class="visually-hidden">Loading...</span>
+									<div class="row">
+										<div class="col-12">
+											<p class="d-flex justify-content-end align-items-center mt-3">
+												<em class="icon ni ni-info text-renta4 fs-6"></em>
+												<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+											</p>
 										</div>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
+				</div>
+			</div>
+			<hr style="margin-bottom: 50px;">
+			<div id="cartera-modelo-2" class="row">
+				<div class="col-12">
+					<h1 class="display-6 text-renta4-alt">
+						Perfil Moderado<br>
+						<span style="color:var(--renta4-shadow);font-size: 20px;">Crecimiento Balanceado</span>
+					</h1>
+				</div>
+				<div class="col-12">
+					<p>
+						Para un enfoque equilibrado, sugerimos: 45% en fondos de renta variable 
+						diversificados (nacionales e internacionales), 35% en fondos de renta fija mixta, 
+						15% en fondos de mercados desarrollados, y 5% en fondos alternativos como REITs. 
+						Esta mezcla busca un crecimiento sostenido con volatilidad controlada. 
+						La diversificación geográfica y por clases de activos te permite capturar 
+						oportunidades de crecimiento mientras reduces el riesgo a través de diferentes ciclos económicos.
+					</p>
+				</div>
+				<div class="col-12">
 					<div class="row">
+						<div class="col-md-2 px-1" style="">
+							<div class="row">
+							</div>
+						</div>
 						<div class="col-12">
-							<p class="d-flex justify-content-end align-items-center mt-3">
-								<em class="icon ni ni-info text-renta4 fs-6"></em>
-								<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
-							</p>
+							<div class="row">
+								<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+									<div class="row">
+										<div id="fondos-grilla" class="col">
+											<nav>
+												<div class="nav nav-tabs" id="nav-bbb-tab" role="tablist" style="flex-wrap: nowrap !important;">
+													<button id="nav-bbb-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-bbb-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+													<button id="nav-bbb-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-bbb-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+													<button id="nav-bbb-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-bbb-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+													<button id="nav-bbb-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-bbb-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+													<button id="nav-bbb-general-tab" data-bs-toggle="tab" data-bs-target="#nav-bbb-general-panel" type="button" role="tab" class="nav-link">General</button>
+												</div>
+											</nav>
+											<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+												<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+													<div class="tab-pane fade show active" id="nav-bbb-basico-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-bbb-basico" data="vm.table_basico_data_modelo" opciones-grilla="vm.opciones_grilla_bbb_basico" class="table1"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-bbb-rentabilidad-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-bbb-rentabilidad" data="vm.table_rentabilidad_data_modelo" opciones-grilla="vm.opciones_grilla_bbb_rentabilidad"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-bbb-ratios-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-bbb-ratios" data="vm.table_ratios_data_modelo" opciones-grilla="vm.opciones_grilla_bbb_ratios"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-bbb-ranking-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-bbb-ranking" data="vm.table_ranking_data_modelo" opciones-grilla="vm.opciones_grilla_bbb_ranking"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-bbb-general-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-bbb-general" data="vm.table_general_data_modelo" opciones-grilla="vm.opciones_grilla_bbb_general"></grilla>
+														</div>
+													</div>
+													
+													<div class="tab-loading-overlay" id="tabLoader">
+														<div class="spinner-border text-renta4" role="status">
+															<span class="visually-hidden">Loading...</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<p class="d-flex justify-content-end align-items-center mt-3">
+												<em class="icon ni ni-info text-renta4 fs-6"></em>
+												<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr style="margin-bottom: 50px;">
+			<div id="cartera-modelo-3" class="row">
+				<div class="col-12">
+					<h1 class="display-6 text-renta4-alt">
+						Perfil Agresivo <br>
+						<span style="color:var(--renta4-shadow);font-size: 20px;">Crecimiento Balanceado</span>
+					</h1>
+				</div>
+				<div class="col-12">
+					<p>
+						Recomendamos una cartera de alto crecimiento: 60% en fondos de renta variable de 
+						crecimiento y pequeña capitalización, 25% en fondos de mercados emergentes y 
+						sectores dinámicos, 10% en fondos de tecnología e innovación, y 5% en fondos 
+						de renta fija como ancla. Esta estrategia maximiza el potencial de retorno a largo 
+						plazo asumiendo mayor volatilidad. La concentración en activos de crecimiento te posiciona 
+						para aprovechar las tendencias de expansión económica y innovación tecnológica.
+					</p>
+				</div>
+				<div class="col-12">
+					<div class="row">
+						<div class="col-md-2 px-1" style="">
+							<div class="row">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+									<div class="row">
+										<div id="fondos-grilla" class="col">
+											<nav>
+												<div class="nav nav-tabs" id="nav-ccc-tab" role="tablist" style="flex-wrap: nowrap !important;">
+													<button id="nav-ccc-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-ccc-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+													<button id="nav-ccc-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-ccc-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+													<button id="nav-ccc-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ccc-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+													<button id="nav-ccc-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-ccc-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+													<button id="nav-ccc-general-tab" data-bs-toggle="tab" data-bs-target="#nav-ccc-general-panel" type="button" role="tab" class="nav-link">General</button>
+												</div>
+											</nav>
+											<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+												<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+													<div class="tab-pane fade show active" id="nav-ccc-basico-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ccc-basico" data="vm.table_basico_data_modelo" opciones-grilla="vm.opciones_grilla_ccc_basico" class="table1"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ccc-rentabilidad-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ccc-rentabilidad" data="vm.table_rentabilidad_data_modelo" opciones-grilla="vm.opciones_grilla_ccc_rentabilidad"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ccc-ratios-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ccc-ratios" data="vm.table_ratios_data_modelo" opciones-grilla="vm.opciones_grilla_ccc_ratios"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ccc-ranking-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ccc-ranking" data="vm.table_ranking_data_modelo" opciones-grilla="vm.opciones_grilla_ccc_ranking"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ccc-general-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ccc-general" data="vm.table_general_data_modelo" opciones-grilla="vm.opciones_grilla_ccc_general"></grilla>
+														</div>
+													</div>
+													
+													<div class="tab-loading-overlay" id="tabLoader">
+														<div class="spinner-border text-renta4" role="status">
+															<span class="visually-hidden">Loading...</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<p class="d-flex justify-content-end align-items-center mt-3">
+												<em class="icon ni ni-info text-renta4 fs-6"></em>
+												<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="pills-ia-pane" role="tabpanel" tabindex="0">
+			<div id="cartera-ia" class="row">
+				<div class="col-12">
+					<h1 class="text-renta4-alt">
+						Cartera Inteligente<br>
+						<span style="color:var(--renta4-shadow);font-size: 20px;">Gestión por Algoritmos de IA</span>
+					</h1>
+				</div>
+				<div class="col-12">
+					<p>
+						Nuestra cartera optimizada por inteligencia artificial utiliza algoritmos de 
+						aprendizaje automático para analizar miles de variables del mercado en tiempo 
+						real y ajustar automáticamente la asignación de activos. El sistema procesa datos 
+						macroeconómicos, tendencias sectoriales, volatilidad histórica y correlaciones entre 
+						fondos para construir una cartera de: 42% en fondos de renta variable global, 28% en fondos de 
+						renta fija adaptativa, 18% en fondos sectoriales rotativos, y 12% en fondos alternativos seleccionados dinámicamente.
+					</p>
+				</div>
+				<div class="col-12">
+					<div class="row">
+						<div class="col-md-2 px-1" style="">
+							<div class="row">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+									<div class="row">
+										<div id="fondos-grilla" class="col">
+											<nav>
+												<div class="nav nav-tabs" id="nav-ia-tab" role="tablist" style="flex-wrap: nowrap !important;">
+													<button id="nav-ia-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-ia-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+													<button id="nav-ia-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-ia-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+													<button id="nav-ia-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-ia-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+													<button id="nav-ia-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-ia-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+													<button id="nav-ia-general-tab" data-bs-toggle="tab" data-bs-target="#nav-ia-general-panel" type="button" role="tab" class="nav-link">General</button>
+												</div>
+											</nav>
+											<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+												<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+													<div class="tab-pane fade show active" id="nav-ia-basico-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ia-basico" data="vm.table_basico_data_ia" opciones-grilla="vm.opciones_grilla_ia_basico" class="table1"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ia-rentabilidad-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ia-rentabilidad" data="vm.table_rentabilidad_data_ia" opciones-grilla="vm.opciones_grilla_ia_rentabilidad"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ia-ratios-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ia-ratios" data="vm.table_ratios_data_ia" opciones-grilla="vm.opciones_grilla_ia_ratios"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ia-ranking-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ia-ranking" data="vm.table_ranking_data_ia" opciones-grilla="vm.opciones_grilla_ia_ranking"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-ia-general-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-ia-general" data="vm.table_general_data_ia" opciones-grilla="vm.opciones_grilla_ia_general"></grilla>
+														</div>
+													</div>
+													
+													<div class="tab-loading-overlay" id="tabLoader">
+														<div class="spinner-border text-renta4" role="status">
+															<span class="visually-hidden">Loading...</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<p class="d-flex justify-content-end align-items-center mt-3">
+												<em class="icon ni ni-info text-renta4 fs-6"></em>
+												<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="pills-r4-pane" role="tabpanel" tabindex="0">
+			<div id="cartera-r4" class="row">
+				<div class="col-12">
+					<h1 class="text-renta4-alt">
+						Cartera Renta 4<br>
+						<span style="color:var(--renta4-shadow);font-size: 20px;">Estrategia Diversificada Global</span>
+					</h1>
+				</div>
+				<div class="col-12">
+					<p>
+						Nuestra propuesta de cartera multiactivo combina la experiencia de nuestro equipo de análisis 
+						con una selección rigurosa de fondos de gestoras reconocidas internacionalmente. 
+						La asignación recomendada incluye: 35% en fondos de renta variable europea y americana, 30% en 
+						fondos de renta fija gubernamental y corporativa, 20% en fondos de mercados emergentes y Asia-Pacífico, 
+						y 15% en fondos alternativos incluyendo materias primas y REITs.
+						Esta cartera refleja nuestra visión constructiva sobre los mercados desarrollados mientras 
+						aprovechamos las oportunidades de crecimiento en economías emergentes. Nuestros analistas han seleccionado 
+						fondos con track record sólido, equipos de gestión experimentados y filosofías de inversión consistentes. 
+						El enfoque global permite diversificar riesgos geográficos y monetarios, mientras que la combinación de 
+						activos tradicionales y alternativos busca optimizar la rentabilidad ajustada por riesgo en diferentes escenarios de mercado.
+					</p>
+				</div>
+				<div class="col-12">
+					<div class="row">
+						<div class="col-md-2 px-1" style="">
+							<div class="row">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="row">
+								<div class="col-12 bg-renta4-alt2 px-1" style="min-height: 300px;">
+									<div class="row">
+										<div id="fondos-grilla" class="col">
+											<nav>
+												<div class="nav nav-tabs" id="nav-r4-tab" role="tablist" style="flex-wrap: nowrap !important;">
+													<button id="nav-r4-basico-tab" data-bs-toggle="tab" data-bs-target="#nav-r4-basico-panel" type="button" role="tab" class="nav-link active">Básico</button>
+													<button id="nav-r4-rentabilidad-tab" data-bs-toggle="tab" data-bs-target="#nav-r4-rentabilidad-panel" type="button" role="tab" class="nav-link">Rentabilidad</button>
+													<button id="nav-r4-ratios-tab" data-bs-toggle="tab" data-bs-target="#nav-r4-ratios-panel" type="button" role="tab" class="nav-link">Ratios</button>
+													<button id="nav-r4-ranking-tab" data-bs-toggle="tab" data-bs-target="#nav-r4-ranking-panel" type="button" role="tab" class="nav-link">Ranking</button>
+													<button id="nav-r4-general-tab" data-bs-toggle="tab" data-bs-target="#nav-r4-general-panel" type="button" role="tab" class="nav-link">General</button>
+												</div>
+											</nav>
+											<div class="card2 border border-top-0 rounded-bottom bg-white"  ui-i18n="es">
+												<div class="card-body2 pt-3 px-0 tab-content table-responsive position-relative" id="nav-tabContent">
+													<div class="tab-pane fade show active" id="nav-r4-basico-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-r4-basico" data="vm.table_basico_data_r4" opciones-grilla="vm.opciones_grilla_r4_basico" class="table1"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-r4-rentabilidad-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-r4-rentabilidad" data="vm.table_rentabilidad_data_r4" opciones-grilla="vm.opciones_grilla_r4_rentabilidad"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-r4-ratios-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-r4-ratios" data="vm.table_ratios_data_r4" opciones-grilla="vm.opciones_grilla_r4_ratios"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-r4-ranking-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-r4-ranking" data="vm.table_ranking_data_r4" opciones-grilla="vm.opciones_grilla_r4_ranking"></grilla>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="nav-r4-general-panel" role="tabpanel">
+														<div class="container-fluid px-0">
+															<grilla grilla-id="grid-r4-general" data="vm.table_general_data_r4" opciones-grilla="vm.opciones_grilla_r4_general"></grilla>
+														</div>
+													</div>
+													
+													<div class="tab-loading-overlay" id="tabLoader">
+														<div class="spinner-border text-renta4" role="status">
+															<span class="visually-hidden">Loading...</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<p class="d-flex justify-content-end align-items-center mt-3">
+												<em class="icon ni ni-info text-renta4 fs-6"></em>
+												<span style="font-size: 10px;">Las rentabilidades se presentan en euros (EUR).<i class="icon compra"></i></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 
-	 <!-- Modal -->
+
+
+
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+ <!-- Modal -->
 <div class="fade modal modal-r4-base" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalleLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl" >
+  <div class="modal-dialog modal-fullscreen" >
     <div class="modal-content">
       <div class="modal-body p-0 m-0">
         <div id="mspreview_ficha" data-iso="EUR|ES0173394034"
-	style="overflow: hidden; z-index: 999999; background: url(/app/assets/images/ms_minificha_bg_green.png) left top / 100% 104px no-repeat rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 16px -5px; top: 662px;"
+	style="overflow: hidden; z-index: 999999; background: url(/app/assets/images/ms_minificha_bg_green.png) left top / 100% 104px no-repeat rgb(255, 255, 255);"
 	data-p3m="5.73814270273872" data-rtbp3m="5,74%" data-p6m="8.756944726697121" data-rtbp6m="8,76%"
 	data-p1a="13.390151635154599" data-rtbp1a="13,39%" data-p3a="15.920545388871554" data-rtbp3a="15,92%"
 	data-p5a="12.405921643682504" data-rtbp5a="12,41%">
 	<div style="color:#fff; font-size:9.5pt; white-space:nowrap; text-overflow:ellipsis; height:24px; overflow:hidden; padding:2px 8px;">
-		<a href="javascript:;" id="msminificha_field_close"
+		<a href="javascript:;" id="msminificha_field_close"  data-bs-dismiss="modal"
 			style="color:#00b491; float:right; background-color:#fff; display:inline-block; width:14px; height:14px; text-align:center; line-height:12px; border-radius:50%; font-weight:600; padding-top:0px;">x</a><span><a
 				class="mslink_minificha_namefondo"
 				href="/portal?TX=goto&amp;FWD=FCH_FND_CHILE&amp;PAG=5&amp;HOJA=2&amp;COD_ISIN=ES0173394034&amp;DIVI=EUR">Renta
@@ -580,4 +1181,3 @@
   </div>
 </div>
 <!-- Fin Modal -->
-</div>
